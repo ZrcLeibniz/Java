@@ -39,6 +39,7 @@ public class HuffmanTree {
 			root.preOrder();
 		}
 	}
+	
 }
 
 class HuffmanNode implements Comparable<HuffmanNode> {

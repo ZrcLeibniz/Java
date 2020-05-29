@@ -1,0 +1,12 @@
+装饰者模式：
+	定义：动态的将新功能附加到对象上。在功能扩展方面，它比继承更有弹性，装饰者模式体现了开闭原则
+	原理：
+		1）装饰者模式就像打包一个快递
+		2）Component是主体。
+		3）ConcreteComponent是要包装的对象，Decorator是装饰者。这两个类都要继承Component
+	应用：
+		装饰者模式在JDK的IO流中就使用了装饰者模式
+		InputStream是抽象类，类似于例子中的Drink
+		FileInputStream是InputStream的子类，类似于集体的单品咖啡
+		FilerInputStream是FileInputStream的子类，类似于Decorator
+		DataInputStream是具体的修饰者，类似于Milk
