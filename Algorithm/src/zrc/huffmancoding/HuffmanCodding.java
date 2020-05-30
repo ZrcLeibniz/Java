@@ -22,6 +22,7 @@ public class HuffmanCodding {
 		// System.out.println(Arrays.toString(huffmanCodeBytes));
 		System.out.println(Arrays.toString(contentBytes));
 		System.out.println(Arrays.toString(huffmanZip(contentBytes)));
+	    System.out.println(new String(decode(huffmanCodes, huffmanZip(contentBytes))));
 	}
 
 	private static byte[] huffmanZip(byte[] bytes) {
@@ -119,6 +120,54 @@ public class HuffmanCodding {
 			huffmanCodeBytes[j] = (byte) Integer.parseInt(strByte, 2);
 		}
 		return huffmanCodeBytes;
+	}
+
+	private static String byteToString(boolean flag, byte b) {
+		int temp = b;
+		if (flag) {
+			temp |= 256;
+		}
+		String str = Integer.toBinaryString(temp);
+		if (flag) {
+			return str.substring(str.length() - 8);
+		} else {
+			return str;
+		}
+	}
+
+	private static byte[] decode(Map<Byte, String> huffmanCodes, byte[] huffmanBytes) {
+		StringBuilder stringBuilder = new StringBuilder();
+		for (int i = 0; i < huffmanBytes.length; i++) {
+			byte b = huffmanBytes[i];
+			boolean flag = (i == huffmanBytes.length - 1);
+			stringBuilder.append(byteToString(!flag, b));
+		}
+		Map<String, Byte> map = new HashMap<String, Byte>();
+		for (Map.Entry<Byte, String> entry : huffmanCodes.entrySet()) {
+			map.put(entry.getValue(), entry.getKey());
+		}
+		List<Byte> list = new ArrayList<>();
+		for (int i = 0; i < stringBuilder.length();) {
+			int count = 1;
+			boolean flag = true;
+			Byte b = null;
+			while (flag) {
+				String key = stringBuilder.substring(i, i + count);
+				b = map.get(key);
+				if (b == null) {
+					count++;
+				} else {
+					flag = false;
+				}
+			}
+			list.add(b);
+			i += count;
+		}
+		byte[] b = new byte[list.size()];
+		for (int i = 0; i < b.length; i++) {
+			b[i] = list.get(i);
+		}
+		return b;
 	}
 
 }
