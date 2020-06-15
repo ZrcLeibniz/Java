@@ -53,5 +53,4 @@ public class SheepPlus implements Cloneable{
 		}
 		return sheep;
 	}
-
 }
