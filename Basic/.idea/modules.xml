@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AnonymousInnerClass/AnonymousInnerClass.iml" filepath="$PROJECT_DIR$/AnonymousInnerClass/AnonymousInnerClass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DigitGroup/DigitGroup.iml" filepath="$PROJECT_DIR$/DigitGroup/DigitGroup.iml" />
       <module fileurl="file://$PROJECT_DIR$/Object/Object.iml" filepath="$PROJECT_DIR$/Object/Object.iml" />
     </modules>
   </component>
