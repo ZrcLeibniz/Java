@@ -1,4 +1,4 @@
-package zrc.onedimensional;
+package zrc.array;
 
 import java.util.Scanner;
 

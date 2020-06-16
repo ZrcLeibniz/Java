@@ -1,4 +1,4 @@
-package zrc.onedimensional;
+package zrc.array;
 
 public class ArrayTest03 {
     public static void main(String[] args) {
