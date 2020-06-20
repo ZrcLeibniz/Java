@@ -20,7 +20,7 @@ public class Selection04 {
         return v.compareTo(w) > 0;
     }
 
-    public static void exchange(Comparable[] a, int i, int j){
+    private static void exchange(Comparable[] a, int i, int j){
         Comparable temp;
         temp = a[i];
         a[i] = a[j];
