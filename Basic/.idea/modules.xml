@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/AnonymousInnerClass/AnonymousInnerClass.iml" filepath="$PROJECT_DIR$/AnonymousInnerClass/AnonymousInnerClass.iml" />
       <module fileurl="file://$PROJECT_DIR$/DigitGroup/DigitGroup.iml" filepath="$PROJECT_DIR$/DigitGroup/DigitGroup.iml" />
       <module fileurl="file://$PROJECT_DIR$/Object/Object.iml" filepath="$PROJECT_DIR$/Object/Object.iml" />
+      <module fileurl="file://$PROJECT_DIR$/String/String.iml" filepath="$PROJECT_DIR$/String/String.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DigitGroup/StringTest.iml" filepath="$PROJECT_DIR$/DigitGroup/StringTest.iml" />
     </modules>
   </component>
 </project>
