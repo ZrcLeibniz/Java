@@ -1,6 +1,7 @@
 package zrc.sort.pratice.selection;
 
-public class Selection08 {
+
+public class Selection09 {
     public static void sort(Comparable[] a){
         int minIndex;
         for (int i = 0; i < a.length - 1; i++) {
@@ -14,7 +15,7 @@ public class Selection08 {
         }
     }
 
-    private static boolean greater(Comparable v, Comparable w){
+    private static boolean greater (Comparable v, Comparable w){
         return v.compareTo(w) > 0;
     }
 

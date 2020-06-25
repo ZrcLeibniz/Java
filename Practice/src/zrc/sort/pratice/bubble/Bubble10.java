@@ -1,16 +1,13 @@
-package zrc.sort.pratice.selection;
+package zrc.sort.pratice.bubble;
 
-public class Selection08 {
+public class Bubble10 {
     public static void sort(Comparable[] a){
-        int minIndex;
-        for (int i = 0; i < a.length - 1; i++) {
-            minIndex = i;
-            for (int j = i + 1; j < a.length; j++) {
-                if (greater(a[minIndex], a[j])){
-                    minIndex = j;
+        for (int i = a.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (greater(a[j], a[j + 1])){
+                    exchange(a, j, j + 1);
                 }
             }
-            exchange(a, minIndex, i);
         }
     }
 
