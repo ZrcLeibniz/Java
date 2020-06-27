@@ -1,10 +1,28 @@
 package zrc.sort.pratice.merge;
 
-public class Merge05 {
+public class Merge06 {
     private static Comparable[] assist;
 
     private static boolean less(Comparable v, Comparable w) {
         return v.compareTo(w) < 0;
+    }
+
+    private static void sort(Comparable[] a, int lo, int hi) {
+        if (lo >= hi) {
+            return;
+        } else {
+            int mid = lo + (hi - lo) / 2;
+            sort(a, lo, mid);
+            sort(a, mid + 1, hi);
+            merge(a, lo, mid, hi);
+        }
+    }
+
+    public static void sort(Comparable[] a) {
+        assist = new Comparable[a.length];
+        int lo = 0;
+        int hi = a.length - 1;
+        sort(a, lo, hi);
     }
 
     private static void merge(Comparable[] a, int lo, int mid, int hi) {
@@ -24,26 +42,8 @@ public class Merge05 {
         while (p2 <= hi) {
             assist[i++] = a[p2++];
         }
-        for (int index = lo; index <= hi; index++) {
+        for (int index = lo; index <= hi ; index++) {
             a[index] = assist[index];
         }
-    }
-
-    private static void sort(Comparable[] a, int lo, int hi) {
-        if (lo >= hi) {
-            return;
-        } else {
-            int mid = lo + (hi - lo) / 2;
-            sort(a, lo, mid);
-            sort(a, mid + 1, hi);
-            merge(a, lo, mid, hi);
-        }
-    }
-
-    public static void sort(Comparable[] a) {
-        assist = new Comparable[a.length];
-        int lo = 0;
-        int hi = a.length - 1;
-        sort(a, lo, hi);
     }
 }

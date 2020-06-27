@@ -68,7 +68,6 @@ public class SequenceList<T> implements Iterable<T> {
         return -1;
     }
 
-
     @Override
     public Iterator<T> iterator() {
         return new SIteratot();
