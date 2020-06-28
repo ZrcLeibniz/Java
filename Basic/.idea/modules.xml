@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/Object/Object.iml" filepath="$PROJECT_DIR$/Object/Object.iml" />
       <module fileurl="file://$PROJECT_DIR$/String/String.iml" filepath="$PROJECT_DIR$/String/String.iml" />
       <module fileurl="file://$PROJECT_DIR$/DigitGroup/StringTest.iml" filepath="$PROJECT_DIR$/DigitGroup/StringTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WrapperClass/WrapperClass.iml" filepath="$PROJECT_DIR$/WrapperClass/WrapperClass.iml" />
     </modules>
   </component>
 </project>
