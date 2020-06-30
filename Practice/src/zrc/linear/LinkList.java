@@ -51,7 +51,6 @@ public class LinkList<T> implements Iterable<T> {
     }
 
     public int length() {
-
         return N;
     }
 
@@ -84,6 +83,7 @@ public class LinkList<T> implements Iterable<T> {
         }
         Node node = new Node(t, n.next);
         n.next = node;
+        N++;
     }
 
     public T remove(int i) {
