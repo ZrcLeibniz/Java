@@ -8,15 +8,15 @@ public class LinkList01<T> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return new LIterator();
     }
 
     private class LIterator implements Iterator{
 
         private Node n;
 
-        public LIterator(Node n) {
-            this.n = n;
+        public LIterator() {
+            this.n = head;
         }
 
         @Override
