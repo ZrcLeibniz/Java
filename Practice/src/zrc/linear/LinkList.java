@@ -107,4 +107,23 @@ public class LinkList<T> implements Iterable<T> {
         }
         return -1;
     }
+
+    public void revere() {
+        if (isEmpty()) {
+            return;
+        } else {
+            reverse(head.next);
+        }
+    }
+
+    public Node reverse(Node curr) {
+        if (curr.next == null) {
+            head.next = curr;
+            return curr;
+        }
+        Node pre = reverse(curr.next);
+        pre.next = curr;
+        curr.next = null;
+        return curr;
+    }
 }
