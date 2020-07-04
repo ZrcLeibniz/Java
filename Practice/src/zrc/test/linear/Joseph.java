@@ -44,5 +44,4 @@ public class Joseph {
             this.next = next;
         }
     }
-
 }
