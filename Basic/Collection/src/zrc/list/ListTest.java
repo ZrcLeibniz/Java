@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class ListTest01 {
+public class ListTest {
     public static void main(String[] args) {
         List arrayList = new ArrayList();
         arrayList.add("A");
