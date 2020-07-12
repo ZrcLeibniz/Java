@@ -2,7 +2,7 @@ package zrc.map;
 
 import java.util.*;
 
-public class HashMapTest {
+public class HashMapTest01 {
     public static void main(String[] args) {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("法外狂徒", "张三");

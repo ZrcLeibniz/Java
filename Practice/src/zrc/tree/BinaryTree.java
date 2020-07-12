@@ -99,4 +99,28 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
     public int size() {
         return N;
     }
+
+    public Key min() {
+        return min(root);
+    }
+
+    public Key min(Node<Key, Value> x){
+        if (x.left != null) {
+           return min(x.left);
+        } else {
+            return x.key;
+        }
+    }
+
+    public Key max() {
+        return max(root);
+    }
+
+    public Key max(Node<Key, Value> x) {
+        if (x .right != null) {
+            return max(x.right);
+        } else {
+            return x.key;
+        }
+    }
 }
