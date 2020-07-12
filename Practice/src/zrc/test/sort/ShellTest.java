@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class ShellTest {
     public static void main(String[] args) {
         Integer[] arr = {3, 2, 4, 5, 7, 6, 5, 9, 8, 1};
-        Shell12.sort(arr);
+        Shell13.sort(arr);
         System.out.println(Arrays.asList(arr));
     }
 }
