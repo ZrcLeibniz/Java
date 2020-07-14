@@ -1,7 +1,6 @@
 package zrc.test.sort;
 
-import zrc.sort.Quick;
-import zrc.sort.pratice.quick.*;
+import zrc.sort.practice.quick.*;
 
 import java.util.Arrays;
 

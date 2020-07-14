@@ -1,22 +1,22 @@
-package zrc.tree;
+package zrc.tree.practice;
 
 import zrc.linear.Queue;
 
-public class BinaryTree<Key extends Comparable<Key>, Value> {
+public class BinaryTree01<Key extends Comparable<Key>, Value> {
     private Node<Key, Value> root;
     private int N;
 
     private class Node<Key, Value> {
-        public Node<Key, Value> left;
-        public Node<Key, Value> right;
         public Key key;
         public Value value;
+        public Node<Key, Value> left;
+        public Node<Key, Value> right;
 
-        public Node(Node<Key, Value> left, Node<Key, Value> right, Key key, Value value) {
-            this.left = left;
-            this.right = right;
+        public Node(Key key, Value value, Node<Key, Value> left, Node<Key, Value> right) {
             this.key = key;
             this.value = value;
+            this.left = left;
+            this.right = right;
         }
     }
 
@@ -27,7 +27,7 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
     private Node put(Node<Key, Value> x, Key key, Value value) {
         if (x == null) {
             N++;
-            return new Node<Key, Value>(null, null, key, value);
+            return new Node<Key, Value>(key, value, null, null);
         }
         int cmp = key.compareTo(x.key);
         if (cmp > 0) {
@@ -51,11 +51,15 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
         int cmp = key.compareTo(x.key);
         if (cmp > 0) {
             return get(x.right, key);
-        } else if (cmp < 0) {
+        } else if (cmp > 0) {
             return get(x.left, key);
         } else {
             return x.value;
         }
+    }
+
+    public int size() {
+        return N;
     }
 
     public void delete(Key key) {
@@ -98,15 +102,11 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
         return x;
     }
 
-    public int size() {
-        return N;
-    }
-
     public Key min() {
         return min(root);
     }
 
-    public Key min(Node<Key, Value> x) {
+    private Key min(Node<Key, Value> x) {
         if (x.left != null) {
             return min(x.left);
         } else {
@@ -118,7 +118,7 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
         return max(root);
     }
 
-    public Key max(Node<Key, Value> x) {
+    private Key max(Node<Key, Value> x) {
         if (x.right != null) {
             return max(x.right);
         } else {
@@ -151,7 +151,7 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
         return keys;
     }
 
-    public void midErgodic(Node<Key, Value> x, Queue<Key> keys) {
+    public void midErgodic(Node<Key, Value> x, Queue keys) {
         if (x == null) {
             return;
         }
@@ -170,7 +170,7 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
         return keys;
     }
 
-    public void afterErgodic(Node<Key, Value> x, Queue<Key> keys) {
+    public void afterErgodic(Node<Key, Value> x, Queue keys) {
         if (x == null) {
             return;
         }
@@ -188,23 +188,23 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
         Queue<Node<Key, Value>> nodes = new Queue<>();
         nodes.enqueue(root);
         while (!nodes.isEmpty()) {
-            Node<Key, Value> n = nodes.dequeue();
-            keys.enqueue(n.key);
-            if (n.left != null) {
-                nodes.enqueue(n.left);
+            Node<Key, Value> dequeue = nodes.dequeue();
+            keys.enqueue(dequeue.key);
+            if (dequeue.left != null) {
+                nodes.enqueue(dequeue.left);
             }
-            if (n.right != null) {
-                nodes.enqueue(n.right);
+            if (dequeue.right != null) {
+                nodes.enqueue(dequeue.right);
             }
         }
         return keys;
     }
 
     public int maxDepth() {
-        return maxDepth(root);
+        return 0;
     }
 
-    public int maxDepth(Node x) {
+    public int maxDepth(Node<Key, Value> x) {
         if (x == null) {
             return 0;
         }

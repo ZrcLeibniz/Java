@@ -1,7 +1,6 @@
 package zrc.test.sort;
 
-import zrc.sort.Bubble;
-import zrc.sort.pratice.bubble.*;
+import zrc.sort.practice.bubble.*;
 
 import java.util.Arrays;
 

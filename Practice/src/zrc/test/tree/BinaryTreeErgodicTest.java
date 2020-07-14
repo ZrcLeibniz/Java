@@ -39,5 +39,6 @@ public class BinaryTreeErgodicTest {
         while (iterator4.hasNext()) {
             System.out.println(iterator4.next());
         }
+        System.out.println(binaryTree.maxDepth());
     }
 }

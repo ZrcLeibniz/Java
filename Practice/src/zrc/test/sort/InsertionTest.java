@@ -1,6 +1,6 @@
 package zrc.test.sort;
 
-import zrc.sort.pratice.Insertion.*;
+import zrc.sort.practice.Insertion.*;
 
 import java.util.Arrays;
 

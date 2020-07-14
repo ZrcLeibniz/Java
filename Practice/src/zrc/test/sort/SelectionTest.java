@@ -1,7 +1,6 @@
 package zrc.test.sort;
 
-import zrc.sort.Selection;
-import zrc.sort.pratice.selection.*;
+import zrc.sort.practice.selection.*;
 
 import java.util.Arrays;
 

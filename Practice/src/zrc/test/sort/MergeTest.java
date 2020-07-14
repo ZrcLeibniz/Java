@@ -1,7 +1,6 @@
 package zrc.test.sort;
 
-import zrc.sort.Merge;
-import zrc.sort.pratice.merge.*;
+import zrc.sort.practice.merge.*;
 
 import java.util.Arrays;
 
