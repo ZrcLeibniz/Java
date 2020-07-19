@@ -1,13 +1,14 @@
 package zrc.test.sort;
 
 import zrc.sort.Heap;
+import zrc.sort.practice.heap.Heap01;
 
 import java.util.Arrays;
 
 public class HeapTest {
     public static void main(String[] args) {
         String[] arr = {"S", "O", "R", "T", "E", "X", "A", "M", "P", "L", "E"};
-        Heap.sort(arr);
+        Heap01.sort(arr);
         System.out.print(Arrays.asList(arr) + " ");
     }
 }
