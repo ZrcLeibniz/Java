@@ -1,5 +1,8 @@
 package zrc.offer;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /*
 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。
 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。
@@ -29,9 +32,18 @@ public class JZ6 {
         return array[lo];
     }
 
+    public static int minNumberInRotateArray2(int[] array) {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        for (int i = 0; i < array.length; i++) {
+            arrayList.add(array[i]);
+        }
+        Collections.sort(arrayList);
+        return arrayList.get(0);
+    }
+
     public static void main(String[] args) {
         int[] a = {4, 5, 6, 1, 2, 3};
-        int i = minNumberInRotateArray(a);
+        int i = minNumberInRotateArray2(a);
         System.out.println(i);
     }
 }
