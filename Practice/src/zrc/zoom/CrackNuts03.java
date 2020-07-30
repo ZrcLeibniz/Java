@@ -10,7 +10,7 @@ public class CrackNuts03 {
         int N = new Scanner(System.in).nextInt();
         int count = 0;
         while (N != 0) {
-            N = (N - 1) & N;
+            N = ((N - 1) & N);
             count++;
         }
         System.out.println(count);
