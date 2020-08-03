@@ -33,7 +33,7 @@ public class Account {
             double before = this.getBalance();
             double after = before - money;
             try {
-                Thread.sleep(1000);
+                  Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
