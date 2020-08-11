@@ -1,4 +1,4 @@
-package zrc;
+package zrc.leetcode;
 
 public class JumpGame {
     public boolean canJump(int[] A) {

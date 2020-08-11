@@ -1,4 +1,4 @@
-package zrc;
+package zrc.leetcode;
 
 public class Coin {
     public int solve(int value) {

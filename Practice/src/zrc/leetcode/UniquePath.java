@@ -1,4 +1,4 @@
-package zrc;
+package zrc.leetcode;
 
 public class UniquePath {
     public int uniquePaths(int m, int n) {
