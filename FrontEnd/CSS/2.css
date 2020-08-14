@@ -1,0 +1,11 @@
+div {
+    border: 1px yellow solid;
+    font-size: 30px;
+    color: aqua;
+}
+
+span {
+    border: 5px darkslateblue dashed;
+    font-size: 20px;
+    color: yellow;
+}
