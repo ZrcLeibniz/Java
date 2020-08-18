@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onclick事件</title>
+    <script type="text/javascript">
+        function onclickFunc() {
+            alert("静态注册onclick");
+        }
+
+        window.onload = function () {
+            var elementById = document.getElementById("id001");
+            elementById.onclick = function () {
+                alert("动态注册onclick");
+            }
+        }
+    </script>
+</head>
+<body>
+<!--静态注册-->
+<button onclick="onclickFunc()">按钮1</button>
+<!--动态注册-->
+<button id="id001">按钮2</button>
+</body>
+</html>
