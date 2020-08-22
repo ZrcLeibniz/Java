@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单提交事件</title>
+    <script type="text/javascript">
+        function onsubmitFunc() {
+            console.log("静态绑定form表单提交了")
+            return false;
+        }
+
+        window.onload = function () {
+            var elementById = document.getElementById("00002");
+            elementById.onsubmit = function () {
+                console.log("动态绑定form表单提交了");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<form action="onsubmit.html" method="post" onsubmit=" return onsubmitFunc()">
+    <input type="submit" value="静态注册">
+</form>
+<form id="00002" action="onsubmit.html" method="post">
+    <input type="submit" value="动态注册">
+</form>
+</body>
+</html>

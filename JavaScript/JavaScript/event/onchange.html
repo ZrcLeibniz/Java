@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内容发生改变事件</title>
+    <script type="text/javascript">
+        function onchangeFunc() {
+            console.log("静态注册修改了内容")
+        }
+        window.onload = function () {
+            var elementById = document.getElementById("0001");
+            elementById.onchange = function () {
+                console.log("动态注册修改了内容");
+            }
+        }
+    </script>
+</head>
+<body>
+请选择你心中的女神
+<select onchange="onchangeFunc()">
+    <option>---女神1---</option>
+    <option>---女神2---</option>
+    <option>---女神3---</option>
+    <option>---女神4---</option>
+    <option>---女神5---</option>
+    <option>---女神6---</option>
+</select>
+请选择你心中的男神
+<select id="0001">
+    <option>---男神1---</option>
+    <option>---男神2---</option>
+    <option>---男神3---</option>
+    <option>---男神4---</option>
+    <option>---男神5---</option>
+    <option>---男神6---</option>
+</select>
+</body>
+</html>

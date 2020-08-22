@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>失去焦点事件</title>
-
+    <script type="text/javascript">
+        function onblurFunc() {
+            console.log("静态注册失去焦点事件");
+        }
+        window.onload = function () {
+            var elementById = document.getElementById("password");
+            // alert(elementById);
+            elementById.onblur = function () {
+                console.log("动态注册失去焦点事件");
+            }
+        }
+    </script>
 </head>
 <body>
-
+用户名:<input type="text" onblur="onblurFunc()"><br/>
+密码:<input id="password" type="text"><br/>
 </body>
 </html>
