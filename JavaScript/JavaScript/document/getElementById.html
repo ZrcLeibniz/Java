@@ -8,16 +8,18 @@
             var usernameObj = document.getElementById("username");
             var username = usernameObj.value;
             var patt = /^\w{5,12}$/;
+            var usernameSpan = document.getElementById("usernameSpan");
             if (patt.test(username)) {
-                alert("用户名合法");
+                usernameSpan.innerHTML = "你真棒";
             } else {
-                alert("用户名不合法");
+                usernameSpan.innerHTML = "用户名不合法";
             }
         }
     </script>
 </head>
 <body>
-用户名:<input id="username" type="text"/>
-<button onclick="onclickFunc()">验证</button>
+    用户名:<input id="username" type="text"/>
+    <span id="usernameSpan" style="color: red"></span>
+    <button onclick="onclickFunc()">验证</button>
 </body>
 </html>
