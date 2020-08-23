@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function checkAll() {
+            let hobbies = document.getElementsByName("hobby");
+            // checked表示复选框的选中状态，如果选中是true，反之为false
+            for (let i = 0; i < hobbies.length; i++) {
+                hobbies[i].checked = true;
+            }
+        }
+
+        function checkNo() {
+            let hobbies = document.getElementsByName("hobby");
+            // checked表示复选框的选中状态，如果选中是true，反之为false
+            for (let i = 0; i < hobbies.length; i++) {
+                hobbies[i].checked = false;
+            }
+        }
+
+        function checkReverse() {
+            let hobbies = document.getElementsByName("hobby");
+            // checked表示复选框的选中状态，如果选中是true，反之为false
+            for (let i = 0; i < hobbies.length; i++) {
+                if (hobbies[i].checked == true) {
+                    hobbies[i].checked = false;
+                } else {
+                    hobbies[i].checked = true;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    兴趣爱好:
+    <input type="checkbox" name="hobby" value="cpp"/>CPP
+    <input type="checkbox" name="hobby" value="java"/>JAVA
+    <input type="checkbox" name="hobby" value="C#"/>C#
+    <input type="checkbox" name="hobby" value="C++"/>C++
+    <input type="checkbox" name="hobby" value="PHP"/>PHP
+    <input type="checkbox" name="hobby" value="Python"/>PYTHON
+    <input type="checkbox" name="hobby" value="Scala"/>SCALA
+    <br/>
+    <button onclick="checkAll()">全选</button>
+    <button onclick="checkNo()">全不选</button>
+    <button onclick="checkReverse()">反选</button>
+</body>
+</html>
