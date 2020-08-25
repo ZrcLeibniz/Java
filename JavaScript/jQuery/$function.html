@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$的使用</title>
+    <script type="text/javascript" src="jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            alert("页面加载完成后自动调用")
+            $("<div>\n" +
+                "    <span>span1(测试传入参数为HTML字符串)</span>\n" +
+                "    <span>span2(测试传入参数为HTML字符串)</span>\n" +
+                "</div>").appendTo("body");
+            let $ooo = $("div");
+            alert($ooo);
+        });
+    </script>
+</head>
+<body>
+<div>$是jQuery的核心函数，能完成jQuery的很多功能。$()就是调用$这个函数</div>
+<div>传入参数是【函数】时，表示页面加载完成之后自动调用，相当于window.onload</div>
+<div>传入参数是【HTML字符串】时，会为我们创建这个HTML标签对象</div>
+<div id="ooo">传入参数是【选择器字符串时】，会返回查询到的对象</div>
+<div>传入参数为dom对象时，会把这个对象转换为jQuery对象</div>
+</body>
+</html>
