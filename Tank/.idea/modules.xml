@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Tank2020/Tank2020.iml" filepath="$PROJECT_DIR$/Tank2020/Tank2020.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TankSelf/TankSelf.iml" filepath="$PROJECT_DIR$/TankSelf/TankSelf.iml" />
     </modules>
   </component>
 </project>
