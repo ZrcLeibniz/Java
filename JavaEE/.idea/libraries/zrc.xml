@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="zrc">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/JarTest02/zrc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
