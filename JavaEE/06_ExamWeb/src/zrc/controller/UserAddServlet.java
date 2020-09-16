@@ -18,7 +18,7 @@ public class UserAddServlet extends HttpServlet {
         String passWord = req.getParameter("password");
         String sex = req.getParameter("sex");
         String email = req.getParameter("email");
-        Users user = new Users(userName, passWord, sex, email);
+        Users user = new Users(null, userName, passWord, sex, email);
         // 2.调用UserDao将用户信息填充到Insert命令中
         UserDao userDao = new UserDao();
         int result = userDao.add(user);

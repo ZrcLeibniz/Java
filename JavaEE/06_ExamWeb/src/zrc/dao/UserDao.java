@@ -68,12 +68,12 @@ public class UserDao {
             preparedStatement = connection.prepareStatement(sql);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-
+                int userId = resultSet.getInt("userId");
                 String userName = resultSet.getString("userName");
                 String password1 = resultSet.getString("password");
                 String sex = resultSet.getString("sex");
                 String email = resultSet.getString("email");
-                Users user = new Users(userName, password1, sex, email);
+                Users user = new Users(userId, userName, password1, sex, email);
                 userList.add(user);
             }
         } catch (ClassNotFoundException | SQLException e) {
@@ -104,7 +104,7 @@ public class UserDao {
         return userList;
     }
 
-    public int delete(String userName) {
+    public int delete(Integer userId) {
         ResourceBundle resourceBundle = ResourceBundle.getBundle("jdbc");
         String driver = resourceBundle.getString("driver");
         String url = resourceBundle.getString("url");
@@ -116,9 +116,9 @@ public class UserDao {
         try {
             Class.forName(driver);
             connection = DriverManager.getConnection(url, username, password);
-            String sql = "delete from users where userName=?";;
+            String sql = "delete from users where userId=?";;
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, userName);
+            preparedStatement.setInt(1, userId);
             result = preparedStatement.executeUpdate();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -142,4 +142,99 @@ public class UserDao {
         }
         return result;
     }
+
+    public int update(Users user) {
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("jdbc");
+        String driver = resourceBundle.getString("driver");
+        String url = resourceBundle.getString("url");
+        String username = resourceBundle.getString("username");
+        String password = resourceBundle.getString("password");
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        int result = 0;
+        try {
+            Class.forName(driver);
+            connection = DriverManager.getConnection(url, username, password);
+            String sql = "update users set userName = ?, password = ?, sex = ?, email = ? where userId = ?";
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, user.getUsername());
+            preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setString(3, user.getSex());
+            preparedStatement.setString(4, user.getEmail());
+            preparedStatement.setInt(5, user.getUserId());
+            result = preparedStatement.executeUpdate();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return result;
+    }
+
+    public int login(String userName, String password) {
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("jdbc");
+        String driver = resourceBundle.getString("driver");
+        String url = resourceBundle.getString("url");
+        String username = resourceBundle.getString("username");
+        String password1 = resourceBundle.getString("password");
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        int anInt = 0;
+        try {
+            Class.forName(driver);
+            connection = DriverManager.getConnection(url, username, password1);
+            String sql = "select count(*) from users where userName = ? and password = ?";
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, userName);
+            preparedStatement.setString(2, password);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                anInt = resultSet.getInt("count(*)");
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return anInt;
+    }
+
 }

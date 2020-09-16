@@ -26,7 +26,8 @@ public class UserSelectServlet extends HttpServlet {
         writer.print("<td>用户密码</td>");
         writer.print("<td>用户性别</td>");
         writer.print("<td>用户邮箱</td>");
-        writer.print("<td>操作</td>");
+        writer.print("<td>删除操作</td>");
+        writer.print("<td>更新操作</td>");
         writer.print("</tr>");
         for (Users user : select) {
             writer.print("<tr>");
@@ -34,7 +35,8 @@ public class UserSelectServlet extends HttpServlet {
             writer.print("<td>" + user.getPassword() + "</td>");
             writer.print("<td>" + user.getSex() + "</td>");
             writer.print("<td>" + user.getEmail() + "</td>");
-            writer.print("<td><a href='/myWeb/user/delete?UserName=" + user.getUsername() + "'>删除用户</a></td>");
+            writer.print("<td><a href='/myWeb/user/delete?userId=" + user.getUserId() + "'>删除用户</a></td>");
+            writer.print("<td><a href='/myWeb/user/update?userId=" + user.getUserId() + "'>修改用户</a></td>");
             writer.print("</tr>");
         }
         writer.print("</table>");

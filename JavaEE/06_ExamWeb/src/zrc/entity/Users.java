@@ -31,7 +31,8 @@ public class Users {
         this.password = password;
     }
 
-    public Users(String username, String password, String sex, String email) {
+    public Users(Integer userId, String username, String password, String sex, String email) {
+        this.userId = userId;
         Username = username;
         this.password = password;
         this.sex = sex;
