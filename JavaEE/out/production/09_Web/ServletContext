@@ -1,0 +1,24 @@
+ServletContext接口：
+    1.介绍
+        1）来自于Servlet规范中的一个接口。在Tomcat中存在servlet-api.jar。在Tomcat中负责这个接口的实现类
+        2）如果两个Servlet来自于同一个网站。彼此之间通过网站的ServletContext实例对象实现数据共享
+        3）开发人员习惯将ServletContext对象成为【全局作用域对象】
+    2.工作原理
+        每一个网站都存在一个全局作用域对象，这个全局作用域对象相当于一个Map。在这个网站中OneServlet可以将一个数据存入到全局作用域
+        对象，当前网站中其他Servlet此时都可以从全局作用域对象中得到这个数据进行使用
+    3.全局作用域对象生命周期
+        1）在Http服务器启动过程中，自动为当前网站在内存中创建一个全局作用域对象
+        2）在Http服务器运行期间，一个网站只有一个全局作用域对象
+        3）在Http服务器运行期间，全局作用域对象一直处于存活状态
+        4）在Http服务器准备关闭时，负责将当前网站中全局作用域对象进行销毁处理
+        5）全局作用域对象的生命周期贯穿网站整个运行期间
+    4.命令实现：
+        【同一个网站】OneServlet将数据共享给TwoServlet
+         1）通过【请求对象】向Tomcat索要当前网站中的【全局作用域对象】
+           ServletContext application = request.getServletContext()
+         2)将数据添加到全局作用域对象作为【共享数据】
+           application.setAttribute(Key, Value)
+         3)通过【请求对象】向Tomcat索要当前网站中的【全局作用域对象】
+           ServletContext application = request.getServletContext()
+         4）从全局作用域对象得到指定关键字对应数据
+           数据 = application.getAttribute(key)
