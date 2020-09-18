@@ -1,0 +1,26 @@
+Coolie
+    1.介绍：
+        1）Coolie来自Servlet规范中的一个工具类，存在于Tomcat提供的servlet-api.jar中
+        2）如果两个Servlet来自于同一个网站，并且为同一个浏览器提供服务，此时可以借助Cookie对象进行数据共享
+        3）Cookie存放当前用户的私人数据，在共享数据过程中提高服务质量
+    2.原理：
+        用户通过浏览器第一次向MyWeb网站发送请求申请OneServlet。OneServlet在运行期间创建一个Cookie存储与当前用户的相关数据。
+        OneServlet工作完毕后，【将Cookie写入到响应头】交还到当前浏览器。浏览器收到响应后包之后，将Cookie存储在浏览器的缓存中，一
+        段时间后，用户通过同一个浏览器再次向myWeb网站发送请求申请TwoServlet时，浏览器需要无条件的将myWeb网站之前推送过来的Cookie
+        写入到请求头中，发送过去
+    3.实现命令
+        同一个网站
+            1)创建一个Cookie对象，保存共享数据
+              Cookie cookie = new Cookie(Key, Value)
+            Cookie相当于一个Map，一个Cookie中只能存放一个键值对，这个键值对的key和value只能是String，键值对中key不能是中文
+            2)将Cookie写入到响应头中，交给浏览器
+              resp.addCookie(cookie)    resp.addCookie(cookie2)
+            3)调用请求头对象从请求头得到浏览器返回的Cookie
+              Cookie[] cookieArray = request.getCookie();
+            4)循环遍历数组得到每一个Cookie对象的Key和Value
+
+    4.生命周期（Cookie销毁时机）
+        1.在默认情况下，Cookie是存放在浏览器的缓存中的。因此只要关闭浏览器关闭，Cookie对象就要被销毁掉
+        2.在手动设置情况下，可以要求浏览器将接收的Cookie存放在客户端计算机硬盘上，同时需要指定Cookie咋熬硬盘上存活时间。在存活时
+        间范围内，不会导致Cookie被销毁。在存活时间到达时，Cookie自动从硬盘上被删掉
+        cookie.setMaxAge(60) 表示Cookie存活时间为1分钟
