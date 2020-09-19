@@ -1,0 +1,36 @@
+HttpSession
+    1.介绍
+        1)HttpSession接口来自于Servlet规范下的一个接口。存在于Tomcat中servlet-api.jar。其实现类由Http服务器提供。
+        2)如果两个Servlet来自于同一个对象，并且为同一个浏览器提供服务，此时借助于HttpServlet对象进行数据共享。
+        3)开发人员习惯于将HttpSession接口修饰对象成为【会话作用域对象】
+
+    2.HttpSession与Cookie的区别
+        1)存储位置：Cookie存放在客户端计算机，HttpSession存储在服务端计算机内存
+        2)数据类型：Cookie对象存储的共享数据类型只能是String，HttpSession可以存储任意类型的共享数据
+        3)数据数量：一个Cookie对象只能存储一个共享数据，HttpSession可以存储任意数量的共享数据
+
+    3.命令实现
+        同一个网站下
+            1)调用请求对象向Tomcat索要当前用户在服务端的session对象
+                HttpSession session = request.getSession();
+            2)将数据添加到用户的session对象中
+                session.addAttribute(Key, Value);
+            3)通过请求对象向Tomcat索要当前用户在服务端的session对象
+                HttpSession = request.getSession();
+            4)从会话作用域对象得到提供的共享数据
+                Value value = session.getAttribute(Key);
+
+    4.Http服务器如何将用户与HttpSession关联起来
+        Cookie
+
+    5.HttpSession的销毁时机
+        1.用户与HttpSession关联时使用的session只能存放在浏览器的缓存中
+        2.在浏览器关闭时，意味着用户与他HttpSession关系被切断
+        3.由于Tomcat无法检测浏览器何时关闭，因此在浏览器关闭时并不会导致Tomcat将浏览器关联的HttpSession被销毁
+        4.为了解决这个问题，Tomcat为每一个HttpSession对象设置【空闲时间】，这个空闲时间默认30分钟，如果当前HttpSession对象的空
+        闲时间达到30分钟，此时Tomcat认为用户已经放弃了自己的HttpSession，此时Tomcat就会销毁这个HttpSession
+        5.HttpSession空闲时间手动设置
+            在当前网站web/Web-INF/web.xml
+            <session-config>
+                <session-timeout>5</session-timeout>
+            </session-config>
