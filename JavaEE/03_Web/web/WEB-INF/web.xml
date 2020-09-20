@@ -5,7 +5,7 @@
          version="4.0">
     <servlet>
         <servlet-name>mm</servlet-name>
-        <servlet-class>zrc.controller.OneServlet</servlet-class>
+        <servlet-class>zrc.listener.OneServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>mm</servlet-name>
@@ -13,7 +13,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>gg</servlet-name>
-        <servlet-class>zrc.controller.TwoServlet</servlet-class>
+        <servlet-class>zrc.listener.TwoServlet</servlet-class>
         <load-on-startup>9</load-on-startup>
     </servlet>
     <servlet-mapping>

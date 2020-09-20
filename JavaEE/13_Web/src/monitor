@@ -1,0 +1,34 @@
+Servlet规范扩展-----监听器接口
+    1.介绍
+        1)一组来自于Servlet规范下的接口，一共有8个接口。在Tomcat存在于servlet-api.jar中
+        2)监听器接口需要开发人员亲自实现，Http服务器提供的jar包并没有对应的实现类
+        3)监听器接口用于监听【作用域对象生命周期变化时刻】以及【作用域对象共享数据变化时刻】
+
+    2.作用域对象
+        1)在Servlet规范中，认为在服务器内存中可以在某些条件下为两个Servlet之间提供数据共享方案的对象，被称为【作用域对象】
+        2)Servlet规范下的作用域对象
+            ServletContext：全局作用域对象
+            HttpSession：会话作用域对象
+            HttpServletRequest：请求作用域对象
+
+    3.监听器接口实现类开发规范
+        1)根据监听的实际情况，选择对应的监听器接口进行实现
+        2)重写监听器接口声明的【监听事件处理方法】
+        3)在web.xml文件中，将监听器接口实现类注册到Http服务器上
+
+    4.ServletContextListener接口
+        1)作用：
+            通过这个接口合法的检测全局作用域对象被初始化时刻以及被销毁时刻
+        2)监听事件处理方法
+            public void contextInitlized():在全局作用域对象被Http服务器初始化被调用
+            public void contextDestory():在全局作用域对象被Http服务器销毁时调用
+
+    5.ServletContextAttributeListener接口
+        1)作用：通过这个接口合法的检测全局作用域对象共享数据变化时刻
+        2)监听事件处理方法
+            public void contextAdd():在全局作用域对象添加共享数据时被调用
+            public void contextReplaced():在全局作用域对象更新共享数据时被调用
+            public void contextRemove():在全局作用域对象删除共享数据时被调用
+
+
+

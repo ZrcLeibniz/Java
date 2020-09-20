@@ -10,7 +10,7 @@
 
     <servlet>
         <servlet-name>UserAddServlet</servlet-name>
-        <servlet-class>zrc.controller.UserAddServlet</servlet-class>
+        <servlet-class>zrc.listener.UserAddServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserAddServlet</servlet-name>
@@ -19,7 +19,7 @@
 
     <servlet>
         <servlet-name>UserSelectServlet</servlet-name>
-        <servlet-class>zrc.controller.UserSelectServlet</servlet-class>
+        <servlet-class>zrc.listener.UserSelectServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserSelectServlet</servlet-name>
@@ -28,7 +28,7 @@
 
     <servlet>
         <servlet-name>UserDeleteServlet</servlet-name>
-        <servlet-class>zrc.controller.UserDeleteServlet</servlet-class>
+        <servlet-class>zrc.listener.UserDeleteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserDeleteServlet</servlet-name>
@@ -37,7 +37,7 @@
 
     <servlet>
         <servlet-name>UserUpdateServlet</servlet-name>
-        <servlet-class>zrc.controller.UserUpdateServlet</servlet-class>
+        <servlet-class>zrc.listener.UserUpdateServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserUpdateServlet</servlet-name>
@@ -46,7 +46,7 @@
 
     <servlet>
         <servlet-name>UserLoginServlet</servlet-name>
-        <servlet-class>zrc.controller.UserLoginServlet</servlet-class>
+        <servlet-class>zrc.listener.UserLoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserLoginServlet</servlet-name>
