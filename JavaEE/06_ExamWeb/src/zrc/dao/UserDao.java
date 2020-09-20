@@ -2,24 +2,28 @@ package zrc.dao;
 
 import zrc.entity.Users;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class UserDao {
-    public int add(Users user) {
-        ResourceBundle resourceBundle = ResourceBundle.getBundle("jdbc");
-        String driver = resourceBundle.getString("driver");
-        String url = resourceBundle.getString("url");
-        String username = resourceBundle.getString("username");
-        String password = resourceBundle.getString("password");
+    public int add(Users user, HttpServletRequest request) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         int result = 0;
+        ServletContext application = request.getServletContext();
+        Map map = (Map) application.getAttribute("key");
+        Iterator iterator = map.keySet().iterator();
+        while (iterator.hasNext()) {
+            connection = (Connection) iterator.next();
+            boolean flag = (boolean) map.get(connection);
+            if (flag) {
+                map.put(connection, false);
+                break;
+            }
+        }
         try {
-            Class.forName(driver);
-            connection = DriverManager.getConnection(url, username, password);
             String sql = "insert into users(userName, password, sex, email) values (?, ? ,? ,?)";
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, user.getUsername());
@@ -27,9 +31,6 @@ public class UserDao {
             preparedStatement.setString(3, user.getSex());
             preparedStatement.setString(4, user.getEmail());
             result = preparedStatement.executeUpdate();
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -40,13 +41,7 @@ public class UserDao {
                     e.printStackTrace();
                 }
             }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+            map.put(connection, true);
         }
         return result;
     }
@@ -116,7 +111,8 @@ public class UserDao {
         try {
             Class.forName(driver);
             connection = DriverManager.getConnection(url, username, password);
-            String sql = "delete from users where userId=?";;
+            String sql = "delete from users where userId=?";
+            ;
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, userId);
             result = preparedStatement.executeUpdate();
@@ -236,5 +232,4 @@ public class UserDao {
         }
         return anInt;
     }
-
 }

@@ -8,6 +8,10 @@
         <welcome-file>login.html</welcome-file>
     </welcome-file-list>
 
+    <listener>
+        <listener-class>zrc.listener.OneListener</listener-class>
+    </listener>
+
     <servlet>
         <servlet-name>UserAddServlet</servlet-name>
         <servlet-class>zrc.controller.UserAddServlet</servlet-class>
