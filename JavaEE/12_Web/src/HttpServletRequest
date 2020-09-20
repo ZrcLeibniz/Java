@@ -1,0 +1,13 @@
+HttpServletRequest
+    1.介绍
+        1)如果在同一个网站中，如果两个servlet通过【请求转发】的方式进行调用，彼此之间共享一个情请求协议包。而同一个请求协议包只对
+        应一个请求对象，因此这两个servlet之间共享一个请求对象，此时可以利用请求对象在两个servlet之间进行数据共享
+        2)在请求对象实现servlet之间数据共享功能时，开发人员将请求对象成为【请求作用域对象】
+
+    2.命令实现
+        1)将数据添加到【请求作用域对象】中attribute属性
+            req.serAttribute(Key, Value);
+        2)向Tomcat申请调用TwoServlet
+            req.getRequestDispatcher("/two").forward(req,resp)
+        3)从当前请求对象得到OneServlet写入的共享数据
+            req.getAttribute(Key)
