@@ -1,0 +1,31 @@
+Filter:
+    1.介绍
+        1)来自于Servlet规范下的接口，在Tomcat中存在于servlet-api.jar中
+        2)Filter接口由开发人员负责提供，Http服务器不负责提供
+        3)Filter接口在Http服务器调用资源文件之前，对Http服务器进行拦截
+
+    2.具体作用
+        1)拦截Http服务器，帮助Http服务器检测当前请求的合法性
+        2)拦截Http服务器，对当前请求进行增强操作
+
+    3.Filter接口实现类开发步骤
+        1)创建一个Java类实现Filter接口
+        2)重写Filter接口中的doFilter方法
+        3)在web.xml中，将过滤器接口类注册到Http服务器上
+
+    4.Filter拦截地址格式
+        1)命令格式
+            <filter-mapping>
+                <filter-name>OneFilter</filterName>
+                <url-pattern>拦截地址</url-pattern>
+            </filter-mapping>
+        2)命令作用
+            拦截地址通知Tomcat在调用何种资源文件之前需要调用OneFilter过滤器进行相关拦截
+        3)要求Tomcat在调用某一个具体文件之前，来调用OneFilter拦截
+            <url-pattern>/img/mm.jpg</url-pattern>
+        4)要求Tomcat在调用某一个文件夹下所有的资源文件之前，来调用OneFilter进行相关拦截
+            <url-pattern>/img/*</url-pattern>
+        5)要求Tomcat在调用任意文件夹下某种类型文件之前，来调用OneFilter
+            <url-pattern>*.jpg</url-pattern>
+        6)要求Tomcat在调用网站中任意文件之前，来调用OneFilter拦截
+            <url-pattern>/*</url-pattern>
