@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package zrc.leetcode;
 
 //给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。 
 //
@@ -26,7 +26,7 @@ package leetcode.editor.cn;
  */
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class MoveZerosSolution {
     public void moveZeroes(int[] nums) {
         int length = nums.length;
         int index = 0;
