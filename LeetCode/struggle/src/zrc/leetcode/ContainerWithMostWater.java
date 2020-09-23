@@ -23,7 +23,7 @@ package zrc.leetcode;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 // 定义两个指针，分别指向数组的左边界和右边界，这个时候的宽度已经是最宽的。
-// 之后需要将两根棒子向内收敛即可（需要注意的是，我们要1将1左右边界较小的向里面去收敛）
+// 之后需要将两根棒子向内收敛即可（需要注意的是，我们要将左右边界较小的向里面去收敛）
 
 class ContainerWithMostWaterSolution {
     public int maxArea(int[] height) {
