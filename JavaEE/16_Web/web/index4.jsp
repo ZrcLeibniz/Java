@@ -1,4 +1,4 @@
-<%@ page import="zrc.entity.Student" %>
+<%@ page import="zrc.zrc.entity.Student" %>
 <%--
   Created by IntelliJ IDEA.
   User: lenovo

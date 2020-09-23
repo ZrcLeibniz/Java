@@ -1,4 +1,4 @@
-<%@ page import="zrc.entity.Student" %>
+<%@ page import="zrc.zrc.entity.Student" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
 <%--

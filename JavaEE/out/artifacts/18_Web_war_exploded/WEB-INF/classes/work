@@ -1,0 +1,10 @@
+Servlet与JSP的分工
+    Servlet：负责处理业务并得到处理结果
+    JSP：不负责业务处理的，主要任务是将Servlet中处理的结果写入到响应体中
+
+Servlet与JSP之间的调用关系
+    Servlet工作完毕后，一般通过请求转发的方式向Tomcat申请调用JSP
+
+Servlet与JSP之间如何实现数据共享
+    Servlet将处理结果添加到【请求作用域对象】
+    JSP从【请求作用域对象】得到处理结果
