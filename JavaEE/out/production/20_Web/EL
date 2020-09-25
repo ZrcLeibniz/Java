@@ -1,0 +1,30 @@
+EL表达式
+    1.命令格式：${作用域对象别名.共享数据}
+
+    2.命令作用
+        1)EL表达式是EL工具包提供的一种特殊命令格式【表达式命令格式】
+        2)EL表达式在JSP文件上使用，负责在JSP文件上从作用域对象读取指定的共享数据并输出到响应体
+
+EL表达式作用域别名
+    1.JSP文件中可以使用的作用域对象
+        1)ServletContext application:全局作用域对象
+        2)HttpSession session:会话作用域对象
+        3)HttpServletRequest request:请求作用域对象
+        4)PageContext pageContext:当前页作用域对象，这是JSP文件独有的作用域对象，在此作用域对象中的共享数据仅能在当前JSP中使用
+        真实开发过程中，主要用于JSTL标签与JSP文件之间的数据共享
+    2.EL表达式提供作用域对象别名
+        JSP                               EL表达式
+        application                       ${applicationScope}
+        session                           ${sessionScope}
+        request                           ${requestScope}
+        pageContext                       ${pageScope}
+
+EL表达式简化版
+    1.命令格式:${共享数据名}
+    2.工作原理:
+        首先到【pageContext】定位共享数据，如果存在，直接读取输出并结束执行
+        如果在【pageContext】没有定位成功，会在【request】定位共享数据，如果存在，直接读取输出并结束执行
+        如果在【request】没有定位成功，会在【session】定位共享数据，如果存在，直接读取输出并结束执行
+        如果在【session】没有定位成功，会在【application】定位共享数据，如果存在，直接读取输出并结束执行
+        如果在【application】没有定位成功，会返回null
+

@@ -65,4 +65,49 @@
         <servlet-name>UserLoginServlet</servlet-name>
         <url-pattern>/user/login</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QuestionServlet</servlet-name>
+        <servlet-class>zrc.controller.QuestionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuestionServlet</servlet-name>
+        <url-pattern>/question/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QuestionSelectServlet</servlet-name>
+        <servlet-class>zrc.controller.QuestionSelectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuestionSelectServlet</servlet-name>
+        <url-pattern>/question/select</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QuestionDeleteServlet</servlet-name>
+        <servlet-class>zrc.controller.QuestionDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuestionDeleteServlet</servlet-name>
+        <url-pattern>/question/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QuestionFindServlet</servlet-name>
+        <servlet-class>zrc.controller.QuestionFindServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuestionFindServlet</servlet-name>
+        <url-pattern>/question/findById</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QuestionUpdateServlet</servlet-name>
+        <servlet-class>zrc.controller.QuestionUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuestionUpdateServlet</servlet-name>
+        <url-pattern>/question/update</url-pattern>
+    </servlet-mapping>
 </web-app>

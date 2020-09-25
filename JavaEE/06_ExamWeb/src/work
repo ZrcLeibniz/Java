@@ -41,3 +41,23 @@ Http状态码：
         6）5XX
             最有特征 500：在服务端已经定位到被访问的资源文件（Servlet），这个Servlet可以接受浏览器采用的请求方式，但是Servlet在
             处理请求期间，由于Java异常导致处理失败
+
+任务：在线考试管理系统---试题信息管理系统
+
+子任务：
+    添加试题
+    查询试题
+    删除试题
+    更新试题
+
+准备工作：
+    1.准备试题信息表：单选题，每道题有四个选项，一个正确答案
+        create table question(
+            questionId int primary key auto_increment,
+            title varchar(50),
+            optionA varchar(20),
+            optionB varchar(20),
+            optionC varchar(20),
+            optionD varchar(20),
+            answer char(1)
+        );
