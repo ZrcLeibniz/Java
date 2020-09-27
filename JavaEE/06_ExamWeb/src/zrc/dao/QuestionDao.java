@@ -234,4 +234,57 @@ public class QuestionDao {
         }
         return result;
     }
+
+    public List<Question> findRand(HttpServletRequest request) {
+        ServletContext application = request.getServletContext();
+        Map map = (Map) application.getAttribute("key");
+        Iterator iterator = map.keySet().iterator();
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        String sql = "select * from question order by rand() limit 0, 4";
+        ArrayList<Question> questions = new ArrayList<>();
+        while (iterator.hasNext()) {
+            connection = (Connection) iterator.next();
+            boolean flag = (boolean) map.get(connection);
+            if (flag) {
+                map.put(connection, false);
+                break;
+            }
+        }
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int questionId = resultSet.getInt("questionId");
+                String title = resultSet.getString("title");
+                String optionA = resultSet.getString("optionA");
+                String optionB = resultSet.getString("optionB");
+                String optionC = resultSet.getString("optionC");
+                String optionD = resultSet.getString("optionD");
+                String answer = resultSet.getString("answer");
+                Question question = new Question(questionId, title, optionA, optionB, optionC, optionD, answer);
+                questions.add(question);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            map.put(connection, true);
+        }
+        return questions;
+    }
 }
