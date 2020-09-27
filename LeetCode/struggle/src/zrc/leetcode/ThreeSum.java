@@ -1,16 +1,33 @@
+package zrc.leetcode;
+
+//给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复
+//的三元组。 
+//
+// 注意：答案中不可以包含重复的三元组。 
+//
+// 
+//
+// 示例： 
+//
+// 给定数组 nums = [-1, 0, 1, 2, -1, -4]，
+//
+//满足要求的三元组集合为：
+//[
+//  [-1, 0, 1],
+//  [-1, -1, 2]
+//]
+// 
+// Related Topics 数组 双指针 
+// 👍 2605 👎 0
+
+//
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Test {
-    public static void main(String[] args) {
-        int[] a = {-1, 0,1, 2,-1,-4};
-        List<List<Integer>> lists = threeSum(a);
-        for (int i = 0; i < lists.size(); i++) {
-            System.out.println(lists.get(i).toString());
-        }
-    }
-
+//leetcode submit region begin(Prohibit modification and deletion)
+class ThreeSumSolution {
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         if (nums == null || nums.length < 3) {
@@ -21,7 +38,7 @@ public class Test {
             if (nums[target] > 0) {
                 break;
             }
-            if (target > 0 && nums[target] == nums[target - 1]) {
+            if (target > 0 && nums[target] == nums[target++]) {
                 continue;
             }
             int l = target + 1;
@@ -48,3 +65,4 @@ public class Test {
         return result;
     }
 }
+//leetcode submit region end(Prohibit modification and deletion)
