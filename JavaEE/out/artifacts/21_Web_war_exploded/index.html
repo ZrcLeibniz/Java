@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function f1() {
+            var value1 = document.getElementById("one").value;
+            var value2 = document.getElementById("two").value;
+            var value3 = parseInt(value1) + parseInt(value2);
+            document.getElementById("three").value = value3;
+        }
+    </script>
+</head>
+<body>
+<center>
+    <table border="2" align="center">
+        <tr>
+            <td>数字1</td>
+            <td><input type="text" id="one"></td>
+        </tr>
+        <tr>
+            <td>数字2</td>
+            <td><input type="text" id="two"></td>
+        </tr>
+        <tr>
+            <td>运算结果</td>
+            <td><input type="text" id="three"></td>
+        </tr>
+        <tr align="center">
+            <td colspan="2">
+                <input type="button" value="加法运算" onclick="f1()">
+            </td>
+        </tr>
+    </table>
+</center>
+</body>
+</html>
