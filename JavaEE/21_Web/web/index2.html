@@ -53,5 +53,72 @@
         4.infinity:
             JavaScript中当一个变量赋值为infinity，表示变量接受了一个【无穷大的数字】，在JavaScript中其数据类型为number
 -->
+
+<!--
+    JavaScript作用
+        帮助浏览器对用户提出请求进行处理
+
+    Dom对象
+        1.Dom = Document Object Model 【文档模型对象】
+        2.JavaScript不能直接操作HTML标签，只能通过HTML标签关联的DOM对象对HTML标签下达指令
+
+    Dom对象生命周期
+        1.浏览器在接收到html文件之后，将HTML文件标签加载到浏览器缓存中，每当加载一个html标签时，自动为这个标生成一个实例对象，这
+        个实例对象就是DOM对象
+        2.在浏览器关闭之前或者浏览器浏览器请求其他资源文件之前，本次生成的DOM对象一直存活在浏览器缓存中
+        3.在浏览器关闭的时候，浏览器缓存中的DOM对象将要被销毁
+        4.在浏览器请求到新的资源文件后，浏览器缓存中原有的DOM对象将会被覆盖
+
+    document对象
+        1.document对象被称为【文档对象】
+        2.document对象用于在浏览器内存中根据定位条件定位DOM对象
+
+    document对象生命周期
+        1.在浏览器将网页中所有的标签加载完毕后，在内存中将使用【树形结构】存储这些DOM对象。在树形结构生成完毕后由浏览器生成一个
+        document对象来管理这棵树（DOM树）
+        2.浏览器运行期间，只会生成一个document对象
+        3.在浏览器关闭时，负责将document对象进行销毁
+
+    通过document对象定位DOM对象方式
+        1.根据HTML标签的id属性值定位DOM对象
+            document.getElementById("id属性值");
+        2.根据HTML标签的name属性值定位DOM对象
+            document.getElementsByName("name属性值");
+        3.根据HTML标签类型定位DOM对象
+            document.getElementsByTagName("标签类型名");
+-->
+
+<!--
+    DOM对象对HTML标签属性操作
+        1.DOM对象对标签value属性进行取值与赋值操作
+            取值操作：
+                var domObj = document.getElementById("one");
+                var num = domObj.value;
+            赋值操作：
+                var domObj = document.getElementById("one");
+                domObj.value = "abc";
+        2.DOM对象对标签中【样式属性】进行取值与赋值操作
+            取值操作：
+                var domObj = document.getElementById("one");
+                var color = domObj.style.background-color
+            赋值操作：
+                var domObj = document.getElementById("one");
+                domObj.style.background-color = "yellow";
+        3.DOM对象对标签中【状态属性】进行取值与赋值操作
+            取值操作：
+                var domObj = document.getElementById("one");
+                var flag = domObj.checked
+            赋值操作：
+                var domObj = document.getElementById("one");
+                domObj.checked = true;
+        4.DOM对象对标签中【文字显示内容】进行赋值与取值
+            文字显示内容：只存在于双目标签之间
+            取值操作：
+                var domObj = document.getElementById("one");
+                var text = domObj.innerText
+            赋值操作：
+                var domObj = document.getElementById("one");
+                domObj.innerText = text;
+-->
 </body>
 </html>
