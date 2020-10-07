@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function fun1() {
+            var elementsByName = document.getElementsByName("deptNo");
+            for (var i = 0; i < elementsByName.length; i++) {
+                var elementsByNameElement = elementsByName[i];
+                window.alert(elementsByNameElement.value);
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="checkbox" name="deptNo" value="10"/>部门10
+<input type="checkbox" name="deptNo" value="20"/>部门20
+<input type="checkbox" name="deptNo" value="30"/>部门30<br/>
+<input type="button" value="获得所有name等于deptNo的标签的value值" onclick="fun1()"/>
+</body>
+</html>

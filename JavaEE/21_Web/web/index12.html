@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function fun1() {
+            var elementById = document.getElementById("one");
+            var elementsByName = document.getElementsByName("ck");
+            for (var i = 0; i < elementsByName.length; i++) {
+                elementsByName[i].checked = elementById.checked;
+            }
+        }
+        function fun2() {
+            this.style.backgroundColor="blue";
+        }
+
+        function fun3() {
+            this.style.backgroundColor="white";
+        }
+
+        function main() {
+            // 1.定位所有tr标签所关联的dom对象
+            var elementsByTagName = document.getElementsByTagName("tr");
+            // 2.通过循环遍历绑定监听事件
+            for (var i = 1; i < elementsByTagName.length; i++) {
+                var elementsByTagNameElement = elementsByTagName[i];
+                elementsByTagNameElement.onmouseover = fun2;
+                elementsByTagNameElement.onmouseout = fun3;
+            }
+        }
+    </script>
+</head>
+<body onload="main()">
+<table border="2" align="center">
+    <tr>
+        <td>
+            <input type="checkbox" id="one" onclick="fun1()">全选/全不选
+        </td>
+        <td>
+            职员姓名
+        </td>
+        <td>
+            职员职位
+        </td>
+        <td>
+            职员工资
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="ck">
+        </td>
+        <td>
+            MIKE
+        </td>
+        <td>
+            初级程序员
+        </td>
+        <td>
+            10000
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="ck">
+        </td>
+        <td>
+            SMITH
+        </td>
+        <td>
+            高级程序员
+        </td>
+        <td>
+            40000
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="ck">
+        </td>
+        <td>
+            KING
+        </td>
+        <td>
+            超级程序员
+        </td>
+        <td>
+            100000
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="ck">
+        </td>
+        <td>
+            Rich
+        </td>
+        <td>
+            法外狂徒
+        </td>
+        <td>
+            ？？？？？？？？？
+        </td>
+    </tr>
+</table>
+</body>
+</html>

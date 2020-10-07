@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function fun1() {
+            var elementById = document.getElementById("two");
+            var innerText = elementById.value;
+            var elementById1 = document.getElementById("one");
+            elementById1.innerText = innerText;
+        }
+    </script>
+</head>
+<body>
+<center>
+    <div id="one" style="background-color: antiquewhite; color: red; width: 200px; height: 200px">
+
+    </div>
+    <input type="text" id="two">
+    <input type="button" value="设置文字内容" onclick="fun1()">
+</center>
+</body>
+</html>

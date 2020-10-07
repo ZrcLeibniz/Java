@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function main() {
+            var elementOne = document.getElementById("one");
+            elementOne.onclick = func1;
+            var elementsCk = document.getElementsByName("ck");
+            for (var i = 0; i < elementsCk.length; i++) {
+                var elementsCkElement = elementsCk[i];
+                elementsCkElement.onclick = func2;
+            }
+            var elementsTr = document.getElementsByTagName("tr");
+            for (var i = 1; i < elementsTr.length; i++) {
+                var elementsTrElement = elementsTr[i];
+                elementsTrElement.onmouseover = func3;
+                elementsTrElement.onmouseout = func4;
+            }
+        }
+
+        function func1() {
+            var checked = document.getElementById("one").checked;
+            var elementsByName = document.getElementsByName("ck");
+            for (var i = 0; i < elementsByName.length; i++) {
+                elementsByName[i].checked = checked;
+            }
+        }
+
+        function func2() {
+            var elementsCk = document.getElementsByName("ck");
+            var length = elementsCk.length;
+            var checkedNumber = 0;
+            for (var i = 0; i < length; i++) {
+                var domObj = elementsCk[i];
+                if (domObj.checked == true) {
+                    ++checkedNumber;
+                }
+            }
+            if (length == checkedNumber) {
+                document.getElementById("one").checked = true;
+            } else {
+                document.getElementById("one").checked = false;
+            }
+        }
+
+        function func3() {
+            this.style.backgroundColor = "green";
+            this.style.color = "red";
+        }
+
+        function func4() {
+            this.style.backgroundColor = "white";
+            this.style.color = "black";
+        }
+    </script>
+</head>
+<body onload="main()">
+<table border="2" align="center">
+    <tr>
+        <td>
+            <input type="checkbox" id="one">全选/全不选
+        </td>
+        <td>
+            职员姓名
+        </td>
+        <td>
+            职员职位
+        </td>
+        <td>
+            职员工资
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="ck">
+        </td>
+        <td>
+            MIKE
+        </td>
+        <td>
+            初级程序员
+        </td>
+        <td>
+            10000
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="ck">
+        </td>
+        <td>
+            SMITH
+        </td>
+        <td>
+            高级程序员
+        </td>
+        <td>
+            40000
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="ck">
+        </td>
+        <td>
+            KING
+        </td>
+        <td>
+            超级程序员
+        </td>
+        <td>
+            100000
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="ck">
+        </td>
+        <td>
+            Rich
+        </td>
+        <td>
+            法外狂徒
+        </td>
+        <td>
+            ？？？？？？？？？
+        </td>
+    </tr>
+</table>
+</body>
+</html>

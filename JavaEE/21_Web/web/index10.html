@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var myArray = [
+            "allen", "smith", "tom", "mike", "jones", "for", "while", "java", "index", "radio"
+        ];
+        function fun1() {
+            // 1.读取用户在文本框输入的内容
+            var content = document.getElementById("one").value;
+            if (content == "") {
+                document.getElementById("two").style.display = "none";
+                return;
+            }
+            // 2.到数组中定位包含了指定内容的字符串
+            var value = "";
+            for (var i = 0; i < myArray.length; i++) {
+                var str = myArray[i];
+                if (str.indexOf(content) != -1) {
+                    value += str + "<br/>";
+                }
+            }
+            // 3.将定位到的字符串作为文字显示内容填充到DIV标签中
+            var elementById = document.getElementById("two");
+            if (value == "") {
+                elementById.style.display = "none";
+                return;
+            }
+            elementById.innerHTML = value;
+            elementById.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+<center>
+    <input type="text" id="one" onkeyup="fun1()"/><input type="button" value="搜索"/>
+    <div id="two" style="background-color: antiquewhite; color: coral; width: 300px; height: 300px; display: none"></div>
+</center>
+</body>
+</html>

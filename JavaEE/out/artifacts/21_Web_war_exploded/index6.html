@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function fun1() {
+            var element = document.getElementById("one");
+            var elementsByName = document.getElementsByName("ck");
+            for (var i = 0; i < elementsByName.length; i++) {
+                elementsByName[i].checked = element.checked;
+            }
+        }
+    </script>
+</head>
+<body>
+<table border="2" align="center">
+    <tr>
+        <td>
+            <input type="checkbox" id="one" onclick="fun1()">全选/全不选
+        </td>
+        <td>
+            职员姓名
+        </td>
+        <td>
+            职员职位
+        </td>
+        <td>
+            职员工资
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="ck">
+        </td>
+        <td>
+            MIKE
+        </td>
+        <td>
+            初级程序员
+        </td>
+        <td>
+            10000
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="ck">
+        </td>
+        <td>
+            SMITH
+        </td>
+        <td>
+            高级程序员
+        </td>
+        <td>
+            40000
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="ck">
+        </td>
+        <td>
+            KING
+        </td>
+        <td>
+            超级程序员
+        </td>
+        <td>
+            100000
+        </td>
+    </tr>
+</table>
+</body>
+</html>
