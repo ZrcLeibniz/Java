@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function fun1(p1) {
+        window.alert("fun1 is run");
+    }
+    // fun1();
+    // fun1(10, 20);
+    // fun1(10);
+
+    function fun2() {
+        window.alert(arguments.length);
+    }
+    // fun2();
+    // fun2(1, 2, 3, 4);
+    // fun2(1, 5);
+
+    function fun3() {
+        if (arguments.length == 1 && typeof arguments[0] == 'string') {
+            window.alert("Hello " + arguments[0]);
+        } else if (arguments.length == 2 && typeof arguments[0] == 'number' && typeof arguments[1] == 'number') {
+            var num3 = arguments[0] + arguments[1];
+            window.alert(num3);
+        }
+    }
+
+    // fun3("tom");
+    // fun3(1, 2);
+</script>
+
+<!--
+    arguments:
+        1.在JavaScript中，每一个函数都包含一个arguments属性
+        2.arguments属性是一个数组，在函数调用时，将实参传入到函数的arguments中，再由arguments将数据传递给形参
+        3.arguments属性的存在，可以将JavaScript中函数在调用时传递实参与形参进行隔离，增加函数调用的灵活性
+        4.arguments只能在函数体内使用，不能在函数体外使用
+-->
+</body>
+</html>

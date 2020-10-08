@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script type="text/javascript">
+    function f1() {
+        window.alert("run1");
+    }
+
+    var f2 = function () {
+        window.alert("run2");
+    }
+</script>
+
+<!--
+    function类型对象
+        1.介绍：
+            1)function是JavaScript中的一种高级数据类型
+            2)一个function对象用来管理一个具体函数
+            3)JavaScript中function类型相当于Java中Method类型
+        2.function类型对象声明方式：
+            1)标准声明方式
+                function 函数对象名(参数1, 参数2) {
+                    命令;
+                }
+            2)匿名声明方式
+                var 函数对象名 = function(参数1, 参数2) {
+                    命令;
+                }
+        3.function类型对象的创建时机
+            浏览器在加载<script>标签时，共加载两次。第一次加载时，将<script>标签中所有以标准形式声明的函数对象进行创建。第二次加
+            载，将<script>标签所有命令按照自上而下的顺序来执行
+-->
+</body>
+</html>
