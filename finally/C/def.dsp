@@ -1,24 +1,24 @@
-# Microsoft Developer Studio Project File - Name="type" - Package Owner=<4>
+# Microsoft Developer Studio Project File - Name="def" - Package Owner=<4>
 # Microsoft Developer Studio Generated Build File, Format Version 6.00
 # ** DO NOT EDIT **
 
 # TARGTYPE "Win32 (x86) Console Application" 0x0103
 
-CFG=type - Win32 Debug
+CFG=def - Win32 Debug
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE use the Export Makefile command and run
 !MESSAGE 
-!MESSAGE NMAKE /f "type.mak".
+!MESSAGE NMAKE /f "def.mak".
 !MESSAGE 
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
 !MESSAGE 
-!MESSAGE NMAKE /f "type.mak" CFG="type - Win32 Debug"
+!MESSAGE NMAKE /f "def.mak" CFG="def - Win32 Debug"
 !MESSAGE 
 !MESSAGE Possible choices for configuration are:
 !MESSAGE 
-!MESSAGE "type - Win32 Release" (based on "Win32 (x86) Console Application")
-!MESSAGE "type - Win32 Debug" (based on "Win32 (x86) Console Application")
+!MESSAGE "def - Win32 Release" (based on "Win32 (x86) Console Application")
+!MESSAGE "def - Win32 Debug" (based on "Win32 (x86) Console Application")
 !MESSAGE 
 
 # Begin Project
@@ -28,7 +28,7 @@ CFG=type - Win32 Debug
 CPP=cl.exe
 RSC=rc.exe
 
-!IF  "$(CFG)" == "type - Win32 Release"
+!IF  "$(CFG)" == "def - Win32 Release"
 
 # PROP BASE Use_MFC 0
 # PROP BASE Use_Debug_Libraries 0
@@ -51,7 +51,7 @@ LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /machine:I386
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /machine:I386
 
-!ELSEIF  "$(CFG)" == "type - Win32 Debug"
+!ELSEIF  "$(CFG)" == "def - Win32 Debug"
 
 # PROP BASE Use_MFC 0
 # PROP BASE Use_Debug_Libraries 1
@@ -78,15 +78,11 @@ LINK32=link.exe
 
 # Begin Target
 
-# Name "type - Win32 Release"
-# Name "type - Win32 Debug"
+# Name "def - Win32 Release"
+# Name "def - Win32 Debug"
 # Begin Source File
 
-SOURCE=.\type.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\type2.cpp
+SOURCE=.\def.cpp
 # End Source File
 # End Target
 # End Project

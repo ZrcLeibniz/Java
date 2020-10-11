@@ -1,0 +1,22 @@
+﻿生成启动时间为 2020/10/11 9:58:44。
+     1>项目“E:\GitWarehouse\Java\finally\C\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\vs2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt test.c test3.c
+         test3.c
+     1>e:\gitwarehouse\java\finally\c\consoleapplication1\consoleapplication1\test3.c(6): warning C4013: “print”未定义；假设外部返回 int
+     1>e:\gitwarehouse\java\finally\c\consoleapplication1\consoleapplication1\test3.c(8): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs2013\vc\include\stdio.h(283) : 参见“scanf”的声明
+         test.c
+     1>e:\gitwarehouse\java\finally\c\consoleapplication1\consoleapplication1\test.c(9): warning C4013: “add”未定义；假设外部返回 int
+     1>e:\gitwarehouse\java\finally\c\consoleapplication1\consoleapplication1\test.c(10): error C2079: “tom”使用未定义的 struct“stu”
+     1>e:\gitwarehouse\java\finally\c\consoleapplication1\consoleapplication1\test.c(10): warning C4047: “初始化”:“int”与“char [4]”的间接级别不同
+     1>e:\gitwarehouse\java\finally\c\consoleapplication1\consoleapplication1\test.c(10): error C2078: 初始值设定项太多
+     1>e:\gitwarehouse\java\finally\c\consoleapplication1\consoleapplication1\test.c(11): warning C4133: “初始化”: 从“int *”到“str *”的类型不兼容
+     1>e:\gitwarehouse\java\finally\c\consoleapplication1\consoleapplication1\test.c(12): error C2224: “.name”的左侧必须具有结构/联合类型
+     1>e:\gitwarehouse\java\finally\c\consoleapplication1\consoleapplication1\test.c(12): error C2224: “.age”的左侧必须具有结构/联合类型
+         正在生成代码...
+     1>已完成生成项目“E:\GitWarehouse\Java\finally\C\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:02.69
