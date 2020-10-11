@@ -2,8 +2,24 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="rich.zrc.dao.UserDao">
+<mapper namespace="rich.zrc.dao.UserMapper">
     <select id="getUserList" resultType="rich.zrc.pojo.Users">
         select * from user
     </select>
+
+    <select id="getUserById" resultType="rich.zrc.pojo.Users" parameterType="int">
+        select * from user where id = #{id};
+    </select>
+
+    <insert id="addUser" parameterType="rich.zrc.pojo.Users">
+        insert into user (id, name, pwd) values (#{id}, #{name}, #{pwd});
+    </insert>
+
+    <update id="updateUser" parameterType="rich.zrc.pojo.Users">
+        update user set name = #{name}, pwd = #{pwd} where id = #{id};
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        delete from user where id = #{id}
+    </delete>
 </mapper>
