@@ -5,6 +5,7 @@ import org.junit.Test;
 import rich.zrc.pojo.Users;
 import rich.zrc.utils.MybatisUtils;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class UserMapperTest {
@@ -58,6 +59,43 @@ public class UserMapperTest {
         int i = mapper.deleteUser(3);
         System.out.println(i);
         sqlSession.commit();
+        sqlSession.close();
+    }
+
+    @Test
+    public void test6() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("userId", 3);
+        map.put("userName", "张三");
+        map.put("password", "123456");
+        mapper.addUser2(map);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+    @Test
+    public void test7() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("userId", 3);
+        Users userById2 = mapper.getUserById2(map);
+        System.out.println(userById2);
+        sqlSession.close();
+    }
+
+    @Test
+    public void test8() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        HashMap<String, Object> map = new HashMap<>();
+        //map.put("value", 3);
+        List<Users> userLike = mapper.getUserLike("r");
+        for (Users users : userLike) {
+            System.out.println(users);
+        }
         sqlSession.close();
     }
 }

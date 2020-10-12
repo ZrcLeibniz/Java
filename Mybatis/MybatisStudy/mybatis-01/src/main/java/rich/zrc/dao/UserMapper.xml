@@ -22,4 +22,16 @@
     <delete id="deleteUser" parameterType="int">
         delete from user where id = #{id}
     </delete>
+
+    <insert id="addUser2" parameterType="map">
+        insert into user (id, name, pwd) values (#{userId}, #{userName}, #{password});
+    </insert>
+
+    <select id="getUserById2" parameterType="map" resultType="rich.zrc.pojo.Users">
+        select * from user where id = #{userId};
+    </select>
+
+    <select id="getUserLike" resultType="rich.zrc.pojo.Users">
+        select * from user where name like "%"#{value}"%"
+    </select>
 </mapper>
