@@ -1,34 +1,47 @@
+import java.util.Arrays;
 
 public class Test {
     public static void main(String[] args) {
-        int[] nums1 = {1, 2, 3, 0, 0, 0};
-        int[] nums2 = {2, 5, 6};
-        merge(nums1, 3, nums2, 3);
-        for (int i = 0; i < nums1.length; i++) {
-            System.out.println(nums1[i]);
+        int[] nums = {3, 3};
+        int[] ints = twoSum(nums, 6);
+        for (int i = 0; i < ints.length; i++) {
+            System.out.println(ints[i]);
         }
     }
 
-    public static void merge(int[] nums1, int m, int[] nums2, int n) {
-        int[] nums3 = new int[m + n];
-        int p1 = 0;
-        int p2 = 0;
-        int index = 0;
-        while (p1 < m && p2 < n) {
-            if (nums1[p1] < nums2[p2]) {
-                nums3[index++] = nums1[p1++];
+    public static int[] twoSum(int[] nums, int target) {
+        int[] result = new int[2];
+        int[] temp = new int[nums.length];
+        int r0 = 0;
+        int r1 = 0;
+        int i = 0;
+        int j = 0;
+        System.arraycopy(nums, 0, temp, 0, nums.length);
+        Arrays.sort(nums);
+        int l = 0;
+        int r = nums.length - 1;
+        while (l <= r) {
+            if (nums[l] + nums[r] > target) {
+                r--;
+            } else if (nums[l] + nums[r] < target) {
+                l++;
             } else {
-                nums3[index++] = nums2[p2++];
+                r0 = nums[l];
+                r1 = nums[r];
+                break;
             }
         }
-        while (p1 < m) {
-            nums3[index++] = nums1[p1++];
+        for (; i < nums.length; i++) {
+            if (temp[i] == r0) {
+                result[0] = i;
+                break;
+            }
         }
-        while (p2 < n) {
-            nums3[index++] = nums2[p2++];
+        for (; j < nums.length; j++) {
+            if (temp[j] == r1 && i != j) {
+                result[1] = j;
+            }
         }
-        for (int i = 0; i < nums3.length; i++) {
-            nums1[i] = nums3[i];
-        }
+        return result;
     }
 }
