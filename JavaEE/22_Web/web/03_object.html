@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var obj1 = new Object();
+        // 新增属性
+        obj1.sid = 10;
+        obj1.sanme = "mike";
+        // 新增函数
+        obj1.sayHello = function () {
+            window.alert("sid为："+obj1.sid+" sname为:"+obj1.sanme+"say hello");
+        }
+        obj1.sayHello();
+    </script>
+</head>
+<body>
+<!--
+    object类型对象特征：
+        1.定义：在JavaScript中认为所有通过【构造函数】生成的对象其数据类型都是object
+        2.特征：object类型的对象在创建完毕后，可以根据实际情况，任意添加属性和方法，也可以移除属性和方法
+        3.属性维护
+            第一种维护方案：
+                添加属性：object对象.新属性名 = 值
+                添加函数：object对象.新函数对象名 = function() {};
+            第二种维护方案：
+                添加属性：object对象["新的属性名"] = 值;
+                添加函数：object对象["新函数对象名"] = function() {};
+            移除对象属性和方法：
+                del object.属性
+-->
+</body>
+</html>
