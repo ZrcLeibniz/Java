@@ -1,4 +1,4 @@
-package zrc.threadmethod;
+package zrc.threadmethod.currentthread;
 
 public class Test01 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package zrc.threadmethod;
+package zrc.threadmethod.currentthread;
 
 public class SubThread1 extends Thread {
     public SubThread1() {
