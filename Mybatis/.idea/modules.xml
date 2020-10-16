@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/MybatisStudy/Mybatis-05/Mybatis05.iml" filepath="$PROJECT_DIR$/MybatisStudy/Mybatis-05/Mybatis05.iml" />
       <module fileurl="file://$PROJECT_DIR$/MybatisStudy/MybatisStudy.iml" filepath="$PROJECT_DIR$/MybatisStudy/MybatisStudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/MybatisStudy/mybatis-01/mybatis01.iml" filepath="$PROJECT_DIR$/MybatisStudy/mybatis-01/mybatis01.iml" />
       <module fileurl="file://$PROJECT_DIR$/MybatisStudy/mybatis-02/mybatis02.iml" filepath="$PROJECT_DIR$/MybatisStudy/mybatis-02/mybatis02.iml" />
       <module fileurl="file://$PROJECT_DIR$/MybatisStudy/mybatis-03/mybatis03.iml" filepath="$PROJECT_DIR$/MybatisStudy/mybatis-03/mybatis03.iml" />
       <module fileurl="file://$PROJECT_DIR$/MybatisStudy/mybatis-04/mybatis04.iml" filepath="$PROJECT_DIR$/MybatisStudy/mybatis-04/mybatis04.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MybatisStudy/mybatis-05/mybatis05.iml" filepath="$PROJECT_DIR$/MybatisStudy/mybatis-05/mybatis05.iml" />
     </modules>
   </component>
 </project>

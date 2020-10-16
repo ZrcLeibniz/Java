@@ -1,32 +1,21 @@
-package rich.zrc.mapper;
+package rich.zrc.dao;
 
 import org.apache.ibatis.session.SqlSession;
-import org.apache.log4j.Logger;
 import org.junit.Test;
+import rich.zrc.mapper.UserMapper;
 import rich.zrc.pojo.Users;
 import rich.zrc.utils.MybatisUtil;
 
 import java.util.List;
 
-public class TestUserMapper {
-
-    static Logger logger = Logger.getLogger(TestUserMapper.class);
-
+public class UserMapperTest {
     @Test
-    public void testGetUserAll() {
+    public void testUserMapper() {
         SqlSession sqlSession = MybatisUtil.getSqlSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         List<Users> userAll = mapper.getUserAll();
         for (Users users : userAll) {
             System.out.println(users);
         }
-        sqlSession.close();
-    }
-
-    @Test
-    public void testLog4j() {
-        logger.info("info:进入了testLog4j");
-        logger.debug("debug:进入了testLog4j");
-        logger.error("error:进入了testLog4j");
     }
 }
