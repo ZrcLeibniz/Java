@@ -10,6 +10,7 @@ import java.io.InputStream;
 
 public class MybatisUtil {
     private static SqlSessionFactory sqlSessionFactory;
+
     static {
         try {
             InputStream resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");

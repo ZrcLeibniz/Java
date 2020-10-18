@@ -1,34 +1,27 @@
 package rich.zrc.pojo;
 
 public class Users {
-    private int userId;
+    private int id;
     private String userName;
     private String password;
 
-    @Override
-    public String toString() {
-        return "Users{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+    public int getId() {
+        return id;
     }
 
-    public Users() {
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Users(int userId, String userName, String password) {
-        this.userId = userId;
-        this.userName = userName;
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public Users() {
     }
 
     public String getUserName() {
@@ -39,11 +32,18 @@ public class Users {
         this.userName = userName;
     }
 
-    public String getPassword() {
-        return password;
+    public Users(int id, String userName, String password) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    @Override
+    public String toString() {
+        return "Users{" +
+                "id=" + id +
+                ", username='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
