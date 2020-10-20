@@ -17,7 +17,7 @@
     </select>
 
     <insert id="addUser" parameterType="Users">
-        insert into user (id, name, pwd) values (#{id}, #{name}, #{pwd});
+        insert into user (id, name, pwd) values (#{id}, #{name}, #{password});
     </insert>
 
     <update id="updateUser" parameterType="Users">

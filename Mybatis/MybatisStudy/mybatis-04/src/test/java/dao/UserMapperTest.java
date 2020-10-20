@@ -36,7 +36,7 @@ public class UserMapperTest {
     public void test3() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        int i = mapper.addUser(new Users(3, "妞妞", "111"));
+        int i = mapper.addUser(new Users(4, "维雅馨", "111"));
         sqlSession.commit();
         System.out.println(i);
         sqlSession.close();
