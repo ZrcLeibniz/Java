@@ -2,7 +2,7 @@ import java.util.Stack;
 
 public class Test {
     public static void main(String[] args) {
-        int[] heights = {2, 1, 2};
+        int[] heights = {2, 1, 5, 6, 2, 3};
         int i = largestRectangleArea(heights);
         System.out.println(i);
     }

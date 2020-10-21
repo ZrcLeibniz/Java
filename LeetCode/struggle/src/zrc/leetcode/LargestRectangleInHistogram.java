@@ -39,10 +39,10 @@ class LargeRectangleInHistogramSolution {
         Stack<Integer> stack = new Stack<>();
         stack.push(heights[0]);
         int maxArea = 0;
-        for (int i = 0; i < heights.length; i++) {
+        for (int i = 1; i < heights.length; i++) {
             while (heights[i] < heights[stack.peek()]) {
                 int curHeight = heights[stack.pop()];
-                int curWeigh = i - stack.pop() - 1;
+                int curWeigh = i - stack.peek() - 1;
                 maxArea = Math.max(maxArea, curHeight * curWeigh);
             }
             stack.push(i);
