@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Mybatis-07</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>Mybatis-mul</artifactId>
+
 
     <dependencies>
         <dependency>
@@ -25,9 +25,5 @@
             <version>1.18.12</version>
         </dependency>
     </dependencies>
-
-
-
-
 
 </project>

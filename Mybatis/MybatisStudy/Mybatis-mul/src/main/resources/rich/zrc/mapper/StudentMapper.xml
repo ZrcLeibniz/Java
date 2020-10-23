@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="rich.zrc.mapper.StudentMapper">
+    <select id="getStudent" resultMap="Student">
+        select * from student;
+    </select>
+
+    <resultMap id="Student" type="Student">
+        <result column="id" property="id"></result>
+        <result column="name" property="name"></result>
+        <association property="teacher" column="tid"  javaType="Teacher" select="getTeacher"></association>
+    </resultMap>
+
+    <select id="getTeacher" resultType="Teacher">
+        select * from teacher;
+    </select>
+
+    <!--
+    ###################################################################################################################
+    -->
+
+    <select id="getStudent2" resultMap="StudentMapper2">
+        select s.id as sid, s.name as sname, t.id as tid, t.name as tname
+        from student as s
+        inner join teacher as t on s.tid = t.id
+    </select>
+
+    <resultMap id="StudentMapper2" type="Student">
+        <result property="id" column="sid"></result>
+        <result property="name" column="sname"></result>
+        <association property="teacher" javaType="Teacher">
+            <result property="id" column="tid"></result>
+            <result property="name" column="tname"></result>
+        </association>
+    </resultMap>
+
+</mapper>
