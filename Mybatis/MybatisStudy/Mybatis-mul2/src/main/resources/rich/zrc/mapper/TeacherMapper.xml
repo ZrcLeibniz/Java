@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="rich.zrc.mapper.TeacherMapper">
+    <select id="getTeacherAll" resultType="Teacher">
+        select * from teacher;
+    </select>
+
+
+    <resultMap id="TeacherMap" type="Teacher">
+        <result column="id" property="tid"></result>
+        <result column="tname" property="name"></result>
+        <collection property="students" javaType="ArrayList" ofType="Student">
+            <result property="id" column="sid"></result>
+            <result property="name" column="sname"></result>
+            <result property="tid" column="tid"></result>
+        </collection>
+    </resultMap>
+    <select id="getTeacherById" resultMap="TeacherMap" parameterType="int">
+        select t.id as tid, t.name as tname, s.id as sid, s.name as sname, s.tid as tid
+        from student as s inner join teacher as t on s.tid = t.id
+        where t.id = #{id}
+    </select>
+
+    <!--################################################################################################################-->
+    <resultMap id="TeacherMap2" type="Teacher">
+        <result property="id" column="id"></result>
+        <result property="name" column="name"></result>
+        <collection property="students" javaType="ArrayList" ofType="Student" select="getStudentByTeacherId" column="id">
+        </collection>
+    </resultMap>
+    <select id="getTeacher" parameterType="int" resultMap="TeacherMap2">
+        select * from teacher where id = #{id}
+    </select>
+
+    <select id="getStudentByTeacherId" resultType="Student">
+        select * from student where tid = #{tid}
+    </select>
+
+</mapper>
