@@ -13,6 +13,7 @@
         <module name="mybatis03" />
         <module name="mybatis02" />
         <module name="mybatis01" />
+        <module name="Mybatiswork" />
         <module name="Mybatismul" />
         <module name="Mybatismul2" />
       </profile>
@@ -32,6 +33,7 @@
       <module name="Mybatismul" target="1.8" />
       <module name="Mybatismul2" target="1.8" />
       <module name="MybatisStudy" target="1.8" />
+      <module name="Mybatiswork" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
