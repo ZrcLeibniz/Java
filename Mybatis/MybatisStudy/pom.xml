@@ -19,6 +19,7 @@
         <module>Mybatis-mul</module>
         <module>Mybatis-mul2</module>
         <module>Mybatis-work</module>
+        <module>Mybatis-work02</module>
     </modules>
 
     <properties>
