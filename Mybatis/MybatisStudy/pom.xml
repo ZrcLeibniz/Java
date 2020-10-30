@@ -20,6 +20,7 @@
         <module>Mybatis-mul2</module>
         <module>Mybatis-work</module>
         <module>Mybatis-work02</module>
+        <module>Mybatis-Dynamic</module>
     </modules>
 
     <properties>

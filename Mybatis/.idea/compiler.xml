@@ -9,14 +9,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Mybatis06" />
         <module name="Mybatis05" />
-        <module name="Mybatiswork02" />
+        <module name="Mybatismul2" />
         <module name="mybatis04" />
         <module name="mybatis03" />
         <module name="mybatis02" />
         <module name="mybatis01" />
         <module name="Mybatiswork" />
         <module name="Mybatismul" />
-        <module name="Mybatismul2" />
+        <module name="Mybatiswork02" />
+        <module name="MybatisDynamic" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -31,6 +32,7 @@
       <module name="Mybatis06" target="1.8" />
       <module name="Mybatis07" target="1.8" />
       <module name="Mybatis08" target="1.8" />
+      <module name="MybatisDynamic" target="1.8" />
       <module name="Mybatismul" target="1.8" />
       <module name="Mybatismul2" target="1.8" />
       <module name="MybatisStudy" target="1.8" />
