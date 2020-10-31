@@ -21,6 +21,7 @@
         <module>Mybatis-work</module>
         <module>Mybatis-work02</module>
         <module>Mybatis-Dynamic</module>
+        <module>Mybatis-Dynamic-Work</module>
     </modules>
 
     <properties>
