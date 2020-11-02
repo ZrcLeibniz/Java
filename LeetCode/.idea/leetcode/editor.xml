@@ -35,6 +35,14 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/struggle/src/leetcode/editor/cn/DesignCircularDeque.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/struggle/src/leetcode/editor/cn/DesignCircularDeque.java" />
+              <option name="questionId" value="859" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/struggle/src/leetcode/editor/cn/LargestRectangleInHistogram.java">
           <value>
             <LeetcodeEditor>
@@ -48,6 +56,14 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/struggle/src/leetcode/editor/cn/LinkedListCycle.java" />
               <option name="questionId" value="141" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/struggle/src/leetcode/editor/cn/LowestCommonAncestorOfABinaryTree.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/struggle/src/leetcode/editor/cn/LowestCommonAncestorOfABinaryTree.java" />
+              <option name="questionId" value="236" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -168,22 +184,6 @@
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/../Practice/leetcode/editor/cn/[1]两数之和.java" />
               <option name="questionId" value="1" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="E:/GitWarehouse/Java/LeetCode/struggle/src/leetcode/editor/cn/LowestCommonAncestorOfABinaryTree.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="E:/GitWarehouse/Java/LeetCode/struggle/src/leetcode/editor/cn/LowestCommonAncestorOfABinaryTree.java" />
-              <option name="questionId" value="236" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="E:/GitWarehouse/Java/LeetCode/struggle/src/leetcode/editor/cn/SlidingWindowMaximum.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="path" value="E:/GitWarehouse/Java/LeetCode/struggle/src/leetcode/editor/cn/SlidingWindowMaximum.java" />
-              <option name="questionId" value="239" />
             </LeetcodeEditor>
           </value>
         </entry>
