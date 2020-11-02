@@ -1,0 +1,33 @@
+Spring的优点:
+    ·Spring是一个开源免费框架
+    ·Spring是一个轻量级的、非入侵式的框架
+    ·控制反转(IOC)、面向切面编程(AOP)
+    ·支持事物的处理，对框架整合的支持
+
+Spring的组成:
+    Spring AOP
+    Spring ORM
+    Spring DAO
+    Spring Web
+    Spring Context
+    Spring Web MVC
+    Spring Core
+
+拓展:
+    现代化的Java开发其实就是基于Spring的开发
+    Spring Boot --- 构建一切
+        一个快速开发的脚手架，基于Spring Boot可以快速开发单个微服务。约定大于配置
+    Spring Cloud --- 协调一切
+        SpringCloud是基于SpringBoot实现的
+    Spring Cloud Data Flow --- 连接一切
+
+IOC理论推导:
+    之前实现业务的步骤:
+        1.UserDao接口
+        2.UserDaoImpl实现类
+        3.UserService业务接口
+        4.UserServiceImpl业务实现类
+    在我们之前的业务中，用户的需求可以能会影响到我们原来的代码，我们需要根据用户的需求修改源代码！如果程序代码量十分大，修改一次的
+    成本代价是十分惊人的。
+    我们使用了一个Set接口实现后，已经发生了革命性的变化，在之前，程序是主动创建对象，控制权在程序员手上。使用了set注入后，程序不再
+    具有主动性，而是变成了被动的接受对象。这种思想，从本质上解决了问题，我们程序员不用再去管理对象的创建了，系统的耦合性大大降低。
