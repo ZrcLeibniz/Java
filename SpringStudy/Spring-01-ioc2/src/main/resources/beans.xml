@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--    &lt;!&ndash;使用无参构造创建对象&ndash;&gt;-->
+    <!--    <bean id="User" class="rich.zrc.pojo.User">-->
+    <!--        <constructor-arg index="0" value="rich"></constructor-arg>-->
+    <!--    </bean>-->
+
+    <!--    &lt;!&ndash;使用有参构造创建对象：第一种方式++下标赋值&ndash;&gt;-->
+    <!--    <bean id="User" class="rich.zrc.pojo.User">-->
+    <!--        <constructor-arg index="0" value="rich"></constructor-arg>-->
+    <!--    </bean>-->
+
+    <!--    &lt;!&ndash;使用有参构造创建对象：第二种方式：++字段类型赋值&ndash;&gt;-->
+    <!--    <bean id="User" class="rich.zrc.pojo.User">-->
+    <!--        <constructor-arg type="java.lang.String" value="rich"></constructor-arg>-->
+    <!--    </bean>-->
+
+    <bean id="User" class="rich.zrc.pojo.User">
+        <constructor-arg name="name" value="rich"></constructor-arg>
+    </bean>
+</beans>
