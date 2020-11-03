@@ -8,7 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Spring-02-HelloSpring" />
         <module name="Spring-01-ioc1" />
-        <module name="Spring-01-ioc2" />
+        <module name="Spring-03-ioc2" />
       </profile>
     </annotationProcessing>
   </component>
