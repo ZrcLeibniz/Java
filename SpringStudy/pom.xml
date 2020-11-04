@@ -12,6 +12,7 @@
         <module>Spring-01-ioc1</module>
         <module>Spring-02-HelloSpring</module>
         <module>Spring-03-ioc2</module>
+        <module>Spring-04-DI</module>
     </modules>
 
     <properties>
