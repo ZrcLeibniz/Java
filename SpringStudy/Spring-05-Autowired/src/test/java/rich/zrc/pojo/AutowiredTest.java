@@ -31,4 +31,13 @@ public class AutowiredTest {
         people.getCat().shout();
         people.getDog().shout();
     }
+
+    @Test
+    public void testAutoWireByAnnotation() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        People people = context.getBean("peopleAnnotation", People.class);
+        System.out.println(people);
+        people.getCat().shout();
+        people.getDog().shout();
+    }
 }

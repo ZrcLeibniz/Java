@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config></context:annotation-config>
 
     <bean id="cat" class="rich.zrc.pojo.Cat"></bean>
 
@@ -15,13 +21,17 @@
 
     <!--通过byName自动注入-->
     <!--会在容器上下文中查找，和自己对象set方法后面对应的bean id-->
-    <bean id = "peopleByName" class="rich.zrc.pojo.People" autowire="byName">
+    <!--需要保证所有的bean的id唯一-->
+    <bean id="peopleByName" class="rich.zrc.pojo.People" autowire="byName">
         <property name="name" value="rich"></property>
     </bean>
 
     <!--通过byType自动注入-->
     <!--会自动在容器上下文中查找，和自己对象属性类型相同的bean-->
-    <bean id = "peopleByType" class="rich.zrc.pojo.People" autowire="byType">
+    <!--需要保证所有bean的class唯一-->
+    <bean id="peopleByType" class="rich.zrc.pojo.People" autowire="byType">
         <property name="name" value="rich"></property>
     </bean>
+
+    <bean id="peopleAnnotation" class="rich.zrc.pojo.People"></bean>
 </beans>
