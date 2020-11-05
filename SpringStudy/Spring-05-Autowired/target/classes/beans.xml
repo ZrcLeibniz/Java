@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="cat" class="rich.zrc.pojo.Cat"></bean>
+
+    <bean id="Dog" class="rich.zrc.pojo.Dog"></bean>
+
+    <bean id="People" class="rich.zrc.pojo.People">
+        <property name="name" value="rich"></property>
+        <property name="cat" ref="cat"></property>
+        <property name="dog" ref="dog"></property>
+    </bean>
+
+    <!--通过byName自动注入-->
+    <bean id = "peopleByName" class="rich.zrc.pojo.People" autowire="byName">
+        <property name="name" value="rich"></property>
+    </bean>
+</beans>
