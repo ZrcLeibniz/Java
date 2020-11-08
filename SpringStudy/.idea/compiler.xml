@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Spring-02-HelloSpring" />
         <module name="Spring-03-ioc2" />
         <module name="Spring-05-Autowired" />
         <module name="Spring-04-DI" />
+        <module name="Spring-02-HelloSpring" />
         <module name="Spring-01-ioc1" />
+        <module name="Spring-06-appconfig" />
       </profile>
     </annotationProcessing>
   </component>
