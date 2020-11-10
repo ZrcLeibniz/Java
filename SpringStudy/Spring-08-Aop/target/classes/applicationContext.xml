@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="userService" class="rich.zrc.serviceImpl.UserServiceImpl"></bean>
+    <bean id="BeforeLog" class="rich.zrc.log.BeforeLog"></bean>
+    <bean id="AfterLog" class="rich.zrc.log.AfterLog"></bean>
+
+    <!--配置AOP-->
+    <aop:config>
+        <!--切入点: expression:表达式 execution(要执行的位置 * * * * *)-->
+        <aop:pointcut id="pointcut" expression="execution(* rich.zrc.serviceImpl.UserServiceImpl.*(..))"/>
+        <!--执行环绕增加-->
+        <aop:advisor advice-ref="BeforeLog" pointcut-ref="pointcut"></aop:advisor>
+        <aop:advisor advice-ref="AfterLog" pointcut-ref="pointcut"></aop:advisor>
+    </aop:config>
+
+</beans>
