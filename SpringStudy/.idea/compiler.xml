@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Spring-08-Aop" />
+        <module name="Spring-09-Aop-exercise" />
         <module name="Spring-03-ioc2" />
         <module name="Spring-05-Autowired" />
         <module name="Spring-04-DI" />

@@ -17,6 +17,7 @@
         <module>Spring-06-appconfig</module>
         <module>Spring-07-proxy</module>
         <module>Spring-08-Aop</module>
+        <module>Spring-09-Aop-exercise</module>
     </modules>
 
     <properties>
