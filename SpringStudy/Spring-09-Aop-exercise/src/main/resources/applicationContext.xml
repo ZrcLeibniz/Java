@@ -8,12 +8,12 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd
         ">
 
-    <bean id="UserService" class="rich.zrc.serviceImpl.UserServiceImpl"></bean>
+    <bean id="UserService" class="rich.zrc.serviceImpl.UserService10Impl"></bean>
     <bean id="BeforeLog" class="rich.zrc.log.BeforeLog"></bean>
     <bean id="AfterLog" class="rich.zrc.log.AfterLog"></bean>
 
     <aop:config>
-        <aop:pointcut id="pointcut" expression="execution(* rich.zrc.serviceImpl.UserServiceImpl.*(..))"/>
+        <aop:pointcut id="pointcut" expression="execution(* rich.zrc.serviceImpl.UserService10Impl.*(..))"/>
         <aop:advisor advice-ref="BeforeLog" pointcut-ref="pointcut"></aop:advisor>
         <aop:advisor advice-ref="AfterLog" pointcut-ref="pointcut"></aop:advisor>
     </aop:config>

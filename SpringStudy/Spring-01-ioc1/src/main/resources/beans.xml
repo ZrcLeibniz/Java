@@ -5,7 +5,7 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--使用Spring来创建对象，在Spring中这些都称为Bean-->
     <bean id="MysqlImpl" class="rich.zrc.daoImpl.UserDaoMysqlImpl"></bean>
-    <bean id="ServiceImpl" class="rich.zrc.serviceImpl.UserServiceImpl">
+    <bean id="ServiceImpl" class="rich.zrc.serviceImpl.UserService10Impl">
         <property name="userDao" ref="OracleImpl"></property>
     </bean>
     <bean id="OracleImpl" class="rich.zrc.daoImpl.UserDaoOracleImpl"></bean>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="UserService" class="rich.zrc.serviceImpl.UserService10Impl"></bean>
+    <bean id="DiyPointCut" class="rich.zrc.diy.DiyPointCut"></bean>
+
+    <aop:config>
+        <aop:aspect ref="DiyPointCut">
+            <aop:pointcut id="point" expression="execution(* rich.zrc.serviceImpl.UserService10Impl.*(..))"/>
+            <aop:before method="before" pointcut-ref="point"></aop:before>
+            <aop:after method="after" pointcut-ref="point"></aop:after>
+        </aop:aspect>
+    </aop:config>
+<!--    <bean id="BeforeLog" class="rich.zrc.log.BeforeLog"></bean>-->
+<!--    <bean id="AfterLog" class="rich.zrc.log.AfterBlog"></bean>-->
+
+<!--    <aop:config>-->
+<!--        <aop:pointcut id="pointcut" expression="execution(* rich.zrc.serviceImpl.UserService10Impl.*(..))"/>-->
+<!--        <aop:advisor advice-ref="BeforeLog" pointcut-ref="pointcut"></aop:advisor>-->
+<!--        <aop:advisor advice-ref="AfterLog" pointcut-ref="pointcut"></aop:advisor>-->
+<!--    </aop:config>-->
+
+</beans>
