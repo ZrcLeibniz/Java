@@ -20,6 +20,7 @@
         <module>Spring-09-Aop-exercise</module>
         <module>Spring-10-Aop</module>
         <module>Spring-11-Aop</module>
+        <module>Spring-12-Mybatis</module>
     </modules>
 
     <properties>
