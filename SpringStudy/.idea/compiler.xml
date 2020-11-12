@@ -13,6 +13,7 @@
         <module name="Spring-02-HelloSpring" />
         <module name="Spring-05-Autowired" />
         <module name="Spring-04-DI" />
+        <module name="Spring-13-Mybatis-exercise" />
         <module name="Spring-03-ioc2" />
         <module name="Spring-09-Aop-exercise" />
         <module name="Spring-07-proxy" />
