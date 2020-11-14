@@ -7,17 +7,17 @@
        http://www.springframework.org/schema/aop
        https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean id="userService" class="rich.zrc.serviceImpl.UserServiceImpl"/>
+    <bean id="userService" class="rich.zrc.servcice.UserServiceImpl"/>
     <bean id="annotationPointCut" class="rich.zrc.diy.AnnotationPointCut"/>
     <!--开启注解支持-->
     <aop:aspectj-autoproxy/>
 
-<!--    <bean id="UserService" class="rich.zrc.serviceImpl.UserServiceImpl"/>-->
+<!--    <bean id="UserService" class="rich.zrc.service.UserServiceImpl"/>-->
 <!--    <bean id="DiyPoint" class="rich.zrc.diy.DiyPoint"/>-->
 
 <!--   <aop:config>-->
 <!--       <aop:aspect ref="DiyPoint">-->
-<!--           <aop:pointcut id="point" expression="execution(* rich.zrc.serviceImpl.UserServiceImpl.*(..))"/>-->
+<!--           <aop:pointcut id="point" expression="execution(* rich.zrc.service.UserServiceImpl.*(..))"/>-->
 <!--           <aop:before method="before" pointcut-ref="point"/>-->
 <!--           <aop:after method="after" pointcut-ref="point"/>-->
 <!--       </aop:aspect>-->

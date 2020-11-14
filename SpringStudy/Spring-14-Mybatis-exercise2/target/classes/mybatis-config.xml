@@ -5,10 +5,10 @@
 
 <configuration>
     <settings>
-        <setting name="logImpl" value="LOG4J"/>
+        <setting name="logImpl" value="LOG4j"/>
     </settings>
 
     <typeAliases>
-        <package name="rich.zrc.User"/>
+        <package name="rich.zrc.pojo"/>
     </typeAliases>
 </configuration>

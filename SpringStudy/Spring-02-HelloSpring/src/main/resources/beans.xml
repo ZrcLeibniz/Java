@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--使用Spring来创建对象，在Spring中这些都称为Bean-->
-    <bean id="hello" class="rich.zrc.pojo.Hello">
+    <bean id="hello" class="rich.zrc.User.Hello">
         <property name="str" value="Spring"></property>
     </bean>
 </beans>

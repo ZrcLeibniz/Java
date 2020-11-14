@@ -5,6 +5,6 @@
        xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="userP" class="rich.zrc.pojo.User" p:name="rich" p:age="10"></bean>
-    <bean id="userC" class="rich.zrc.pojo.User" c:name="rich" c:age="12"></bean>
+    <bean id="userP" class="rich.zrc.User.User" p:name="rich" p:age="10"></bean>
+    <bean id="userC" class="rich.zrc.User.User" c:name="rich" c:age="12"></bean>
 </beans>

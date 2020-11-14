@@ -22,6 +22,7 @@
         <module>Spring-11-Aop</module>
         <module>Spring-12-Mybatis</module>
         <module>Spring-13-Mybatis-exercise</module>
+        <module>Spring-14-Mybatis-exercise2</module>
     </modules>
 
     <properties>

@@ -4,11 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="address" class="rich.zrc.pojo.Address">
+    <bean id="address" class="rich.zrc.User.Address">
         <property name="address" value="china"></property>
     </bean>
 
-    <bean id="student" class="rich.zrc.pojo.Student">
+    <bean id="student" class="rich.zrc.User.Student">
         <property name="name" value="rich"></property>
         <property name="address" ref="address"></property>
         <property name="books">

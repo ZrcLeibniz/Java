@@ -8,6 +8,6 @@
     </settings>
     
     <typeAliases>
-        <package name="rich.zrc.pojo"/>
+        <package name="rich.zrc.User"/>
     </typeAliases>
 </configuration>
