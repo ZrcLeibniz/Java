@@ -23,6 +23,7 @@
         <module>Spring-12-Mybatis</module>
         <module>Spring-13-Mybatis-exercise</module>
         <module>Spring-14-Mybatis-exercise2</module>
+        <module>Spring-15-Mybatis</module>
     </modules>
 
     <properties>

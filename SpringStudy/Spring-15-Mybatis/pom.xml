@@ -9,7 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Spring-14-Mybatis-exercise2</artifactId>
+    <artifactId>Spring-15-Mybatis</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>mysql</groupId>
@@ -53,4 +54,6 @@
             <version>1.2.17</version>
         </dependency>
     </dependencies>
+
+
 </project>
