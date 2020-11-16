@@ -12,6 +12,7 @@
         <module name="Spring-13-Mybatis-exercise" />
         <module name="Spring-10-Aop" />
         <module name="Spring-06-appconfig" />
+        <module name="Spring-16-Transcation" />
         <module name="Spring-14-Mybatis-exercise2" />
         <module name="Spring-12-Mybatis" />
         <module name="Spring-01-ioc1" />

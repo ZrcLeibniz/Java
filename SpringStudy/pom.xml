@@ -24,6 +24,7 @@
         <module>Spring-13-Mybatis-exercise</module>
         <module>Spring-14-Mybatis-exercise2</module>
         <module>Spring-15-Mybatis</module>
+        <module>Spring-16-Transcation</module>
     </modules>
 
     <properties>
