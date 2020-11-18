@@ -52,20 +52,20 @@ class TreeNode {
 
 class ValidateBinarySearchTreeSolution {
     public static boolean isValidBST(TreeNode root) {
-            return isValidHelper(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+            return isValidHelper(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
-    private static boolean isValidHelper(TreeNode root, Integer lower, Integer higher) {
+    private static boolean isValidHelper(TreeNode root, Long lower, Long higher) {
         if (root == null) {
             return true;
         }
         if (root.val >= higher || root.val <= lower) {
             return false;
         }
-        return isValidHelper(root.left, lower, root.val) && isValidHelper(root.right, root.val, higher);
+        return isValidHelper(root.left, lower, (long) root.val) && isValidHelper(root.right, (long) root.val, higher);
     }
 
-    static Integer pre = Integer.MIN_VALUE;
+    static Long pre = Long.MIN_VALUE;
     public static boolean isValidBST2(TreeNode root) {
         if (root == null) {
             return true;
@@ -76,7 +76,7 @@ class ValidateBinarySearchTreeSolution {
         if (root.val <= pre) {
             return false;
         }
-        pre = root.val;
+        pre = (long)root.val;
         if (!isValidBST2(root.right)) {
             return false;
         }
