@@ -15,5 +15,5 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="/hello" class="rich.zrc.controller.HelloController"/>
+    <bean id="/hello" class="rich.zrc.controller.ControllerTest1"/>
 </beans>
