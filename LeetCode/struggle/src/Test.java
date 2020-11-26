@@ -1,39 +1,49 @@
-import java.util.HashMap;
-import java.util.Set;
+
+
+import java.util.Arrays;
+
 
 public class Test {
     public static void main(String[] args) {
-        String s = "a";
-        String t = "b";
-        boolean anagram = isAnagram(s, t);
-        System.out.println(anagram);
+        int[] pre = {3, 9, 20, 15, 7};
+        int[] in = {9, 3, 15, 20, 7};
+        TreeNode root = buildTree(pre, in);
+        System.out.println(root);
     }
 
-    public static boolean isAnagram(String s, String t) {
-        if (s.length() != t.length()) {
-            return false;
+    public static TreeNode buildTree(int[] preorder, int[] inorder) {
+        if (preorder.length == 0 || inorder.length == 0) {
+            return null;
         }
-        HashMap<Character, Integer> map = new HashMap<>();
-        for (int i = 0; i < s.length(); i++) {
-            if (map.containsKey(s.charAt(i))) {
-                map.replace(s.charAt(i), map.get(s.charAt(i)) + 1);
-            } else {
-                map.put(s.charAt(i), 1);
+        TreeNode root = new TreeNode(preorder[0]);
+        for (int i = 0; i < preorder.length; i++) {
+            if (inorder[i] == preorder[0]) {
+                root.left = buildTree(Arrays.copyOfRange(preorder, 1, i + 1),
+                        Arrays.copyOfRange(inorder, 0, i));
+                root.right = buildTree(Arrays.copyOfRange(preorder, i + 1, preorder.length),
+                        Arrays.copyOfRange(inorder, i + 1, inorder.length));
+                break;
             }
         }
-        for (int i = 0; i < t.length(); i++) {
-            if (map.containsKey(t.charAt(i))) {
-                map.replace(t.charAt(i), map.get(t.charAt(i)) - 1);
-            } else {
-                return false;
-            }
-        }
-        Set<Character> entries = map.keySet();
-        for (Character entry : entries) {
-            if (map.get(entry) != 0) {
-                return false;
-            }
-        }
-        return true;
+        return root;
+    }
+}
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int x) {
+        val = x;
+    }
+
+    @Override
+    public String toString() {
+        return "TreeNode{" +
+                "val=" + val +
+                ", left=" + left +
+                ", right=" + right +
+                '}';
     }
 }
