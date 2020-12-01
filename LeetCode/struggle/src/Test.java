@@ -1,31 +1,29 @@
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 
 public class Test {
-    public static void main(String[] args) {
-        int[] pre = {3, 9, 20, 15, 7};
-        int[] in = {9, 3, 15, 20, 7};
-        TreeNode root = buildTree(pre, in);
-        System.out.println(root);
-    }
-
-    public static TreeNode buildTree(int[] preorder, int[] inorder) {
-        if (preorder.length == 0 || inorder.length == 0) {
-            return null;
-        }
-        TreeNode root = new TreeNode(preorder[0]);
-        for (int i = 0; i < preorder.length; i++) {
-            if (inorder[i] == preorder[0]) {
-                root.left = buildTree(Arrays.copyOfRange(preorder, 1, i + 1),
-                        Arrays.copyOfRange(inorder, 0, i));
-                root.right = buildTree(Arrays.copyOfRange(preorder, i + 1, preorder.length),
-                        Arrays.copyOfRange(inorder, i + 1, inorder.length));
-                break;
+    public static boolean containsNearbyDuplicate(int[] nums, int k) {
+        //HashSet<Integer> hashSet = new HashSet<Integer>();
+        ArrayList<Integer> hashSet = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (hashSet.contains(nums[i])) {
+                return true;
+            }
+            hashSet.add(nums[i]);
+            if (hashSet.size() > k) {
+                hashSet.remove(nums[k - i]);
             }
         }
-        return root;
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 1, 2, 3};
+        boolean b = containsNearbyDuplicate(nums, 2);
+        System.out.println(b);
     }
 }
 
