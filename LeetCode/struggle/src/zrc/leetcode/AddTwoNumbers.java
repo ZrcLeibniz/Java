@@ -72,6 +72,31 @@ class AddTwoNumbersSolution {
         return result.next;
     }
 
+    public ListNode AddTwoNumbersII(ListNode l1, ListNode l2) {
+        ListNode result = new ListNode();
+        ListNode cur = result;
+        int carry = 0;
+        while (l1 != null || l2 != null) {
+            int l1val = l1 == null ? 0 : l1.val;
+            int l2val = l2 == null ? 0 : l2.val;
+            int sum = l1val + l2val + carry;
+            carry = sum % 10;
+            sum = sum / 10;
+            cur.next = new ListNode(sum);
+            cur = cur.next;
+            if (l1 != null) {
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                l2 = l2.next;
+            }
+        }
+        if (carry == 1) {
+            cur.next = new ListNode(1);
+        }
+        return result.next;
+    }
+
     public static void main(String[] args) {
         ListNode node1 = new ListNode(9);
         ListNode node2 = new ListNode(9);
