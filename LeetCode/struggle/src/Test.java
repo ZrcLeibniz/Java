@@ -1,7 +1,5 @@
-
-
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashSet;
 
 
 public class Test {
@@ -14,7 +12,7 @@ public class Test {
             }
             hashSet.add(nums[i]);
             if (hashSet.size() > k) {
-                hashSet.remove(nums[k - i]);
+                hashSet.remove(nums[i - k]);
             }
         }
         return false;
