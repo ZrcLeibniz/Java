@@ -41,13 +41,54 @@ class LongestPalindromicSubStringSolution {
 
     private boolean validPalindromic(char[] s, int left, int right) {
         while (left < right) {
-            if (!(s[left] == s[right])){
+            if (!(s[left] == s[right])) {
                 return false;
             }
             left++;
             right--;
         }
         return true;
+    }
+
+    public static String longestPalindromeII(String s) {
+        int len = s.length();
+        if (len < 2) {
+            return s;
+        }
+        int maxLength = 1;
+        int begin = 0;
+        char[] charArray = s.toCharArray();
+        for (int i = 0; i < len - 1; i++) {
+            int oddLen = validPalindromicII(charArray, i, i);
+            int evenLen = validPalindromicII(charArray, i, i + 1);
+            int curMax = Math.max(oddLen, evenLen);
+            if (curMax > maxLength) {
+                maxLength = curMax;
+                begin = i - (maxLength - 1) / 2;
+            }
+        }
+        return s.substring(begin, maxLength);
+    }
+
+    private static int validPalindromicII(char[] s, int left, int right) {
+        int len = s.length;
+        int i = left;
+        int j = right;
+        while (i >= 0 && j < len) {
+            if (s[i] == s[j]) {
+                i--;
+                j++;
+            } else {
+                break;
+            }
+        }
+        return j - i - 1;
+    }
+
+    public static void main(String[] args) {
+        String s = "cbbd";
+        String s1 = longestPalindromeII(s);
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
