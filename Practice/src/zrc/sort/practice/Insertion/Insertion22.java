@@ -7,6 +7,8 @@ public class Insertion22 {
             for (int j = i + 1; j > 0 ; j--) {
                 if (!greater(a[j], a[j - 1])) {
                     exchange(a, j , j - 1);
+                } else {
+                    break;
                 }
             }
         }
