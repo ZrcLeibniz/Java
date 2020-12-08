@@ -1,6 +1,6 @@
 package zrc.sort.practice.shell;
 
-public class Shell14 {
+public class Shell16 {
 
     public static void sort(Comparable[] a) {
         int gap = 1;
@@ -9,9 +9,9 @@ public class Shell14 {
         }
         while (gap >= 1) {
             for (int i = gap; i <= a.length - 1; i++) {
-                for (int j = i; j >= gap ; j = j - gap) {
-                    if (greater(a[j - gap], a[j])) {
-                        exchange(a, j - gap, j);
+                for (int j = i; j >= gap; j = j - gap) {
+                    if (!greater(a[j], a[j - gap])) {
+                        exchange(a, j, j - gap);
                     } else {
                         break;
                     }
