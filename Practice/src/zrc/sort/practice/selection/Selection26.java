@@ -2,15 +2,15 @@ package zrc.sort.practice.selection;
 
 public class Selection26 {
 
-    public static void sort(Comparable[] a) {
-        for (int i = 0; i < a.length - 1; i++) {
+    public static void sort(Comparable[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
             int minIndex = i;
-            for (int j = i + 1; j < a.length; j++) {
-                if (greater(a[minIndex], a[j])) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (greater(array[minIndex], array[j])) {
                     minIndex = j;
                 }
             }
-            exchange(a, minIndex, i);
+            exchange(array, minIndex, i);
         }
     }
 
