@@ -24,10 +24,10 @@ package zrc.leetcode;
  * }
  */
 class ReverseLinkedListSolution {
-    public ListNode reverseList(ListNode head) {
-        ListNode pre = null;
-        ListNode cur = head;
-        ListNode next = null;
+    public NthEndListNode reverseList(NthEndListNode head) {
+        NthEndListNode pre = null;
+        NthEndListNode cur = head;
+        NthEndListNode next = null;
         while (cur != null) {
             next = cur.next;
             cur.next = pre;

@@ -60,7 +60,7 @@ package zrc.leetcode;
 
 class ListNode {
     int val;
-    ListNode next;
+    NthEndListNode next;
 
     public ListNode() {
     }
@@ -71,9 +71,9 @@ class ListNode {
 }
 
 class HasCycleSolution {
-    public boolean hasCycle(ListNode head) {
-        ListNode fast = head;
-        ListNode slow = head;
+    public boolean hasCycle(NthEndListNode head) {
+        NthEndListNode fast = head;
+        NthEndListNode slow = head;
         if (head == null || head.next == null) {
             return false;
         }

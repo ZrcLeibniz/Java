@@ -39,13 +39,13 @@ package zrc.leetcode;
 //}
 
 class AddTwoNumbersSolution {
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode result = new ListNode();
-        ListNode cur = result;
+    public static NthEndListNode addTwoNumbers(NthEndListNode l1, NthEndListNode l2) {
+        NthEndListNode result = new NthEndListNode();
+        NthEndListNode cur = result;
         while (l1 != null || l2 != null) {
             int l1val = l1 == null ? 0 : l1.val;
             int l2val = l2 == null ? 0 : l2.val;
-            ListNode temp = new ListNode(l1val + l2val);
+            NthEndListNode temp = new NthEndListNode(l1val + l2val);
             cur.next = temp;
             cur = cur.next;
             if (l1 != null) {
@@ -63,7 +63,7 @@ class AddTwoNumbersSolution {
             }
             if (cur.val > 9 && cur.next == null) {
                 cur.val = cur.val % 10;
-                ListNode listNode = new ListNode(1);
+                NthEndListNode listNode = new NthEndListNode(1);
                 cur.next = listNode;
                 break;
             }
@@ -72,9 +72,9 @@ class AddTwoNumbersSolution {
         return result.next;
     }
 
-    public ListNode AddTwoNumbersII(ListNode l1, ListNode l2) {
-        ListNode result = new ListNode();
-        ListNode cur = result;
+    public NthEndListNode AddTwoNumbersII(NthEndListNode l1, NthEndListNode l2) {
+        NthEndListNode result = new NthEndListNode();
+        NthEndListNode cur = result;
         int carry = 0;
         while (l1 != null || l2 != null) {
             int l1val = l1 == null ? 0 : l1.val;
@@ -82,7 +82,7 @@ class AddTwoNumbersSolution {
             int sum = l1val + l2val + carry;
             carry = sum % 10;
             sum = sum / 10;
-            cur.next = new ListNode(sum);
+            cur.next = new NthEndListNode(sum);
             cur = cur.next;
             if (l1 != null) {
                 l1 = l1.next;
@@ -92,23 +92,23 @@ class AddTwoNumbersSolution {
             }
         }
         if (carry == 1) {
-            cur.next = new ListNode(1);
+            cur.next = new NthEndListNode(1);
         }
         return result.next;
     }
 
     public static void main(String[] args) {
-        ListNode node1 = new ListNode(9);
-        ListNode node2 = new ListNode(9);
-        ListNode node3 = new ListNode(9);
-        ListNode node4 = new ListNode(9);
-        ListNode node5 = new ListNode(9);
-        ListNode node6 = new ListNode(9);
-        ListNode node7 = new ListNode(9);
-        ListNode node8 = new ListNode(9);
-        ListNode node9 = new ListNode(9);
-        ListNode node10 = new ListNode(9);
-        ListNode node11 = new ListNode(9);
+        NthEndListNode node1 = new NthEndListNode(9);
+        NthEndListNode node2 = new NthEndListNode(9);
+        NthEndListNode node3 = new NthEndListNode(9);
+        NthEndListNode node4 = new NthEndListNode(9);
+        NthEndListNode node5 = new NthEndListNode(9);
+        NthEndListNode node6 = new NthEndListNode(9);
+        NthEndListNode node7 = new NthEndListNode(9);
+        NthEndListNode node8 = new NthEndListNode(9);
+        NthEndListNode node9 = new NthEndListNode(9);
+        NthEndListNode node10 = new NthEndListNode(9);
+        NthEndListNode node11 = new NthEndListNode(9);
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;
@@ -118,7 +118,7 @@ class AddTwoNumbersSolution {
         node8.next = node9;
         node9.next = node10;
         node10.next = node11;
-        ListNode listNode = addTwoNumbers(node1, node4);
+        NthEndListNode listNode = addTwoNumbers(node1, node4);
         System.out.println(listNode.val);
         System.out.println(listNode.next.val);
         System.out.println(listNode.next.next.val);
