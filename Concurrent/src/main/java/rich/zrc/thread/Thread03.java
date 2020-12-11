@@ -9,5 +9,8 @@ public class Thread03 {
 
     public static void main(String[] args) {
         Runnable runnable = () -> log.debug("running");
+        Thread thread = new Thread(runnable, "t3");
+        thread.start();
+        log.debug("running");
     }
 }
