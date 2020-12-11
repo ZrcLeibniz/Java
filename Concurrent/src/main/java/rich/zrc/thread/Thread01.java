@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 
 // 使用Thread创建线程
 
-@Slf4j(topic = "c.Test")
+@Slf4j(topic = "c.Thread01")
 public class Thread01 {
     public static void main(String[] args) {
         //final Logger logger = Logger.getLogger(Test.class);
