@@ -8,7 +8,7 @@ public class InsertionTest {
 
     public static void main(String[] args) {
         Integer[] arr = {4, 3, 2, 10, 12, 1, 5, 6};
-        Insertion25.sort(arr);
+        Insertion26.sort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
