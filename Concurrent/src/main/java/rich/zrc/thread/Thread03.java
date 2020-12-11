@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j(topic = "c.Thread03")
 public class Thread03 {
+
     public static void main(String[] args) {
         Runnable runnable = () -> log.debug("running");
     }
