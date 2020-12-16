@@ -5,9 +5,9 @@ import org.junit.Test;
 
 @Slf4j(topic = "c.Join")
 public class Join {
-    static int r = 0;
-    static int r1 = 0;
-    static int r2 = 0;
+    private static int r = 0;
+    private static int r1 = 0;
+    private static int r2 = 0;
 
     @Test
     public void test1() throws InterruptedException {
