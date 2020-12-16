@@ -15,7 +15,7 @@ public class Join {
         Thread thread = new Thread(() -> {
             log.debug("开始");
             try {
-                Thread.sleep(1);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
