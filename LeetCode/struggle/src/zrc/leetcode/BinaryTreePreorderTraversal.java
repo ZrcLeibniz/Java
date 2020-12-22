@@ -57,8 +57,10 @@ package zrc.leetcode;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Definition for a binary tree node.
@@ -90,6 +92,39 @@ class BinaryTreePreOrderTraversalSolution {
             preorderTraversal(root.right);
         }
         return result;
+    }
+
+    public List<Integer> preorderTraversalII(PreOrderTreeNode root) {
+        ArrayList<Integer> resultII = new ArrayList<>();
+        Stack<PreOrderTreeNode> stack = new Stack<>();
+        if (root == null) {
+            return resultII;
+        }
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            PreOrderTreeNode node = stack.pop();
+            resultII.add(node.val);
+            if (root.right != null) {
+                stack.push(node.right);
+            }
+            if (root.left != null) {
+                stack.push(node.left);
+            }
+        }
+        return resultII;
+    }
+
+    public ArrayList<Integer> preorderTraversalIII(PreOrderTreeNode root) {
+        ArrayList<Integer> resultIII = new ArrayList<>();
+        if (root == null) {
+            return resultIII;
+        }
+        ArrayList<Integer> left = preorderTraversalIII(root.left);
+        ArrayList<Integer> right = preorderTraversalIII(root.right);
+        resultIII.add(root.val);
+        resultIII.addAll(left);
+        resultIII.addAll(right);
+        return resultIII;
     }
 }
 
