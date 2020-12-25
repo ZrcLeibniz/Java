@@ -109,7 +109,7 @@ class CountAndSaySolution {
     }
 
     public static void main(String[] args) {
-        String s = countAndSay(3);
+        String s = countAndSay(4);
         System.out.println(s);
     }
 }
