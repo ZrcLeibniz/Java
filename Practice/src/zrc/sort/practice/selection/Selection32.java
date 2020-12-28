@@ -6,7 +6,7 @@ public class Selection32 {
         for (int i = 0; i < a.length; i++) {
             int minIndex = i;
             for (int j = i + 1; j < a.length; j++) {
-                if (!greater(a[j], a[minIndex])) {
+                if (greater(a[minIndex], a[j])) {
                     minIndex = j;
                 }
             }
