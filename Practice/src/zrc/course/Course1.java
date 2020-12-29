@@ -3,7 +3,7 @@ package zrc.course;
 
 import java.util.Arrays;
 
-public class course1 {
+public class Course1 {
     public static void main(String[] args) {
         int[] arr = {6, 1, 7, 33, 91, 41, 45, 77, 88, 65, 23, 18, 56, 65};
 //        Solution.solution1(arr, 2);
