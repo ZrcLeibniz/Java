@@ -8,7 +8,7 @@ import java.util.Random;
 import java.util.Vector;
 
 @Slf4j(topic = "c.Test5")
-public class ExerciseTransfer {
+public class ExerciseSell {
     public static void main(String[] args) {
         TicketWindow ticketWindow = new TicketWindow(10000);
         List<Integer> amountList = new Vector<>();
