@@ -48,9 +48,7 @@ package zrc.leetcode;
 // 👍 4655 👎 0
 
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class LongestSubstringWithoutRepeatingCharactersSolution {
@@ -60,7 +58,7 @@ class LongestSubstringWithoutRepeatingCharactersSolution {
         int left = 0;
         for (int i = 0; i < s.length(); i++) {
             if (hashMap.containsKey(s.charAt(i))) {
-                left = Math.max(left,hashMap.get(s.charAt(i)) + 1);
+                left = Math.max(left, hashMap.get(s.charAt(i)) + 1);
             }
             hashMap.put(s.charAt(i), i);
             max = Math.max(max, i - left + 1);
