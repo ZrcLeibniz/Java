@@ -1,4 +1,4 @@
-package zrc.course.course8;
+package zrc.course.course9;
 
 public class KMP {
     public int getIndexOf(String str, String target) {
