@@ -30,7 +30,7 @@ package zrc.leetcode;
 // 所以爬上第n级楼梯的时候，其方法的总数f(n) = f(n-1) + f(n-2)
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class ClimbingStairsSolution {
     public int climbStairs(int n) {
         int[] result = new int[n + 1];
         result[0] = 1;
