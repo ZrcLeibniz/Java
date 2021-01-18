@@ -17,13 +17,13 @@ package zrc.leetcode;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class SpiralMatrixIISolution {
-    public static int[][] generateMatrix(int n) {
+    public int[][] generateMatrix(int n) {
         int[][] result = new int[n][n];
         initialization(result);
         return result;
     }
 
-    private static void initialization(int[][] arr) {
+    private void initialization(int[][] arr) {
         int num = 1;
         int begin = 0;
         int end = arr.length - 1;
@@ -32,7 +32,7 @@ class SpiralMatrixIISolution {
         }
     }
 
-    private static int partInitialization(int[][] arr, int begin, int end, int num) {
+    private int partInitialization(int[][] arr, int begin, int end, int num) {
         while (num == arr.length * arr.length) {
             arr[begin][begin] = num++;
             return num;
