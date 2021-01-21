@@ -32,13 +32,13 @@ package zrc.leetcode;
 //leetcode submit region begin(Prohibit modification and deletion)
 class ClimbingStairsSolution {
     public int climbStairs(int n) {
-        int[] result = new int[n + 1];
-        result[0] = 1;
-        result[1] = 1;
-        for (int i = 2; i < n + 1; i++) {
-            result[i] = result[i - 1] + result[i - 2];
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        dp[1] = 1;
+        for (int i = 2; i < dp.length; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
-        return result[n];
+        return dp[n];
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
