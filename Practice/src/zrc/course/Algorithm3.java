@@ -12,7 +12,7 @@ class Heap {
             return;
         }
         for (int i = 0; i < arr.length; i++) {
-            heapInsert(arr, 0);
+            heapInsert(arr, i);
         }
         int heapSize = arr.length;
         swap(arr, 0, --heapSize);
