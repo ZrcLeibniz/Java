@@ -49,9 +49,6 @@ public class SequenceList<T> implements Iterable<T> {
 
     public T remove(int i) {
         T current = eles[i];
-        if (N == eles.length) {
-            resize(1 / 2 * eles.length);
-        }
         for (int index = i; index < N - 1; index++) {
             eles[index] = eles[index + 1];
         }
