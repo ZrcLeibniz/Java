@@ -112,6 +112,21 @@ public class IsIntersectLinkedList {
             return null;
         }
     }
+
+    public ListNode isIntersect(ListNode list1, ListNode list2) {
+        if (list1 == null || list2 == null) {
+            return null;
+        }
+        ListNode loop1 = isLoop(list1);
+        ListNode loop2 = isLoop(list2);
+        if (loop1 == null && loop2 == null) {
+            return noLoop(list1, list2);
+        }
+        if (loop1 != null && loop2 != null) {
+            return bothLoop(list1, loop1, list2, loop2);
+        }
+        return null;
+    }
 }
 
 class ListNode {
