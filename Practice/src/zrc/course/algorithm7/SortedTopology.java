@@ -21,7 +21,7 @@ public class SortedTopology {
             Node cur = queue.poll();
             result.add(cur);
             for (Node next : cur.nexts) {
-                map.put(next, map.get(next) - 1);
+                map.put(next, next.in - 1);
                 if (next.in == 0) {
                     queue.add(next);
                 }
