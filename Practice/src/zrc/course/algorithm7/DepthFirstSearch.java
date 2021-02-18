@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Stack;
 
 public class DepthFirstSearch {
-    public void dfs(Node node) {
+    public static void dfs(Node node) {
         Stack<Node> stack = new Stack<>();
         HashSet<Node> set = new HashSet<>();
         stack.add(node);
