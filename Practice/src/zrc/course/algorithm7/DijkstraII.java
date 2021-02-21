@@ -19,9 +19,9 @@ public class DijkstraII {
                 } else {
                     distanceMap.put(toNode, Math.min(distanceMap.get(toNode), distance + edge.weight));
                 }
-                selectedNodes.add(toNode);
-                minNode = getMinDistanceAndUnSelectedNode(selectedNodes, distanceMap);
             }
+            selectedNodes.add(minNode);
+            minNode = getMinDistanceAndUnSelectedNode(selectedNodes, distanceMap);
         }
         return distanceMap;
     }

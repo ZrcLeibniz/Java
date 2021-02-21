@@ -1,10 +1,10 @@
-package zrc.course.algorithm7;
+package zrc.course.algorithm7.practice1;
 
 import java.util.HashSet;
 import java.util.Stack;
 
 public class DepthFirstSearch {
-    public static void dfs(Node node) {
+    public void solution(Node node) {
         if (node == null) {
             return;
         }
@@ -15,12 +15,12 @@ public class DepthFirstSearch {
         System.out.println(node.value);
         while (!stack.isEmpty()) {
             Node cur = stack.pop();
-            for (Node next : cur.nexts) {
-                if (!set.contains(next)) {
+            if (!set.contains(cur)) {
+                for (Node next : cur.nexts) {
+                    stack.add(cur);
+                    stack.add(next);
                     System.out.println(next.value);
-                    stack.push(cur);
-                    stack.push(next);
-                    set.add(next);
+                    set.add(node);
                     break;
                 }
             }
