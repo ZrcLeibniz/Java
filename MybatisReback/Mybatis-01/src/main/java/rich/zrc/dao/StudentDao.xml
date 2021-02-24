@@ -7,4 +7,8 @@
     <select id="selectStudents" resultType="rich.zrc.pojo.Student">
         select * from student;
     </select>
+
+    <insert id="insertStudent" parameterType="rich.zrc.pojo.Student">
+        insert into student values (#{id}, #{name}, #{age}, #{tid});
+    </insert>
 </mapper>

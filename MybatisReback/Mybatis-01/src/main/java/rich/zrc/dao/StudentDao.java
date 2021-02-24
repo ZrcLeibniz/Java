@@ -5,5 +5,7 @@ import rich.zrc.pojo.Student;
 import java.util.List;
 
 public interface StudentDao {
-    public List<Student> selectStudents();
+    List<Student> selectStudents();
+
+    int insertStudent(Student student);
 }

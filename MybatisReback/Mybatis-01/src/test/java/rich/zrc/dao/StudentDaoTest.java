@@ -28,4 +28,20 @@ public class StudentDaoTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void testInsertStudent() {
+        try {
+            InputStream resourceAsStream = Resources.getResourceAsStream("Mybatis.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+            SqlSession sqlSession = sqlSessionFactory.openSession();
+            StudentDao mapper = sqlSession.getMapper(StudentDao.class);
+            Student student = new Student(10001, "张某", 1, 1);
+            int num = mapper.insertStudent(student);
+            System.out.println(num);
+            sqlSession.commit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
