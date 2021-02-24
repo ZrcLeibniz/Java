@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class Algorithm9 {
+public class Algorithm9_1 {
 }
 
 // 使用堆加速后的迪杰斯塔拉算法（系统提供的堆，无法动态的调整的堆的结构，所以需要我们手动实现一个堆结构）
