@@ -13,6 +13,7 @@
         <module>Mybatis-01-Practice</module>
         <module>Mybatis-01-PracticeI</module>
         <module>Mybatis-01-PracticeII</module>
+        <module>Mybatis-02</module>
     </modules>
 
     <properties>
