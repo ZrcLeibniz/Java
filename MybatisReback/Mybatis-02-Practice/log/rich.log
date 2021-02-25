@@ -1,0 +1,12 @@
+[DEBUG][21-02-25][org.apache.ibatis.logging.LogFactory]-Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][21-02-25][org.apache.ibatis.logging.LogFactory]-Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG][21-02-25][org.apache.ibatis.datasource.pooled.PooledDataSource]-PooledDataSource forcefully closed/removed all connections.
+[DEBUG][21-02-25][org.apache.ibatis.datasource.pooled.PooledDataSource]-PooledDataSource forcefully closed/removed all connections.
+[DEBUG][21-02-25][org.apache.ibatis.datasource.pooled.PooledDataSource]-PooledDataSource forcefully closed/removed all connections.
+[DEBUG][21-02-25][org.apache.ibatis.datasource.pooled.PooledDataSource]-PooledDataSource forcefully closed/removed all connections.
+[DEBUG][21-02-25][org.apache.ibatis.transaction.jdbc.JdbcTransaction]-Opening JDBC Connection
+[DEBUG][21-02-25][org.apache.ibatis.datasource.pooled.PooledDataSource]-Created connection 1136497418.
+[DEBUG][21-02-25][org.apache.ibatis.transaction.jdbc.JdbcTransaction]-Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@43bd930a]
+[DEBUG][21-02-25][rich.zrc.mapper.StudentMapper.selectStudentById]-==>  Preparing: select * from student where id = ? 
+[DEBUG][21-02-25][rich.zrc.mapper.StudentMapper.selectStudentById]-==> Parameters: 1(Integer)
+[DEBUG][21-02-25][rich.zrc.mapper.StudentMapper.selectStudentById]-<==      Total: 1
