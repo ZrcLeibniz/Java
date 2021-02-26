@@ -165,7 +165,7 @@ class reverseStack {
 class NumberToString {
     public int solution(String str) {
         char[] chars = str.toCharArray();
-        return process(chars, 1);
+        return process(chars, 0);
     }
 
     private int process(char[] string, int i) {
