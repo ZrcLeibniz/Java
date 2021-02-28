@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Mybatis-01-PracticeII" />
+        <module name="Mybatis-03-Practice" />
         <module name="Mybatis-02-Practice" />
         <module name="Mybatis-01-Practice" />
         <module name="Mybatis-01-PracticeI" />
