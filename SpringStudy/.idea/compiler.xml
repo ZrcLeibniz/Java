@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="SpringReback-01-IOC" />
         <module name="Spring-07-proxy" />
         <module name="Spring-15-Mybatis" />
         <module name="Spring-13-Mybatis-exercise" />
@@ -27,6 +28,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Spring-14-Mybatis" target="1.8" />
+      <module name="SpringReback" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../SpringReback" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring-01-ioc1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring-02-HelloSpring" charset="UTF-8" />
@@ -15,9 +16,9 @@
     <file url="file://$PROJECT_DIR$/Spring-11-Aop" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring-12-Mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring-13-Mybatis-exercise" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Spring-14-Mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring-14-Mybatis-exercise2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring-15-Mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring-16-Transcation" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringReback-01-IOC" charset="UTF-8" />
   </component>
 </project>
