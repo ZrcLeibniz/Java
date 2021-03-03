@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        测试使用null值
+        引用类型赋值
+        集合类型赋值
+        级联属性赋值
+    -->
+    <!--将对象的属性赋值为null-->
+    <bean id="personPlusI" class="rich.zrc.pojo.PersonII">
+        <property name="name">
+            <null/>
+        </property>
+    </bean>
+
+    <!--对一个引用类型赋值-->
+    <bean id="personPlusII" class="rich.zrc.pojo.PersonII">
+        <property name="car" ref="car"/>
+    </bean>
+
+    <bean id="car" class="rich.zrc.pojo.Car">
+        <property name="carName" value="保时捷"/>
+        <property name="price" value="20000000"/>
+        <property name="color" value="红色"/>
+    </bean>
+
+    <!--如何为list类型赋值-->
+    <bean id="personPlusIII" class="rich.zrc.pojo.PersonII">
+        <property name="farm">
+            <list>
+                <bean class="rich.zrc.pojo.Pig">
+                    <property name="name" value="何丽雯"/>
+                </bean>
+                <bean class="rich.zrc.pojo.Pig">
+                    <property name="name" value="何丽雯1"/>
+                </bean>
+                <bean class="rich.zrc.pojo.Pig">
+                    <property name="name" value="何丽雯2"/>
+                </bean>
+                <bean class="rich.zrc.pojo.Pig">
+                    <property name="name" value="何丽雯3"/>
+                </bean>
+            </list>
+        </property>
+
+        <!--如何给map赋值-->
+        <property name="marry">
+            <map>
+                <entry key-ref="personPlusI" value-ref="personPlusII"/>
+            </map>
+        </property>
+
+        <!--给Properties赋值-->
+        <property name="properties">
+            <props>
+                <prop key="key1">shazi</prop>
+                <prop key="key2">guazi</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

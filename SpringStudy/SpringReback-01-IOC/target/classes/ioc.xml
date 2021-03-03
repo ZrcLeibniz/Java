@@ -13,11 +13,24 @@
         <property name="gender" value="男"/>
     </bean>
 
-    <!--实验2:通过类型从IOC容器中获得bean实例-->
     <bean id="pig" class="rich.zrc.pojo.Pig">
         <property name="name" value="孙欢"/>
         <property name="gender" value="男"/>
         <property name="age" value="25"/>
         <property name="weight" value="180"/>
+    </bean>
+
+    <bean id="personII" class="rich.zrc.pojo.Person">
+        <constructor-arg name="lastName" value="何丽雯"/>
+        <constructor-arg name="age" value="23"/>
+        <constructor-arg name="gender" value="女"/>
+        <constructor-arg name="email" value="2834511921@qq.com"/>
+    </bean>
+
+    <bean id="pigII" class="rich.zrc.pojo.Pig">
+        <constructor-arg value="何丽雯"/>
+        <constructor-arg value="18"/>
+        <constructor-arg value="230"/>
+        <constructor-arg value="公"/>
     </bean>
 </beans>
