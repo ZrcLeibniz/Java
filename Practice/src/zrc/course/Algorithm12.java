@@ -142,7 +142,7 @@ class SlideWindow {
             return;
         }
         L++;
-        if (max.peekLast() == L) {
+        if (max.peekFirst() == L) {
             max.pollFirst();
         }
     }
