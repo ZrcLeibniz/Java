@@ -184,4 +184,40 @@ class CoinWay {
         }
         return ways;
     }
+
+    public int solutionII(int[] coins, int aim) {
+        if (coins == null || coins.length == 0) {
+            return 0;
+        }
+        int N = coins.length;
+        int[][] dp = new int[N + 1][aim + 1];
+        dp[N][0] = 1;
+        for (int index = N - 1; index >= 0; index--) {
+            for (int rest = 0; rest <= aim; rest++) {
+                int ways = 0;
+                for (int zhang = 0; coins[index] * zhang <= rest; zhang++) {
+                    ways += dp[index + 1][aim - coins[index] * zhang];
+                }
+            }
+        }
+        return dp[0][aim];
+    }
+
+    public int solutionIII(int[] coins, int aim) {
+        if (coins == null || coins.length == 0) {
+            return 0;
+        }
+        int N = coins.length;
+        int[][] dp = new int[N + 1][aim + 1];
+        dp[N][0] = 1;
+        for (int index = N - 1; index >= 0; index--) {
+            for (int rest = 0; rest <= aim; rest++) {
+                dp[index][rest] = dp[index + 1][rest];
+                if (rest - coins[index] >= 0) {
+                    dp[index][rest] += dp[index][rest - coins[index]];
+                }
+            }
+        }
+        return dp[0][aim];
+    }
 }
