@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--通过set方法对注册的组件进行属性赋值-->
+    <bean id="person1" class="rich.zrc.pojo.Person">
+        <property name="gender" value="男"/>
+        <property name="name" value="rich"/>
+        <property name="age" value="18"/>
+    </bean>
+
+    <!--使用有参构造来对注册的组件进行属性赋值-->
+    <bean id="person2" class="rich.zrc.pojo.Person">
+        <constructor-arg name="name" value="妞妞"/>
+        <constructor-arg name="age" value="11"/>
+        <constructor-arg name="gender" value="女"/>
+    </bean>
+
+    <!--对组件的复杂属性赋值-->
+    <!--对于引用属性Car，我们直接在创建richman的过程中创建了新的Car-->
+    <bean id="richman1" class="rich.zrc.pojo.RichMan">
+        <property name="name" value="rich"/>
+        <property name="age" value="23"/>
+        <property name="gender" value="男"/>
+        <property name="car">
+            <bean class="rich.zrc.pojo.Car">
+                <property name="name" value="法拉利"/>
+                <property name="price" value="100000000"/>
+            </bean>
+        </property>
+        <property name="house">
+            <map>
+                <entry key="西安" value="120"/>
+                <entry key="长沙" value="180"/>
+                <entry key="北京" value="160"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="car" class="rich.zrc.pojo.Car">
+        <property name="name" value="拖拉机"/>
+        <property name="price" value="10000"/>
+    </bean>
+
+    <!--使用parent标签继承richman的属性，之后使用工厂模式来建造飞机-->
+    <bean id="superrichman" class="rich.zrc.pojo.SuperRichMan" parent="richman1">
+        <property name="airplane" ref="airplane"/>
+    </bean>
+
+    <bean id="airplane" class="rich.zrc.pojo.AirplaneFactory" factory-method="getAirplane">
+
+    </bean>
+</beans>

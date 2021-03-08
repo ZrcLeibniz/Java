@@ -10,6 +10,7 @@
         <module name="SpringReback-01-IOC" />
         <module name="Spring-07-proxy" />
         <module name="Spring-15-Mybatis" />
+        <module name="Spring-01-IOC-Practice" />
         <module name="Spring-13-Mybatis-exercise" />
         <module name="Spring-10-Aop" />
         <module name="Spring-06-appconfig" />
