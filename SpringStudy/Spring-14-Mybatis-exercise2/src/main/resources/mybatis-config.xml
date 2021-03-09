@@ -9,6 +9,6 @@
     </settings>
 
     <typeAliases>
-        <package name="rich.zrc.pojo"/>
+        <package name="rich.zrc.rich.zrc.pojo"/>
     </typeAliases>
 </configuration>

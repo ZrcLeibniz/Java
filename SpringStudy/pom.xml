@@ -27,6 +27,7 @@
         <module>Spring-16-Transcation</module>
         <module>SpringReback-01-IOC</module>
         <module>Spring-01-IOC-Practice</module>
+        <module>SpringReback-02-IOC</module>
     </modules>
 
     <properties>
