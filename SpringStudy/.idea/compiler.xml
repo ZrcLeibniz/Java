@@ -25,6 +25,7 @@
         <module name="Spring-01-IOC-Practice" />
         <module name="Spring-04-DI" />
         <module name="Spring-05-Autowired" />
+        <module name="SpringReback-03-IOC" />
         <module name="SpringReback-02-IOC" />
       </profile>
     </annotationProcessing>

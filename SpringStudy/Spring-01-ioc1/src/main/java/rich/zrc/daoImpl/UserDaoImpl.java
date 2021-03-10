@@ -1,6 +1,6 @@
 package rich.zrc.daoImpl;
 
-import rich.zrc.dao.UserDao;
+import rich.zrc.mapper.UserDao;
 
 public class UserDaoImpl implements UserDao {
     @Override

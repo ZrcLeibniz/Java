@@ -1,7 +1,6 @@
 package rich.zrc.serviceImpl;
 
-import rich.zrc.dao.UserDao;
-import rich.zrc.daoImpl.UserDaoImpl;
+import rich.zrc.mapper.UserDao;
 import rich.zrc.service.UserService;
 
 public class UserServiceImpl implements UserService {

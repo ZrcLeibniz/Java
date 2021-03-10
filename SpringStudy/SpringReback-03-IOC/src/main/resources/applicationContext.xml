@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--自动扫描组件-->
+    <!--指定扫描的基础包，把基础包及其下面的所有包中添加注解的类自动在容器中注册-->
+    <context:component-scan base-package="rich.zrc" use-default-filters="true">
+        <!--扫描的时候可以排除一些不需要的组件-->
+        <!--type="annotation": 按照注解进行排除，标注了指定注解的组件不扫描-->
+        <!--type="assignable": 指定排除某个具体的类-->
+<!--        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>-->
+        <!--指定扫描包是要包含的类-->
+        <!--在使用之前要将父标签的默认过滤规则关掉 use-default-filters="false"-->
+<!--        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>-->
+    </context:component-scan>
+
+    <!--
+        通过注解将组件快速的配置到ioc容器中，某个类中添加上任何一个注解都能快速的将这个组件加入到ioc容器的管理中
+            Spring中有4个注解：
+                @Controller: 推荐给控制器层的组件添加此注解
+                @Service: 推荐给业务逻辑层的额组件添加此注解
+                @Repository: 推荐给持久化层的组件添加此注解
+                @Component: 推荐给不属于以上几层的组件添加此注解
+            添加注解快速注册：
+                1.给要注册的组件添加注解
+                2.告诉Spring自动扫描加了注解的组件
+            在获取注解注册的组件时，其id就是类名首字母小写
+    -->
+</beans>
