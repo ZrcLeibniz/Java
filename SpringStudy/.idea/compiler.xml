@@ -9,9 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SpringReback-01-IOC" />
         <module name="Spring-07-proxy" />
-        <module name="SpringReback-02-IOC" />
+        <module name="Spring-08-Aop" />
         <module name="Spring-15-Mybatis" />
-        <module name="Spring-01-IOC-Practice" />
         <module name="Spring-13-Mybatis-exercise" />
         <module name="Spring-10-Aop" />
         <module name="Spring-06-appconfig" />
@@ -21,11 +20,12 @@
         <module name="Spring-01-ioc1" />
         <module name="Spring-09-Aop-exercise" />
         <module name="Spring-02-HelloSpring" />
-        <module name="Spring-03-ioc2" />
-        <module name="Spring-04-DI" />
-        <module name="Spring-08-Aop" />
-        <module name="Spring-05-Autowired" />
         <module name="Spring-11-Aop" />
+        <module name="Spring-03-ioc2" />
+        <module name="Spring-01-IOC-Practice" />
+        <module name="Spring-04-DI" />
+        <module name="Spring-05-Autowired" />
+        <module name="SpringReback-02-IOC" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

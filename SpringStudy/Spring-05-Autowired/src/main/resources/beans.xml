@@ -9,11 +9,11 @@
 
     <context:annotation-config></context:annotation-config>
 
-    <bean id="cat" class="rich.zrc.User.Cat"></bean>
+    <bean id="cat" class="rich.zrc.pojo.Cat"></bean>
 
-    <bean id="dog" class="rich.zrc.User.Dog"></bean>
+    <bean id="dog" class="rich.zrc.pojo.Dog"></bean>
 
-    <bean id="People" class="rich.zrc.User.People">
+    <bean id="People" class="rich.zrc.pojo.People">
         <property name="name" value="rich"></property>
         <property name="cat" ref="cat"></property>
         <property name="dog" ref="dog"></property>
@@ -22,7 +22,7 @@
     <!--通过byName自动注入-->
     <!--会在容器上下文中查找，和自己对象set方法后面对应的bean id-->
     <!--需要保证所有的bean的id唯一-->
-    <bean id="peopleByName" class="rich.zrc.User.People" autowire="byName">
+    <bean id="peopleByName" class="rich.zrc.pojo.People" autowire="byName">
         <property name="name" value="rich"></property>
     </bean>
 

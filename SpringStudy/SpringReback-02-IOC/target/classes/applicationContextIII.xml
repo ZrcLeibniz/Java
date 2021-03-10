@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--基于XML的自动装配-->
+<!--    <bean id="cari" class="rich.zrc.pojo.Car">-->
+<!--        <property name="carName" value="兰博基尼"/>-->
+<!--        <property name="price" value="1000000000"/>-->
+<!--        <property name="color" value="黑色"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="car" class="rich.zrc.pojo.Car">-->
+<!--        <property name="carName" value="宝马"/>-->
+<!--        <property name="price" value="1000000000"/>-->
+<!--        <property name="color" value="黑色"/>-->
+<!--    </bean>-->
+    <!--
+        autowire = default/no: 不自动装配
+        autowire = byName: 在容器中找到以属性名作为id的组件为其赋值
+        autowire = byType: 在容器中找到与属性类型一致的组件为其赋值，如果这个类型有两个组件，就会报错
+        autowire = constructor:
+            1.先按照有参构造器的类型进行装配（成功就赋值）；没有就直接为组件装配null即可
+            2.如果按照类型找到了多个，就找以参数名作为id的组件继续匹配
+    -->
+    <bean id="richMan" class="rich.zrc.pojo.RichMan" autowire="constructor">
+        <property name="lastName" value="rich"/>
+        <property name="gender" value="男"/>
+        <property name="age" value="18"/>
+        <property name="email" value="110"/>
+<!--        <property name="car" ref="car"/>-->
+    </bean>
+
+    <bean id="pig1" class="rich.zrc.pojo.Pig">
+        <property name="name" value="猪1"/>
+    </bean>
+
+    <bean id="pig2" class="rich.zrc.pojo.Pig">
+        <property name="name" value="猪1"/>
+    </bean>
+
+    <bean id="pig3" class="rich.zrc.pojo.Pig">
+        <property name="name" value="猪1"/>
+    </bean>
+
+    <bean id="pig4" class="rich.zrc.pojo.Pig">
+        <property name="name" value="猪1"/>
+    </bean>
+
+    <bean id="pig5" class="rich.zrc.pojo.Pig">
+        <property name="name" value="猪1"/>
+    </bean>
+
+    <bean id="person" class="rich.zrc.pojo.PersonII" autowire="byType">
+    </bean>
+
+</beans>
