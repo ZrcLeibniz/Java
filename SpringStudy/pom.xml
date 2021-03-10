@@ -29,6 +29,7 @@
         <module>Spring-01-IOC-Practice</module>
         <module>SpringReback-02-IOC</module>
         <module>SpringReback-03-IOC</module>
+        <module>SpringReback-04-IOC</module>
     </modules>
 
     <properties>

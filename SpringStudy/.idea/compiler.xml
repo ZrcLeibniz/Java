@@ -20,6 +20,7 @@
         <module name="Spring-01-ioc1" />
         <module name="Spring-09-Aop-exercise" />
         <module name="Spring-02-HelloSpring" />
+        <module name="SpringReback-04-IOC" />
         <module name="Spring-11-Aop" />
         <module name="Spring-03-ioc2" />
         <module name="Spring-01-IOC-Practice" />
