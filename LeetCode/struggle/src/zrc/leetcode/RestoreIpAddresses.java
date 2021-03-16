@@ -66,28 +66,26 @@ class RestoreIPAddressSolution {
             return result;
         }
         Deque<String> path = new ArrayDeque<>(4);
-        process(result, path, 0, s, 4);
+        process(result, path, 0, s);
         return result;
     }
 
-    private void process(List<String> result, Deque<String> path, int begin, String s, int rest) {
-        if (begin == s.length()) {
-            if (rest == 0) {
-                result.add(String.join(".", path));
-            }
+    private void process(List<String> result, Deque<String> path, int begin, String s) {
+        if (begin == s.length() && path.size() == 4) {
+            result.add(String.join(".", path));
             return;
         }
         for (int i = begin; i < begin + 3; i++) {
             if (s.length() <= i) {
                 break;
             }
-            if (rest * 3 < s.length() - i) {
+            if ((4 - path.size())* 3 < s.length() - i) {
                 continue;
             }
             if (isValidIP(s, begin, i)) {
                 String curIP = s.substring(begin, i + 1);
                 path.addLast(curIP);
-                process(result, path, i + 1, s, rest - 1);
+                process(result, path, i + 1, s);
                 path.removeLast();
             }
         }
