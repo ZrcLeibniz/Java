@@ -7,7 +7,7 @@
        http://www.springframework.org/schema/aop
        https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean id="userService" class="rich.zrc.servcice.UserServiceImpl"/>
+    <bean id="userService" class="rich.zrc.serviceImpl.UserServiceImpl"/>
     <bean id="annotationPointCut" class="rich.zrc.diy.AnnotationPointCut"/>
     <!--开启注解支持-->
     <aop:aspectj-autoproxy/>
