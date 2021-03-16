@@ -22,6 +22,10 @@ public class Test {
         int[] nums = {1, 2, 3, 1, 2, 3};
         boolean b = containsNearbyDuplicate(nums, 2);
         System.out.println(b);
+        String s = "abcde";
+        String substring = s.substring(0, 3);
+        System.out.println(s);
+        System.out.println(substring);
     }
 }
 
