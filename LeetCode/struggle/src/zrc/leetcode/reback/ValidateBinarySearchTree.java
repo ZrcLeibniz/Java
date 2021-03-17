@@ -94,10 +94,10 @@ class ValidateBinarySearchTreeSolution {
             max = Math.max(max, rightInfo.max);
         }
         boolean isBST = true;
-        if (leftInfo != null && (leftInfo.max > root.val || !leftInfo.isBST)) {
+        if (leftInfo != null && (leftInfo.max >= root.val || !leftInfo.isBST)) {
             isBST = false;
         }
-        if (rightInfo != null && (rightInfo.max > root.val || !rightInfo.isBST)) {
+        if (rightInfo != null && (rightInfo.min <= root.val || !rightInfo.isBST)) {
             isBST = false;
         }
         return new Info(min, max, isBST);
