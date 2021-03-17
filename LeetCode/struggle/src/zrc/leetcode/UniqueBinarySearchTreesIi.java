@@ -72,7 +72,7 @@ class UniqueBinarySearchTreesIISolution {
         if (n == 0) {
             return result;
         }
-        return process(0, n);
+        return process(1, n);
     }
 
     private List<TreeNode> process(int begin, int end) {
