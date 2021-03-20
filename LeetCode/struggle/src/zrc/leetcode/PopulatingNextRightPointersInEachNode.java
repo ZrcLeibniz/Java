@@ -81,6 +81,9 @@ class PopulatingNextRightPointersInEachNodeSolution {
     }
 
     public Node connect(Node root) {
+        if (root == null) {
+            return null;
+        }
         process(root);
         return root;
     }
