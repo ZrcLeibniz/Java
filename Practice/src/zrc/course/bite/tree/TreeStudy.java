@@ -124,15 +124,14 @@ public class TreeStudy {
             return result;
         }
         Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
         while (!stack.isEmpty() || root != null) {
             if (root != null) {
                 stack.push(root);
                 root = root.left;
             } else {
-                TreeNode node = stack.pop();
-                result.add(node.val);
-                node = node.right;
+                root = stack.pop();
+                result.add(root.val);
+                root = root.right;
             }
         }
         return result;
