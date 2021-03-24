@@ -9,20 +9,20 @@ public class ABAProblem {
 
     public static void main(String[] args) {
         // ABA问题的产生
-//        new Thread(() -> {
-//            atomicReference.compareAndSet(100, 101);
-//            atomicReference.compareAndSet(101, 100);
-//        }, "t1").start();
-//
-//        new Thread(() -> {
-//            try {
-//                Thread.sleep(3000);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//            boolean b = atomicReference.compareAndSet(100, 2019);
-//            System.out.println(b + "\t" + atomicReference.get());
-//        }, "t2").start();
+        new Thread(() -> {
+            atomicReference.compareAndSet(100, 101);
+            atomicReference.compareAndSet(101, 100);
+        }, "t1").start();
+
+        new Thread(() -> {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            boolean b = atomicReference.compareAndSet(100, 2019);
+            System.out.println(b + "\t" + atomicReference.get());
+        }, "t2").start();
         System.out.println("------------------------------------------------");
         try {
             Thread.sleep(3000);
