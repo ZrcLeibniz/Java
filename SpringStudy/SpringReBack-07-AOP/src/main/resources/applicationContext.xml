@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <!--1.将目标类和切面类都加入IOC容器中-->
+    <bean id="myMathCalculator" class="rich.zrc.impl.MyMathCalculator"/>
+    <bean id="logUtilII" class="rich.zrc.utils.LogUtilII"/>
+    <bean id="logUtilIII" class="rich.zrc.utils.LogUtilIII"/>
+    <!--需要AOP名称空间-->
+    <!--默认是谁配置在前谁先执行-->
+    <aop:config>
+        <!--2.指定切面-->
+        <aop:aspect ref="logUtilII" order="2">
+            <!--3.在切面类中配置这些切面类中的这些通知方法何时何地运行-->
+            <aop:pointcut id="myPointCut" expression="execution(* rich.zrc.utils.LogUtilII.*(..))"/>
+
+            <!--配置那个方法是前置通知-->
+            <aop:before method="logStart" pointcut-ref="myPointCut"/>
+            <!--配置那个方法是返回通知-->
+            <aop:after-returning method="logReturn" pointcut-ref="myPointCut" returning="result"/>
+            <!--配置那个方法是异常通知-->
+            <aop:after-throwing method="logException" pointcut-ref="myPointCut" throwing="exception"/>
+            <!--配置那个方法是后置通知-->
+            <aop:after method="logEnd" pointcut-ref="myPointCut"/>
+        </aop:aspect>
+        <aop:aspect ref="logUtilIII" order="1">
+            <aop:pointcut id="myPointCut" expression="execution(* rich.zrc.utils.LogUtilIII.*(..))"/>
+
+            <!--配置那个方法是前置通知-->
+            <aop:before method="logStart" pointcut-ref="myPointCut"/>
+            <!--配置那个方法是返回通知-->
+            <aop:after-returning method="logReturn" pointcut-ref="myPointCut" returning="result"/>
+            <!--配置那个方法是异常通知-->
+            <aop:after-throwing method="logException" pointcut-ref="myPointCut" throwing="exception"/>
+            <!--配置那个方法是后置通知-->
+            <aop:after method="logEnd" pointcut-ref="myPointCut"/>
+            <!--配置那个方法是环绕通知-->
+            <aop:around method="myAround" pointcut-ref="myPointCut"/>
+        </aop:aspect>
+    </aop:config>
+
+    <!--
+        注解: 快捷方便
+        配置: 功能完善
+        ****: 重要的用配置，不重要的用注解
+    -->
+</beans>
