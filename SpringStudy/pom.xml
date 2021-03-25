@@ -32,6 +32,7 @@
         <module>SpringReback-04-IOC</module>
         <module>SpringReback-05-AOP</module>
         <module>SpringReback-06-AOP</module>
+        <module>SpringReBack-07-AOP</module>
     </modules>
 
     <properties>
