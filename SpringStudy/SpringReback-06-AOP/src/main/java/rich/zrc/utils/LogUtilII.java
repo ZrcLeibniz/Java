@@ -20,21 +20,21 @@ Spring对通知方法的唯一要求就是参数列表不能乱写
 public class LogUtilII {
     @Before("execution(public int rich.zrc.impl.MyMathCalculatorII.*(int, int))")
     public static void logStart(JoinPoint joinPoint) {
-        System.out.println(joinPoint.getSignature().getName() + "开始执行，参数是" + Arrays.asList(joinPoint.getArgs()));
+        System.out.println("{I}" + joinPoint.getSignature().getName() + "开始执行，参数是" + Arrays.asList(joinPoint.getArgs()));
     }
 
     @AfterReturning(value = "execution(public int rich.zrc.impl.MyMathCalculatorII.*(int, int))", returning = "result")
     public static void logReturn(JoinPoint joinPoint, Object result) {
-        System.out.println(joinPoint.getSignature().getName() + "执行完成，结果是" + result);
+        System.out.println("{I}" + joinPoint.getSignature().getName() + "执行完成，结果是" + result);
     }
 
     @AfterThrowing(value = "execution(public int rich.zrc.impl.MyMathCalculatorII.*(int, int))", throwing = "exception")
     public static void logException(JoinPoint joinPoint, Exception exception) {
-        System.out.println(joinPoint.getSignature().getName() + "出现异常，异常是" + exception);
+        System.out.println("{I}" + joinPoint.getSignature().getName() + "出现异常，异常是" + exception);
     }
 
     @After("execution(public int rich.zrc.impl.MyMathCalculatorII.*(int, int))")
     public static void logEnd(JoinPoint joinPoint) {
-        System.out.println(joinPoint.getSignature().getName() + "执行结束，参数是" + Arrays.asList(joinPoint.getArgs()));
+        System.out.println("{I}" + joinPoint.getSignature().getName() + "执行结束，参数是" + Arrays.asList(joinPoint.getArgs()));
     }
 }
