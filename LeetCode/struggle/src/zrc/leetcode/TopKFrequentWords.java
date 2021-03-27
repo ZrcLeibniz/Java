@@ -47,7 +47,7 @@ package zrc.leetcode;
 
 import java.util.*;
 
-//leetcode submit region begin(Prohibit modification and deletion)
+// begin
 class TopKFrequentWordsSolution {
     public List<String> topKFrequent(String[] words, int k) {
         List<String> result = new ArrayList<>();
@@ -70,4 +70,4 @@ class TopKFrequentWordsSolution {
         return result.subList(0, k);
     }
 }
-//leetcode submit region end(Prohibit modification and deletion)
+// end
