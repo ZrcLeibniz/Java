@@ -4,30 +4,30 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--一个bean标签可以注册一个组件-->
     <!--id:这个对象的唯一标识-->
-    <!--class:告诉容器要注册的组件的全限定名称名称-->
+    <!--class:告诉容器要注册的组件的全限定名称-->
     <!--property:给组件实例的各个属性赋值-->
-    <bean id="person" class="rich.zrc.rich.zrc.pojo.Person">
+    <bean id="person" class="rich.zrc.pojo.Person">
         <property name="lastName" value="张三"/>
         <property name="age" value="18"/>
         <property name="email" value="2834511920@qq.com"/>
         <property name="gender" value="男"/>
     </bean>
 
-    <bean id="pig" class="rich.zrc.rich.zrc.pojo.Pig">
+    <bean id="pig" class="rich.zrc.pojo.Pig">
         <property name="name" value="孙欢"/>
         <property name="gender" value="男"/>
         <property name="age" value="25"/>
         <property name="weight" value="180"/>
     </bean>
 
-    <bean id="personII" class="rich.zrc.rich.zrc.pojo.Person">
+    <bean id="personII" class="rich.zrc.pojo.Person">
         <constructor-arg name="lastName" value="何丽雯"/>
         <constructor-arg name="age" value="23"/>
         <constructor-arg name="gender" value="女"/>
         <constructor-arg name="email" value="2834511921@qq.com"/>
     </bean>
 
-    <bean id="pigII" class="rich.zrc.rich.zrc.pojo.Pig">
+    <bean id="pigII" class="rich.zrc.pojo.Pig">
         <constructor-arg value="何丽雯"/>
         <constructor-arg value="18"/>
         <constructor-arg value="230"/>

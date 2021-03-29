@@ -10,37 +10,37 @@
         级联属性赋值
     -->
     <!--将对象的属性赋值为null-->
-    <bean id="personPlusI" class="rich.zrc.rich.zrc.pojo.PersonII">
+    <bean id="personPlusI" class="rich.zrc.pojo.PersonII">
         <property name="name">
             <null/>
         </property>
     </bean>
 
     <!--对一个引用类型赋值-->
-    <bean id="personPlusII" class="rich.zrc.rich.zrc.pojo.PersonII">
+    <bean id="personPlusII" class="rich.zrc.pojo.PersonII">
         <property name="car" ref="car"/>
     </bean>
 
-    <bean id="car" class="rich.zrc.rich.zrc.pojo.Car">
+    <bean id="car" class="rich.zrc.pojo.Car">
         <property name="carName" value="保时捷"/>
         <property name="price" value="20000000"/>
         <property name="color" value="红色"/>
     </bean>
 
     <!--如何为list类型赋值-->
-    <bean id="personPlusIII" class="rich.zrc.rich.zrc.pojo.PersonII">
+    <bean id="personPlusIII" class="rich.zrc.pojo.PersonII">
         <property name="farm">
             <list>
-                <bean class="rich.zrc.rich.zrc.pojo.Pig">
+                <bean class="rich.zrc.pojo.Pig">
                     <property name="name" value="何丽雯"/>
                 </bean>
-                <bean class="rich.zrc.rich.zrc.pojo.Pig">
+                <bean class="rich.zrc.pojo.Pig">
                     <property name="name" value="何丽雯1"/>
                 </bean>
-                <bean class="rich.zrc.rich.zrc.pojo.Pig">
+                <bean class="rich.zrc.pojo.Pig">
                     <property name="name" value="何丽雯2"/>
                 </bean>
-                <bean class="rich.zrc.rich.zrc.pojo.Pig">
+                <bean class="rich.zrc.pojo.Pig">
                     <property name="name" value="何丽雯3"/>
                 </bean>
             </list>
@@ -63,25 +63,25 @@
     </bean>
 
     <!--给级联属性赋值-->
-    <bean id="human" class="rich.zrc.rich.zrc.pojo.PersonII">
+    <bean id="human" class="rich.zrc.pojo.PersonII">
         <property name="car" ref="car"/>
         <property name="car.price" value="1000"/>
     </bean>
 
     <!--通过继承实现bean配置信息的重用-->
-    <bean id="person01" class="rich.zrc.rich.zrc.pojo.Person">
+    <bean id="person01" class="rich.zrc.pojo.Person">
         <property name="lastName" value="张三"/>
         <property name="gender" value="男"/>
         <property name="email" value="2834511920@qq.com"/>
         <property name="age" value="18"/>
     </bean>
 
-    <bean id="person02" class="rich.zrc.rich.zrc.pojo.Person" parent="person01">
+    <bean id="person02" class="rich.zrc.pojo.Person" parent="person01">
         <property name="lastName" value="李四"/>
     </bean>
 
     <!--通过abstract属性创建一个模板bean-->
-    <bean id="model" class="rich.zrc.rich.zrc.pojo.Person" abstract="true">
+    <bean id="model" class="rich.zrc.pojo.Person" abstract="true">
         <property name="lastName" value="张三"/>
         <property name="gender" value="男"/>
         <property name="email" value="2834511920@qq.com"/>
@@ -93,15 +93,15 @@
         默认的创建顺序是bean的代码编写顺序
         depends-on中的顺序从左到右，最后是bean本身
     -->
-    <bean id="person03" class="rich.zrc.rich.zrc.pojo.Person" parent="person02" depends-on="pig02, car2">
+    <bean id="person03" class="rich.zrc.pojo.Person" parent="person02" depends-on="pig02, car2">
 
     </bean>
 
-    <bean id="pig02" class="rich.zrc.rich.zrc.pojo.Pig" parent="pig">
+    <bean id="pig02" class="rich.zrc.pojo.Pig" parent="pig">
 
     </bean>
 
-    <bean id="car2" class="rich.zrc.rich.zrc.pojo.Car" parent="car">
+    <bean id="car2" class="rich.zrc.pojo.Car" parent="car">
 
     </bean>
 
@@ -117,21 +117,21 @@
         request:web环境下，同一次请求创建一个实例
         session:web环境下，同一次会话创建一个实例
     -->
-    <bean id="pig03" class="rich.zrc.rich.zrc.pojo.Pig" scope="singleton">
+    <bean id="pig03" class="rich.zrc.pojo.Pig" scope="singleton">
 
     </bean>
 
     <!--配置通过静态工厂方法创建的bean、实例工厂方法创建的bean、FactoryBean-->
     <!--通过静态工厂创建对象的配置-->
-    <bean id="airplane01" class="rich.zrc.rich.zrc.pojo.AirPlaneStaticFactory" factory-method="getAirplane">
+    <bean id="airplane01" class="rich.zrc.pojo.AirPlaneStaticFactory" factory-method="getAirplane">
         <constructor-arg value="大飞机"/>
     </bean>
 
     <!--实例工厂的使用-->
-    <bean id="airplaneFactory" class="rich.zrc.rich.zrc.pojo.AirPlaneInstanceFactory">
+    <bean id="airplaneFactory" class="rich.zrc.pojo.AirPlaneInstanceFactory">
 
     </bean>
-    <bean id="airplane02" class="rich.zrc.rich.zrc.pojo.Airplane" factory-bean="airplaneFactory" factory-method="getAirplane">
+    <bean id="airplane02" class="rich.zrc.pojo.Airplane" factory-bean="airplaneFactory" factory-method="getAirplane">
         <constructor-arg value="小飞机"/>
     </bean>
 
@@ -139,5 +139,5 @@
         FactoryBean(只要是这个接口的实现类Spring都认为是一个工厂)
         无论是单例还是多例，都不会在容器启动的时候创建bean
     -->
-    <bean id="airplane" class="rich.zrc.rich.zrc.pojo.MyFactoryBean"/>
+    <bean id="airplane" class="rich.zrc.pojo.MyFactoryBean"/>
 </beans>

@@ -27,5 +27,7 @@
     <file url="file://$PROJECT_DIR$/SpringReback-04-IOC" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringReback-05-AOP" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringReback-06-AOP" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringReback-08-JDBCTemplate" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringReback-08-JDBCTemplateI" charset="UTF-8" />
   </component>
 </project>
