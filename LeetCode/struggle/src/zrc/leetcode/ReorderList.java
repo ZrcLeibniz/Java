@@ -28,7 +28,7 @@ package zrc.leetcode;
  * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class ReorderListSolution {
     private static class ListNode {
         int val;
         ListNode next;
