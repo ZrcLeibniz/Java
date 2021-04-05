@@ -53,7 +53,7 @@ class FindPeakElementSolution {
         }
         int mid = (l + r) / 2;
         if (nums[mid] > nums[mid + 1]) {
-            search(nums, l, mid);
+            return search(nums, l, mid);
         }
         return search(nums, mid + 1, r);
     }
