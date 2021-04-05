@@ -47,7 +47,7 @@ class FindPeakElementSolution {
         return search(nums, 0, nums.length - 1);
     }
 
-    public int search(int[] nums, int l, int r) {
+    private int search(int[] nums, int l, int r) {
         if (l == r) {
             return l;
         }
