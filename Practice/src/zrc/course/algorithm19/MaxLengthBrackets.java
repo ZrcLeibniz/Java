@@ -8,11 +8,10 @@ public class MaxLengthBrackets {
         }
         char[] str = s.toCharArray();
         int[] dp = new int[s.length()];
-        int pre = 0;
         int res = 0;
-        for (int i = 0; i < dp.length; i++) {
+        for (int i = 1; i < dp.length; i++) {
             if (str[i] == ')') {
-                pre = dp[i - 1] - 1;
+                int pre = i - dp[i - 1] - 1;
                 if (pre >= 0 && str[pre] == '(') {
                     dp[i] = dp[i - 1] + 2 + (pre > 0 ? dp[pre - 1] : 0);
                 }
