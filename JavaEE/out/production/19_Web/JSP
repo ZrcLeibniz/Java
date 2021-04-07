@@ -2,7 +2,8 @@ Http服务器调用JSP文件步骤：
     1.Http服务器将JSP文件内容【编辑】为一个Servlet接口实现类
     2.Http服务器将Servlet接口实现类【编译】为.class文件
     3.Http服务器负责创建这个class的实例对象，这个实例对象就是Servlet实例对象
-    4.Http通过Servlet实例调用service方法，将jsp文件内容写入响应体中
+    4.Http通过Servlet实例调用_jspService方法，将jsp文件内容写入响应体中
 
 Http服务器【编辑】与【编译】JSP文件位置：
-    
+    C:\Users\lenovo\.IntelliJIdea2019.2\system\tomcat\Unnamed_JavaEE_2\work\Catalina\localhost\myWeb\org\apache\jsp
+

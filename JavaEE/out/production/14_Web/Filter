@@ -27,3 +27,5 @@ Filter:
             <url-pattern>/img/*</url-pattern>
         5)要求Tomcat在调用任意文件夹下某种类型文件之前，来调用OneFilter
             <url-pattern>*.jpg</url-pattern>
+        6)要求Tomcat在调用网站中任意文件之前，来调用OneFilter拦截
+            <url-pattern>/*</url-pattern>

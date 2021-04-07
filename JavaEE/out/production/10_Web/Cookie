@@ -18,3 +18,9 @@ Coolie
             3)调用请求头对象从请求头得到浏览器返回的Cookie
               Cookie[] cookieArray = request.getCookie();
             4)循环遍历数组得到每一个Cookie对象的Key和Value
+
+    4.生命周期（Cookie销毁时机）
+        1.在默认情况下，Cookie是存放在浏览器的缓存中的。因此只要关闭浏览器关闭，Cookie对象就要被销毁掉
+        2.在手动设置情况下，可以要求浏览器将接收的Cookie存放在客户端计算机硬盘上，同时需要指定Cookie咋熬硬盘上存活时间。在存活时
+        间范围内，不会导致Cookie被销毁。在存活时间到达时，Cookie自动从硬盘上被删掉
+        cookie.setMaxAge(60) 表示Cookie存活时间为1分钟

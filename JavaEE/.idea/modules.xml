@@ -27,6 +27,7 @@
       <module fileurl="file://$PROJECT_DIR$/JDBC/JDBC.iml" filepath="$PROJECT_DIR$/JDBC/JDBC.iml" />
       <module fileurl="file://$PROJECT_DIR$/JarTest/JarTest.iml" filepath="$PROJECT_DIR$/JarTest/JarTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/JarTest02/JarTest02.iml" filepath="$PROJECT_DIR$/JarTest02/JarTest02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
     </modules>
   </component>
 </project>

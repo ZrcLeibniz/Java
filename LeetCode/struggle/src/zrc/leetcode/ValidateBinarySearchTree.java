@@ -40,19 +40,19 @@ package zrc.leetcode;
 /**
  * Definition for a binary tree node.
  */
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-}
-
 class ValidateBinarySearchTreeSolution {
+    private class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
+
     public static boolean isValidBST(TreeNode root) {
-            return isValidHelper(root, Long.MIN_VALUE, Long.MAX_VALUE);
+        return isValidHelper(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
     private static boolean isValidHelper(TreeNode root, Long lower, Long higher) {
@@ -66,6 +66,7 @@ class ValidateBinarySearchTreeSolution {
     }
 
     static Long pre = Long.MIN_VALUE;
+
     public static boolean isValidBST2(TreeNode root) {
         if (root == null) {
             return true;
@@ -76,28 +77,11 @@ class ValidateBinarySearchTreeSolution {
         if (root.val <= pre) {
             return false;
         }
-        pre = (long)root.val;
+        pre = (long) root.val;
         if (!isValidBST2(root.right)) {
             return false;
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        TreeNode treeNode10 = new TreeNode(10);
-        TreeNode treeNode5 = new TreeNode(5);
-        TreeNode treeNode15 = new TreeNode(15);
-        TreeNode treeNode6 = new TreeNode(6);
-        TreeNode treeNode20 = new TreeNode(20);
-        TreeNode treeNode0 = new TreeNode(0);
-        treeNode10.left = treeNode5;
-        treeNode10.right = treeNode15;
-        treeNode15.right = treeNode20;
-        treeNode15.left = treeNode6;
-        boolean validBST = isValidBST(treeNode10);
-        boolean validBST2 = isValidBST2(treeNode0);
-        System.out.println(validBST);
-        System.out.println(validBST2);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -27,4 +27,10 @@ HttpSession
         1.用户与HttpSession关联时使用的session只能存放在浏览器的缓存中
         2.在浏览器关闭时，意味着用户与他HttpSession关系被切断
         3.由于Tomcat无法检测浏览器何时关闭，因此在浏览器关闭时并不会导致Tomcat将浏览器关联的HttpSession被销毁
-        4.为了解决这个问题，Tomcat为每一个HttpSession对象设置【空闲时间】，这个空暇时间
+        4.为了解决这个问题，Tomcat为每一个HttpSession对象设置【空闲时间】，这个空闲时间默认30分钟，如果当前HttpSession对象的空
+        闲时间达到30分钟，此时Tomcat认为用户已经放弃了自己的HttpSession，此时Tomcat就会销毁这个HttpSession
+        5.HttpSession空闲时间手动设置
+            在当前网站web/Web-INF/web.xml
+            <session-config>
+                <session-timeout>5</session-timeout>
+            </session-config>
