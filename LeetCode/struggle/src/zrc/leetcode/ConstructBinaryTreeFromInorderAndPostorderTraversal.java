@@ -40,6 +40,16 @@ import java.util.Arrays;
 //}
 
 class ConstructBinaryTreeFromInorderAndPostorderTraversalSolution {
+    private static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
     public TreeNode buildTree(int[] inorder, int[] postorder) {
         if (inorder.length == 0 || postorder.length == 0) {
             return null;

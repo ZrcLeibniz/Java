@@ -60,6 +60,16 @@ package zrc.leetcode;
  * }
  */
 class BalancedBinaryTreeSolution {
+    private static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
     public boolean isBalanced(TreeNode root) {
         return maxDepth(root) != -1;
     }

@@ -49,6 +49,12 @@ package zrc.leetcode;
  * }
  */
 class BinaryTreeMaximumPathSumSolution {
+    private static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+    }
+
     int maxSum = Integer.MIN_VALUE;
 
     public int maxPathSum(TreeNode root) {

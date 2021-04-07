@@ -72,7 +72,7 @@ class MinimumDepthOfBinarySolution {
         return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
     }
 
-    public int minDepth2(TreeNode root) {
+    public int minDepth2(MinimumDepthOfBinarySolutionTreeNode root) {
         if (root == null) {
             return 0;
         }

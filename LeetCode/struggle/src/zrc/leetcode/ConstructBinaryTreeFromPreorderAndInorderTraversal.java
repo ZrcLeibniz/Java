@@ -12,7 +12,7 @@ package zrc.leetcode;
 //
 // 返回如下的二叉树： 
 //
-//     3
+//    3
 //   / \
 //  9  20
 //    /  \
@@ -30,6 +30,16 @@ import java.util.Arrays;
  */
 
 class ConstructBinaryTreeFromPreOrderAndInOrderSolution {
+    private static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         if (preorder.length == 0 || inorder.length == 0) {
             return null;
