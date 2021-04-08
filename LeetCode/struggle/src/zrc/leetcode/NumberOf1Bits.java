@@ -63,12 +63,12 @@ package zrc.leetcode;
 class NumberOf1BitsSolution {
     // you need to treat n as an unsigned value
     public int hammingWeight(int n) {
-        int result = 0;
+        int res = 0;
         while (n != 0) {
             n = n & (n - 1);
-            result++;
+            res++;
         }
-        return result;
+        return res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
