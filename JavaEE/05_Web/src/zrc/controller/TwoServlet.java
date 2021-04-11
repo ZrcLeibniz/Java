@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Enumeration;
+import java.util.LinkedList;
 
 public class TwoServlet extends HttpServlet {
     @Override
@@ -19,6 +20,6 @@ public class TwoServlet extends HttpServlet {
         // 2.通过请求对象读取指定的请求参数的值
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-        System.out.println("username：" + username + "  " +"password" + password);
+        System.out.println("username:" + username + "  " +"password:" + password);
     }
 }
