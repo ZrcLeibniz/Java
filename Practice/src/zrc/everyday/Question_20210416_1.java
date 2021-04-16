@@ -1,4 +1,4 @@
-package zrc.everyday.question;
+package zrc.everyday;
 
 import java.util.ArrayList;
 import java.util.Scanner;
