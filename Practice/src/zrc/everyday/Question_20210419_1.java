@@ -1,9 +1,8 @@
-package zrc;
-
+package zrc.everyday;
 
 import java.util.Scanner;
 
-public class Problem {
+public class Question_20210419_1 {
     private static int solution(int A, int B) {
         int max = Math.max(A, B);
         int min = Math.min(A, B);
