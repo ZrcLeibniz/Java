@@ -1,9 +1,8 @@
-package zrc;
-
+package zrc.everyday;
 
 import java.util.*;
 
-public class Problem {
+public class Question_20210420_3 {
     public static int[] solution(int[] arr) {
         PriorityQueue<Integer> queue = new PriorityQueue<>(
                 new Comparator<Integer>() {
@@ -49,5 +48,3 @@ public class Problem {
         }
     }
 }
-
-
