@@ -1,10 +1,9 @@
-package zrc;
-
+package zrc.everyday;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Problem {
+public class Question_20210420_2 {
     public static int solution(ArrayList<Integer> people) {
         int index = 0;
         while (people.size() != 1) {
@@ -30,5 +29,3 @@ public class Problem {
         }
     }
 }
-
-
