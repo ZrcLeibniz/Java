@@ -1,8 +1,10 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-public class Problem {
+public class Question_20210422_1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNext()) {
