@@ -2,7 +2,7 @@ package zrc.everyday;
 
 import java.util.Scanner;
 
-public class Question20210422_2 {
+public class Question_20210422_2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNext()) {
