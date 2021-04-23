@@ -1,8 +1,6 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
-
-public class Problem {
+public class Question20210423_1 {
     public static int solution(int a, int b) {
         int maxNode = Math.max(a, b);
         int minNode = maxNode == a ? b : a;
