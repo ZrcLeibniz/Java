@@ -1,8 +1,6 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
-
-public class Problem {
+public class Question_20210423_2 {
     public static int solution(int number) {
         number = Math.abs(number);
         String string = Integer.toBinaryString(number);
@@ -18,12 +16,6 @@ public class Problem {
     }
 
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-//        while (scanner.hasNext()) {
-//            int number = scanner.nextInt();
-//            int solution = solution(number);
-//            System.out.println(solution);
-//        }
         int a = -3;
         int solution = solution(a);
         System.out.println(solution);
