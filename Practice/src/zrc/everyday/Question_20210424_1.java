@@ -1,8 +1,8 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
+import java.util.Scanner;
 
-public class Problem {
+public class Question_20210424_1 {
     public static int solution(int rope) {
         if (rope == 1) {
             return 1;
