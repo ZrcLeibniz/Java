@@ -67,13 +67,21 @@ public class Problem {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNext()) {
-            int number = scanner.nextInt();
-            int[] solution = solution(number);
-            for (int i : solution) {
-                System.out.println(i);
-            }
+        int i = test();
+        System.out.println(i);
+    }
+
+    public static int test() {
+        try {
+            System.out.println(1);
+            System.out.println(2);
+            return 3;
+        } catch (Exception e) {
+            System.out.println(3);
+            return 3;
+        } finally {
+            System.out.println(4);
+            return 4;
         }
     }
 }
