@@ -1,8 +1,10 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-public class Problem {
+public class Question_20210426_1 {
     public static List<String> solution(String s) {
         List<String> result = new ArrayList<>();
         StringBuilder cur = new StringBuilder();
