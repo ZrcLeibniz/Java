@@ -1,8 +1,10 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-public class Problem {
+public class Question_20210426_2 {
     public static int solution(int M, int N) {
         int step = M - N + 1;
         int[] dp = new int[step];
