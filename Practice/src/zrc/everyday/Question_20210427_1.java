@@ -1,8 +1,8 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
+import java.util.Scanner;
 
-public class Problem {
+public class Question_20210427_1 {
     public static int solution(int year, int month, int day) {
         int[] table = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         if (year % 100 == 0) {
