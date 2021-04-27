@@ -1,8 +1,9 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
-public class Problem {
+public class Question_20210427_2 {
     private static int find(int[] nums, int index, long sum, long multi) {
         int count = 0;
         for (int i = index; i < nums.length; i++) {
