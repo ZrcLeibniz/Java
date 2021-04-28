@@ -1,8 +1,8 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
+import java.util.HashSet;
 
-public class Problem {
+public class Question_20210428_2 {
     public static int solution(int n, int[] left, int[] right) {
         HashSet<Integer> table = new HashSet<>();
         // 第一步: 需要找到左边和右边同时存在的颜色
