@@ -1,8 +1,8 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
+import java.util.Scanner;
 
-public class Problem {
+public class Question_20210428_1 {
     private static int solution(int num) {
         int result = 0;
         while (num != 0) {
