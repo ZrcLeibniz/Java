@@ -1,8 +1,10 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-public class Problem {
+public class Question_20210430_1 {
     public static boolean process(int x) {
         List<Integer> table = new ArrayList<>();
         for (int i = 1; i <= Math.sqrt(x); i++) {
@@ -39,4 +41,3 @@ public class Problem {
         }
     }
 }
-
