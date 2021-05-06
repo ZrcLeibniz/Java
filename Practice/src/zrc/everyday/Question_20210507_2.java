@@ -3,7 +3,7 @@ package zrc.everyday;
 import java.util.Scanner;
 
 public class Question_20210507_2 {
-    public static String add(String numOne, String numTwo) {
+    public static String solution(String numOne, String numTwo) {
         StringBuilder result = new StringBuilder();
         StringBuilder one = new StringBuilder(numOne).reverse();
         StringBuilder two = new StringBuilder(numTwo).reverse();
@@ -28,7 +28,7 @@ public class Question_20210507_2 {
         while (scanner.hasNext()) {
             String numOne = scanner.next();
             String numTwo = scanner.next();
-            String add = add(numOne, numTwo);
+            String add = solution(numOne, numTwo);
             System.out.println(add);
         }
     }
