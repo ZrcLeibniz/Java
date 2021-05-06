@@ -1,8 +1,8 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
+import java.util.Scanner;
 
-public class Problem {
+public class Question_20210507_2 {
     public static String add(String numOne, String numTwo) {
         StringBuilder result = new StringBuilder();
         StringBuilder one = new StringBuilder(numOne).reverse();
