@@ -35,6 +35,8 @@
         <module>SpringReBack-07-AOP</module>
         <module>SpringReback-08-JDBCTemplate</module>
         <module>SpringReback-08-JDBCTemplateI</module>
+        <module>SpringII-01</module>
+        <module>SpringII-01-practice</module>
     </modules>
 
     <properties>
