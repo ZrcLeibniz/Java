@@ -14,6 +14,7 @@ public class Question_20210508_2 {
         } else if (str1.charAt(p1) == '?' || str1.charAt(p2) == str2.charAt(p2)) {
             return solution(str1, str2, p1 + 1, p2 + 1);
         }
+
         return false;
     }
 
