@@ -1,8 +1,8 @@
-package zrc;
+package zrc.everyday;
 
 import java.util.Scanner;
 
-public class Problem {
+public class Question_20210508_2 {
     private static boolean solution(String str1, String str2, int p1, int p2) {
         if (p1 == str1.length() && p2 == str2.length()) {
             return true;
