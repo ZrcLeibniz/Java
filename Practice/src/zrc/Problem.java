@@ -1,29 +1,43 @@
 package zrc;
 
+import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Problem {
-    private static boolean solution(String str1, String str2, int p1, int p2) {
-        if (p1 == str1.length() && p2 == str2.length()) {
-            return true;
-        } else if (p1 == str1.length() || p2 == str2.length()){
-            return false;
+    public static void solution(int num, int step, int[] arr) {
+        StringBuilder queue = new StringBuilder();
+        for (int i = 1; i <= num; i++) {
+            queue.append(i);
         }
-        if (str1.charAt(p1) == '*') {
-            return solution(str1, str2, p1, p2 + 1) || solution(str1, str2, p1 + 1, p2 + 1);
-        } else if (str1.charAt(p1) == '?' || str1.charAt(p2) == str2.charAt(p2)) {
-            return solution(str1, str2, p1 + 1, p2 + 1);
+        for (int i = 0; i < step; i++) {
+            int people = arr[2 * i];
+            int x = arr[2 * i + 1];
+            int start = queue.indexOf(String.valueOf(people));
+            int end = Math.min(start + x + 1, queue.length());
+            StringBuilder substring = new StringBuilder(queue.substring(start, end));
+            queue.delete(start, end);
+            queue = substring.append(queue);
         }
-        return false;
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < queue.length(); i++ ) {
+            result.append(queue.charAt(i));
+            result.append(" ");
+        }
+        result.deleteCharAt(result.length() - 1);
+        System.out.println(result);
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNext()) {
-            String s1 = scanner.nextLine();
-            String s2 = scanner.nextLine();
-            boolean solution = solution(s1, s2, 0, 0);
-            System.out.println(solution);
+            int num = scanner.nextInt();
+            int step = scanner.nextInt();
+            int[] arr = new int[step * 2];
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] = scanner.nextInt();
+            }
+            solution(num, step, arr);
         }
     }
 }
