@@ -1,5 +1,6 @@
 package rich.zrc.config;
 
+import rich.zrc.bean.ColorFactoryBean;
 import rich.zrc.condition.LinuxCondition;
 import rich.zrc.condition.MyImportBeanDefinitionRegistrar;
 import rich.zrc.condition.MyImportSelector;
@@ -20,6 +21,9 @@ import rich.zrc.bean.Season;
             1) @Import(要导入容器的组件): 容器就会自动注册这个组件，默认的id是组件的全类名
             2) ImportSelector: 返回需要注册的组件的全类名的数组
             3) ImportBeanDefinitionRegistrar: 手动注册组件到IOC容器中
+         4.使用Spring提供的FactoryBean
+            按照id获取，得到的是工厂制造出来的对象
+            添加&前缀，得到的是工厂对象本身
  */
 @Configuration
 @Import({Color.class, Season.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
@@ -62,5 +66,10 @@ public class MainConfigII {
     @Bean(value = "linus")
     public Person person02() {
         return new Person("linus", 24);
+    }
+
+    @Bean
+    public ColorFactoryBean colorFactoryBean() {
+        return new ColorFactoryBean();
     }
 }
