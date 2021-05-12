@@ -4,7 +4,7 @@ package zrc.everyday;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Question_20210630_2 {
+public class Question_20210430_2 {
     static HashMap<String, Integer> map = new HashMap<>();
 
     static {
