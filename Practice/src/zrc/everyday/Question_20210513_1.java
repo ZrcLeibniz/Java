@@ -1,8 +1,8 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
+import java.util.Scanner;
 
-public class Problem {
+public class Question_20210513_1 {
     public static int solution(int a, int[] b) {
         for (int i : b) {
             if (a >= i) {
