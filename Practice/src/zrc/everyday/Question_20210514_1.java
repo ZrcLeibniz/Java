@@ -1,8 +1,8 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
+import java.util.HashMap;
 
-public class Problem {
+public class Question_20210514_1 {
     public static int solution(int[] gifts, int n) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int gift : gifts) {
@@ -17,11 +17,5 @@ public class Problem {
             }
         }
         return 0;
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 2, 2};
-        int solution = solution(arr, 5);
-        System.out.println(solution);
     }
 }
