@@ -1,8 +1,8 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
+import java.util.Scanner;
 
-public class Problem {
+public class Question_20210513_2 {
     public static int solution(String stringA, String stringB) {
         int[][] dp = new int[stringA.length() + 1][stringB.length() + 1];
         char[] wordA = stringA.toCharArray();
@@ -18,7 +18,7 @@ public class Problem {
                 if (wordA[i - 1] == wordB[j - 1]) {
                     dp[i][j] = dp[i - 1][j - 1];
                 } else {
-                    dp[i][j] = Math.min(Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1), dp[i - 1][j - 1] + 1);
+                    dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1);
                 }
             }
         }
