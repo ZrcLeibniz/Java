@@ -1,8 +1,6 @@
-package zrc;
+package zrc.everyday;
 
-import java.util.*;
-
-public class Problem {
+public class Question_20210516_1 {
     public static int solution(int[][] board) {
         int[][] dp = new int[6][6];
         dp[0][0] = board[0][0];
