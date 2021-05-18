@@ -1,4 +1,4 @@
-package rich.zrc;
+package rich.zrc.stackorqueue;
 
 import org.junit.Test;
 import rich.zrc.stackorqueue.MinStack;
