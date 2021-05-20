@@ -20,6 +20,10 @@
         <!--
             /*和/都是拦截所有请求，但是/*的范围更大，还会拦截到*.jsp这些请求
             /也会拦截所有请求，但是不会拦截*.jsp
+            1)服务器的大web.xml中有一个DefaultServlet是url-pattern=/
+            2)我们配置中前端控制器url-pattern=/，静态资源会来到DispatcherServlet看那个方法的RequestMapping是这个请求
+            3)因为我们没有覆盖服务器中的JspServlet的配置
+            4)/*直接就是拦截所有的请求
         -->
         <url-pattern>/</url-pattern>
     </servlet-mapping>

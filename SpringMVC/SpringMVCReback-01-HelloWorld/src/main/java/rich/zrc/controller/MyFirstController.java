@@ -19,6 +19,13 @@ public class MyFirstController {
         6.拿到方法返回值之后，用试图解析器拼接完整的页面地址
         7.拿到页面地址，前端控制器帮我们请求转发至对应页面
      */
+
+    /*
+        @Requesting
+            就是告诉SpringMVC: 这个方法用来处理什么请求
+            这个/是可以省略，，即使省略了，也是默认从当前项目下开始
+
+     */
     @RequestMapping("/hello")
     public String myFirstRequest() {
         System.out.println("请求收到了");
