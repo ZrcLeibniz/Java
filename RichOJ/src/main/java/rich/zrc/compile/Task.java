@@ -26,7 +26,7 @@ public class Task {
     private String COMPILE_ERROR;
 
     public Task() {
-        WORK_DIR = "./tmp/" + UUID.randomUUID().toString() + "/";
+        WORK_DIR = "F:/tmp/" + UUID.randomUUID().toString() + "/";
         CODE = WORK_DIR + CLASS + ".java";
         STDOUT = WORK_DIR + "stdout.txt";
         STDERR = WORK_DIR + "stderr.txt";
@@ -87,20 +87,20 @@ public class Task {
         return answer;
     }
 
-    public static void main(String[] args) {
-        Task task = new Task();
-        Question question = new Question();
-        question.setCode("public class Solution {\n" +
-                "    public static void main(String[] args) {\n" +
-                "        String s = null;\n" +
-                "        s.length();\n" +
-                "    }\n" +
-                "}");
-        try {
-            Answer answer = task.compileAndRun(question);
-            System.out.println(answer);
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void main(String[] args) {
+//        Task task = new Task();
+//        Question question = new Question();
+//        question.setCode("public class Solution {\n" +
+//                "    public static void main(String[] args) {\n" +
+//                "        String s = null;\n" +
+//                "        s.length();\n" +
+//                "    }\n" +
+//                "}");
+//        try {
+//            Answer answer = task.compileAndRun(question);
+//            System.out.println(answer);
+//        } catch (IOException | InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
