@@ -23,8 +23,8 @@ public class RequestMappingTestController {
                 param1 != value1: 表示请求包含名为param1的请求参数，但是其值不能为value1
                 该属性可以传一个数组，数组中的元素就是上述规则
             headers: 规定请求头，规则与上述相同，但是必须是请求头中存在的属性
-            consumes:
-            produces:
+            consumes: 只接收内容类型是哪种的请求，规定请求头中的content-type
+            produces: 告诉浏览器返回的类型是是什么，给响应头中加上content-type
      */
     @RequestMapping(value = "handle02" )
     public String handle02() {

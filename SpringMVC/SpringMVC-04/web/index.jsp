@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: lenovo
-  Date: 2021/5/20
-  Time: 11:10
+  Date: 2021/6/6
+  Time: 18:13
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,8 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  <a href="hello">hello请求</a>
-  <a href="handle01">hello请求</a>
-  <a href="antTest01">精确请求</a>
+  $END$
   </body>
 </html>
