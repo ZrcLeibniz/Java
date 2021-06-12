@@ -1,0 +1,25 @@
+person:
+  userName: rich
+  boss: true
+  birth: 2019/12/9
+  age: 18
+  interests:
+    - 篮球
+    - 足球
+  animal: [恐龙, 鳄鱼]
+  score:
+    math: 100
+    english: 100
+  salary:
+    - 9999.98
+    - 1000
+    - 200
+    - 459922
+  pet:
+    name: tomcat
+    weight: 999
+  allPets:
+    sick:
+      - {name: 阿狗, weight: 23}
+      - {name: 阿猫, weight: 21}
+    health: [{name: 小黑, weight: 89}, {name: 小黄, weight: 76}]

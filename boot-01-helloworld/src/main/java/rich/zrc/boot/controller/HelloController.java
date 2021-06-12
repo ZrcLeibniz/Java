@@ -1,14 +1,19 @@
 package rich.zrc.boot.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import rich.zrc.boot.bean.Car;
+import rich.zrc.boot.bean.Person;
 
+@Slf4j
 @RestController
 public class HelloController {
     @Autowired
     Car car;
+    @Autowired
+    Person person;
 
     @RequestMapping("/hello")
     public String handle01() {
@@ -18,6 +23,11 @@ public class HelloController {
     @RequestMapping("/myCar")
     public Car car() {
         return car;
+    }
+
+    @RequestMapping("/person")
+    public Person person() {
+        return person;
     }
 }
 /*

@@ -7,11 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Pet {
-    private String name;
-    private Double weight;
-
-    public Pet(String name) {
-        this.name = name;
-    }
+public class PojoTest {
+    private int a;
+    private int b;
 }

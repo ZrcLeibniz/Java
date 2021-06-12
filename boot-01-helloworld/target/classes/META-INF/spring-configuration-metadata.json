@@ -1,0 +1,77 @@
+{
+  "groups": [
+    {
+      "name": "mycar",
+      "type": "rich.zrc.boot.bean.Car",
+      "sourceType": "rich.zrc.boot.bean.Car"
+    },
+    {
+      "name": "person",
+      "type": "rich.zrc.boot.bean.Person",
+      "sourceType": "rich.zrc.boot.bean.Person"
+    }
+  ],
+  "properties": [
+    {
+      "name": "mycar.brand",
+      "type": "java.lang.String",
+      "sourceType": "rich.zrc.boot.bean.Car"
+    },
+    {
+      "name": "mycar.price",
+      "type": "java.lang.Integer",
+      "sourceType": "rich.zrc.boot.bean.Car"
+    },
+    {
+      "name": "person.age",
+      "type": "java.lang.Integer",
+      "sourceType": "rich.zrc.boot.bean.Person"
+    },
+    {
+      "name": "person.all-pets",
+      "type": "java.util.Map<java.lang.String,java.util.List<rich.zrc.boot.bean.Pet>>",
+      "sourceType": "rich.zrc.boot.bean.Person"
+    },
+    {
+      "name": "person.animal",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "rich.zrc.boot.bean.Person"
+    },
+    {
+      "name": "person.birth",
+      "type": "java.util.Date",
+      "sourceType": "rich.zrc.boot.bean.Person"
+    },
+    {
+      "name": "person.boss",
+      "type": "java.lang.Boolean",
+      "sourceType": "rich.zrc.boot.bean.Person"
+    },
+    {
+      "name": "person.interests",
+      "type": "java.lang.String[]",
+      "sourceType": "rich.zrc.boot.bean.Person"
+    },
+    {
+      "name": "person.pet",
+      "type": "rich.zrc.boot.bean.Pet",
+      "sourceType": "rich.zrc.boot.bean.Person"
+    },
+    {
+      "name": "person.salary",
+      "type": "java.util.Set<java.lang.Double>",
+      "sourceType": "rich.zrc.boot.bean.Person"
+    },
+    {
+      "name": "person.score",
+      "type": "java.util.Map<java.lang.String,java.lang.Object>",
+      "sourceType": "rich.zrc.boot.bean.Person"
+    },
+    {
+      "name": "person.user-name",
+      "type": "java.lang.String",
+      "sourceType": "rich.zrc.boot.bean.Person"
+    }
+  ],
+  "hints": []
+}
