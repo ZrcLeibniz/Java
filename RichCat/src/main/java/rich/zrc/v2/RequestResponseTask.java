@@ -15,6 +15,7 @@ public class RequestResponseTask implements Runnable {
         mimeTypeMap.put("txt", "text/plain");
         mimeTypeMap.put("html", "text/html");
         mimeTypeMap.put("js", "application/javascript");
+        mimeTypeMap.put("jpg", "image/jpeg");
     }
 
     RequestResponseTask(Socket socket) {
@@ -33,7 +34,6 @@ public class RequestResponseTask implements Runnable {
                 path = "/index.html";
             }
             String filePath = DOC_BASE + path;
-            System.out.println(filePath);
             // 1.判断该文件是否存在
             File resource = new File(filePath);
             if (resource.exists()) {
@@ -46,12 +46,10 @@ public class RequestResponseTask implements Runnable {
                     int i = path.lastIndexOf(".");
                     String suffix = path.substring(i + 1);
                     contentType = mimeTypeMap.getOrDefault(suffix, contentType);
-                    System.out.println(contentType);
                 }
                 if (contentType.startsWith("text/")) {
                     contentType = contentType + ";charset=utf-8";
                 }
-                System.out.println(contentType);
                 printWriter.printf("HTTP/1.0 200 OK\r\n");
                 printWriter.printf("Content-Type:%s\r\n", contentType);
                 printWriter.printf("\r\n");
