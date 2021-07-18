@@ -6,10 +6,12 @@ import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.UUID;
 
 public class RequestResponseTask implements Runnable {
     private final Socket socket;
     private static final String DOC_BASE = "E:/GitWarehouse/Java/RichCat/docBase";
+    private static final String SESSION_BASE = "E:\\GitWarehouse\\Java\\RichCat\\sessions";
     private static final Map<String, String> mimeTypeMap = new HashMap<>();
 
     static {
@@ -51,7 +53,91 @@ public class RequestResponseTask implements Runnable {
                 requestURI = "/index.html";
                 path = "/index.html";
             }
-            if (requestURI.equals("/set-cookie")) {
+            if (requestURI.equals("/required-login")) {
+                String cookie = headers.getOrDefault("cookie", "");
+                String uuid = null;
+                System.out.println("Cookie value" + cookie);
+                for (String cookieKV : cookie.split(";")) {
+                    if (cookie.isEmpty()) {
+                        continue;
+                    }
+                    String[] kv = cookieKV.split("=");
+                    String cookieName = kv[0];
+                    String cookieValue = kv[1];
+                    if (cookieName.equals("session-id")) {
+                        uuid = cookieValue;
+                    }
+                }
+                OutputStream outputStream = socket.getOutputStream();
+                Writer writer = new OutputStreamWriter(outputStream, "UTF-8");
+                PrintWriter printWriter = new PrintWriter(writer);
+                if (uuid == null) {
+                    printWriter.printf("HTTP/1.0 200 OK\r\n");
+                    printWriter.printf("Set-Cookie: session-id=%s", uuid);
+                    printWriter.printf("\r\n");
+                    printWriter.printf("Content-Type: text/plain;charset=utf-8\r\n");
+                    printWriter.printf("\r\n");
+                    printWriter.printf("没有登录");
+                    printWriter.flush();
+                } else {
+                    File sessionFile = new File(SESSION_BASE, uuid + ".session");
+                    if (!sessionFile.exists()) {
+                        printWriter.printf("HTTP/1.0 200 OK\r\n");
+                        printWriter.printf("Set-Cookie: session-id=%s", uuid);
+                        printWriter.printf("\r\n");
+                        printWriter.printf("Content-Type: text/plain;charset=utf-8\r\n");
+                        printWriter.printf("\r\n");
+                        printWriter.printf("没有登录");
+                        printWriter.flush();
+                    } else {
+                        try (InputStream is = new FileInputStream(sessionFile)) {
+                            try (ObjectInputStream objectInputStream = new ObjectInputStream(is)) {
+                                Map<String, Object> sessionData = (Map<String, Object>) objectInputStream.readObject();
+                                Pojo user = (Pojo)sessionData.get("user");
+                                if (user == null) {
+                                    printWriter.printf("HTTP/1.0 200 OK\r\n");
+                                    printWriter.printf("Set-Cookie: session-id=%s", uuid);
+                                    printWriter.printf("\r\n");
+                                    printWriter.printf("Content-Type: text/plain;charset=utf-8\r\n");
+                                    printWriter.printf("\r\n");
+                                    printWriter.printf("没有登录");
+                                    printWriter.flush();
+                                } else {
+                                    printWriter.printf("HTTP/1.0 200 OK\r\n");
+                                    printWriter.printf("Set-Cookie: session-id=%s", uuid);
+                                    printWriter.printf("\r\n");
+                                    printWriter.printf("Content-Type: text/plain;charset=utf-8\r\n");
+                                    printWriter.printf("\r\n");
+                                    printWriter.printf("当前用户是" + user.toString());
+                                    printWriter.flush();
+                                }
+                            } catch (ClassNotFoundException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }
+            } else if (requestURI.equals("/login")) {
+                Pojo pojo = new Pojo(1, "HelloWord", "男");
+                String uuid = UUID.randomUUID().toString();
+                Map<String, Object> sessionData = new HashMap<>();
+                sessionData.put("user", pojo);
+                try (OutputStream outputStream = new FileOutputStream(SESSION_BASE + "/" + uuid + ".session")) {
+                    try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream)) {
+                        objectOutputStream.writeObject(sessionData);
+                    }
+                }
+                OutputStream outputStream = socket.getOutputStream();
+                Writer writer = new OutputStreamWriter(outputStream, "UTF-8");
+                PrintWriter printWriter = new PrintWriter(writer);
+                printWriter.printf("HTTP/1.0 200 OK\r\n");
+                printWriter.printf("Set-Cookie: session-id=%s", uuid);
+                printWriter.printf("\r\n");
+                printWriter.printf("Content-Type: text/plain;charset=utf-8\r\n");
+                printWriter.printf("\r\n");
+                printWriter.printf("登录成功");
+                printWriter.flush();
+            } else if (requestURI.equals("/set-cookie")) {
                 OutputStream outputStream = socket.getOutputStream();
                 Writer writer = new OutputStreamWriter(outputStream, "UTF-8");
                 PrintWriter printWriter = new PrintWriter(writer);
