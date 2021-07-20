@@ -5,5 +5,5 @@ public interface HttpSession {
 
     void removeAttribute(String name);
 
-    void setAttribute(String name, String value);
+    void setAttribute(String name, Object value);
 }
